@@ -11,6 +11,8 @@
 class Rel: public Math {
 public:
     Rel(Token *, Expr *, Expr *);
+
+    void execute();
 };
 
 

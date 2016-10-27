@@ -13,6 +13,8 @@
 class Equality: public Math {
 public:
     Equality(Token *, Expr *, Expr *);
+
+    void execute();
 };
 
 

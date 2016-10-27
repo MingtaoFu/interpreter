@@ -15,6 +15,7 @@ public:
     Expr * factor;
     Unary(Token *, Expr *);
 
+    void execute();
 };
 
 

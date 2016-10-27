@@ -17,6 +17,8 @@ public:
     Expr * term;
     Expr(Token *);
     Expr(Token *, Expr *, Expr *);
+
+    virtual void execute();
 };
 
 

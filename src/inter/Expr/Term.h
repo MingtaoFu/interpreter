@@ -14,6 +14,8 @@ public:
     Expr * term;
     Expr * unary;
     Term(Token *, Expr *, Expr *);
+
+    void execute();
 };
 
 

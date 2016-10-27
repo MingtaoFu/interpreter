@@ -11,5 +11,6 @@ Set::Set(Id * id1, Expr * expr1) {
 }
 
 void Set::execute() {
+    expr->execute();
     std::cout << "发生赋值" << std::endl;
 }

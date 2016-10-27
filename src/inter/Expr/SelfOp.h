@@ -11,6 +11,8 @@
 class SelfOp: public Math {
 public:
     SelfOp(Token *, Expr *);
+
+    void execute();
 };
 
 
