@@ -18,12 +18,13 @@ int main(int argc, char** argv) {
     cout << lexer.scan()->toString() << endl;
     cout << lexer.scan()->toString() << endl;
     cout << lexer.scan()->toString() << endl;
-    cout << lexer.scan()->toString() << endl;
      */
 
     Lexer lexer;
+    lexer.setFile(argv[1]);
     //语法分析
     Parser parser = Parser(&lexer);
+    parser.program();
     //执行语法树
     Vm vm = Vm(parser.getRoot());
     vm.execute();

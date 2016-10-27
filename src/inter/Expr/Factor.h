@@ -12,7 +12,6 @@ class Factor: public Expr {
 public:
     Token * token;
     Factor(Token *);
-
 };
 
 

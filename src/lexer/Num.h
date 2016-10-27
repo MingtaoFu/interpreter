@@ -9,7 +9,7 @@
 #include "Token.h"
 #include "Tag.h"
 
-class Num: Token{
+class Num: public Token{
 public:
     int value;
     Num(int v);

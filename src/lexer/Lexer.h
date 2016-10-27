@@ -13,15 +13,16 @@
 class Lexer {
 public:
     static int line;
-    void reserve(Word);
+    void reserve(Word *);
     void setFile(std::string);
     void readch();
+    void back();
     bool readch(char c);
     Token* scan();
     Lexer();
 
 private:
-    std::ifstream file;
+    std::ifstream input_file;
     char buffers[2][4097];
     int buffer_index = 0;
     int index = 0;

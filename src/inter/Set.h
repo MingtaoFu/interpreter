@@ -14,6 +14,7 @@ public:
     Id * id;
     Expr * expr;
     Set(Id *, Expr *);
+    void execute();
 
 };
 

@@ -6,7 +6,9 @@
 #define COMPILER_STMT_H
 
 
-class Stmt {
+#include "Node.h"
+
+class Stmt: public Node {
 public:
     virtual void execute();
 };

@@ -4,6 +4,6 @@
 
 #include "Factor.h"
 
-Factor::Factor(Token * token1): Expr(token1) {
-
+Factor::Factor(Token * token1): Expr(NULL) {
+    token = token1;
 }

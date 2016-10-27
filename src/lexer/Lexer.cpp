@@ -4,24 +4,32 @@
 
 #include "Lexer.h"
 #include "Tag.h"
+#include "Num.h"
 #include <iostream>
 
-void Lexer::reserve(Word word) {
-    words.insert(std::pair<std::string, Word>(word.lexeme, word));
+void Lexer::reserve(Word * word) {
+    words.insert(std::pair<std::string, Word>(word->lexeme, *word));
 }
 
 int Lexer::line = 1;
 
 Lexer::Lexer() {
+    reserve(new Word("if", Tag::IF));
+    reserve(new Word("else", Tag::ELSE));
+    reserve(new Word("while", Tag::WHILE));
+    reserve(new Word("for", Tag::FOR));
+    reserve(new Word("do", Tag::DO));
+    reserve(new Word("break", Tag::BREAK));
+    reserve(new Word("int", Tag::INT));
     this->line = 1;
 }
 
 void Lexer::setFile(std::string str) {
-    file.open(str);
+    input_file.open(str);
 }
 
 void Lexer::read(char* ch) {
-    file.read(ch, 4096);
+    input_file.read(ch, 4096);
 }
 
 Token* Lexer::scan() {
@@ -124,15 +132,25 @@ Token* Lexer::scan() {
         return word;
 
     } else if(isdigit(peek)) {
-    }
+        int value = 0;
+        do {
+            value = 10 * value + (peek - '0');
+            readch();
+        } while (isdigit(peek));
 
-    token = new Token(1);
-    return token;
+        back();
+
+        return new Num(value);
+    }
 }
 
 void Lexer::readch() {
     peek = buffers[buffer_index][index];
     index ++;
+}
+
+void Lexer::back() {
+    index --;
 }
 
 bool Lexer::readch(char c) {

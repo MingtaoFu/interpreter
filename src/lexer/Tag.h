@@ -38,7 +38,8 @@ public:
             ELSE = 260,
             FOR = 261,
             DO = 262,
-            WHILE = 263;
+            WHILE = 263,
+            BREAK = 270;
 };
 
 

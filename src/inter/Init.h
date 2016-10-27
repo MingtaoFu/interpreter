@@ -9,7 +9,8 @@
 #include "Stmt.h"
 
 class Init: public Stmt {
-
+public:
+    void execute();
 };
 
 

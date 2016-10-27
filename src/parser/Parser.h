@@ -22,7 +22,7 @@ private:
     Token * look;
 
 protected:
-    Node * root;
+    Block * root;
     Env * top;
     void move();
     void error(std::string);
@@ -44,7 +44,7 @@ protected:
 public:
     Parser(Lexer* lexer);
     void program();
-    Node * getRoot();
+    Block * getRoot();
 };
 
 

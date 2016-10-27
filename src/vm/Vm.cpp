@@ -5,13 +5,13 @@
 #include "Vm.h"
 
 void Vm::execute() {
-
+    entry->execute();
 }
 
-void Vm::setEntry(Node * node) {
+void Vm::setEntry(Block * node) {
     entry = node;
 }
 
-Vm::Vm(Node * node) {
+Vm::Vm(Block * node) {
     setEntry(node);
 }

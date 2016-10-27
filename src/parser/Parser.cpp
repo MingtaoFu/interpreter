@@ -3,24 +3,19 @@
 //
 
 #include "Parser.h"
-#include "../inter/Block.h"
 #include "../inter/Blank.h"
 #include "../inter/If.h"
-#include "../inter/Set.h"
-#include "../inter/Expr/Expr.h"
-#include "../inter/Expr/Id.h"
 #include "../inter/Expr/Equality.h"
 #include "../inter/Expr/SelfOp.h"
-#include "../lexer/Num.h"
 #include "../inter/Expr/Term.h"
-#include "../inter/Init.h"
+#include "../inter/Decl.h"
 
 Parser::Parser(Lexer* lexer) {
     this->lexer = lexer;
     move();
 }
 
-Node * Parser::getRoot() {
+Block * Parser::getRoot() {
     return root;
 }
 
@@ -82,6 +77,10 @@ void Parser::decl() {
 }
 
 Set * Parser::assign() {
+    if(look->tag != Tag::ID) {
+        return NULL;
+    }
+
     Set * set1;
 
     Id * id = new Id((Word*)look);
@@ -91,6 +90,7 @@ Set * Parser::assign() {
 
     Expr * equality1 = equality();
     set1 = new Set(id, equality1);
+    match(';');
 
     return set1;
 }
@@ -178,8 +178,11 @@ Expr * Parser::selfop() {
 Factor * Parser::factor() {
     switch(look->tag) {
         case Tag::NUM:
-        case Tag::ID:
-            return new Factor(look);
+        case Tag::ID: {
+            Factor * factor1 = new Factor(look);
+            move();
+            return factor1;
+        }
         default:
             error("syntax error");
             return NULL;
@@ -224,21 +227,26 @@ Stmt * Parser::stmt() {
         }
         case Tag::INT: {
             match(Tag::INT);
-            Factor * factor1 = factor();
+            //Factor * factor1 = factor();
+            Token * token = look;
+            match(Tag::ID);
+            Id * id = new Id((Word*)token);
             if(look->tag == '=') {
                 Expr * equality1 = equality();
             } else if(look->tag == ';'){
                 match(';');
-                stmt1 = new Init();
+                stmt1 = new Decl(id);
             }
+            return stmt1;
         }
         default:
-            assign();
+            return assign();
     }
 
     return stmt1;
 }
 
 void Parser::program() {
-    Stmt * stmt = block();
+    Block * stmt = block();
+    root = stmt;
 }

@@ -5,16 +5,16 @@
 #ifndef COMPILER_VM_H
 #define COMPILER_VM_H
 
-#include "../inter/Node.h"
+#include "../inter/Block.h"
 
 class Vm {
 protected:
-    Node * entry;
+    Block * entry;
 
 public:
     void execute();
-    void setEntry(Node *);
-    Vm(Node *);
+    void setEntry(Block *);
+    Vm(Block *);
 };
 
 

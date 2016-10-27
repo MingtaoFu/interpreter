@@ -7,9 +7,13 @@
 
 
 #include "Stmt.h"
+#include "Expr/Id.h"
 
 class Decl: public Stmt {
-
+public:
+    Id * id;
+    Decl(Id *);
+    void execute();
 };
 
 
