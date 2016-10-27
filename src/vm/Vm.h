@@ -5,7 +5,7 @@
 #ifndef COMPILER_VM_H
 #define COMPILER_VM_H
 
-#include "../inter/Block.h"
+#include "../inter/stmt/Block.h"
 
 class Vm {
 protected:

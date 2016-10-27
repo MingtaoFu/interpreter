@@ -3,6 +3,7 @@
 //
 
 #include "Vm.h"
+#include "../inter/stmt/Block.h"
 
 void Vm::execute() {
     entry->execute();

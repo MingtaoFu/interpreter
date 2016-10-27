@@ -7,7 +7,8 @@
 
 
 #include "Stmt.h"
-#include "Expr/Id.h"
+#include "../expr/Expr.h"
+#include "../expr/Id.h"
 
 class Set: public Stmt {
 public:

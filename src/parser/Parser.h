@@ -8,13 +8,11 @@
 
 #include "../lexer/Lexer.h"
 #include "../symbols/Env.h"
-#include "../inter/Stmt.h"
-#include "../inter/Block.h"
 #include "../inter/Node.h"
-#include "../inter/Expr/Expr.h"
-#include "../inter/Set.h"
-#include "../inter/Expr/Rel.h"
-#include "../inter/Expr/Factor.h"
+#include "../inter/stmt/Stmt.h"
+#include "../inter/stmt/Block.h"
+#include "../inter/stmt/Set.h"
+#include "../inter/expr/Factor.h"
 
 class Parser {
 private:

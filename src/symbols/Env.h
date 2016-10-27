@@ -7,7 +7,7 @@
 
 #include <map>
 #include "../lexer/Token.h"
-#include "../inter/Expr/Id.h"
+#include "../inter/expr/Id.h"
 
 class Env {
 private:

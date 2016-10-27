@@ -6,7 +6,7 @@
 #define COMPILER_STMT_H
 
 
-#include "Node.h"
+#include "../Node.h"
 
 class Stmt: public Node {
 public:

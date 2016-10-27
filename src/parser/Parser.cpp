@@ -3,12 +3,12 @@
 //
 
 #include "Parser.h"
-#include "../inter/Blank.h"
-#include "../inter/If.h"
-#include "../inter/Expr/Equality.h"
-#include "../inter/Expr/SelfOp.h"
-#include "../inter/Expr/Term.h"
-#include "../inter/Decl.h"
+#include "../inter/expr/Equality.h"
+#include "../inter/expr/SelfOp.h"
+#include "../inter/expr/Term.h"
+#include "../inter/stmt/Blank.h"
+#include "../inter/stmt/If.h"
+#include "../inter/stmt/Decl.h"
 
 Parser::Parser(Lexer* lexer) {
     this->lexer = lexer;
