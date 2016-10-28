@@ -7,12 +7,13 @@
 
 
 #include "Math.h"
+#include "../stmt/Stmt.h"
 
 class SelfOp: public Math {
 public:
     SelfOp(Token *, Expr *);
 
-    void execute();
+    Constant * execute();
 };
 
 

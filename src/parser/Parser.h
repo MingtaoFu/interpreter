@@ -35,7 +35,7 @@ protected:
     Expr * term();
     Expr * unary();
     Expr * selfop();
-    Factor * factor();
+    Expr * factor();
 
 
 public:

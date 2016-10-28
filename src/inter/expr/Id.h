@@ -6,12 +6,16 @@
 #define COMPILER_ID_H
 
 
-#include "Expr.h"
 #include "../../lexer/Word.h"
+#include "Factor.h"
+#include "Constant.h"
 
-class Id: public Expr {
+class Id: public Factor {
 public:
     Id(Word *);
+    Constant * value;
+
+    Constant * execute();
 };
 
 

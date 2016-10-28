@@ -11,11 +11,9 @@
 
 class Term: public Math {
 public:
-    Expr * term;
-    Expr * unary;
     Term(Token *, Expr *, Expr *);
 
-    void execute();
+    Constant * execute();
 };
 
 

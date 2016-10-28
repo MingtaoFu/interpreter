@@ -12,10 +12,14 @@
 
 class If: public Stmt {
 protected:
-    std::vector<std::pair<Expr, Stmt>> * if_then;
+    Expr * equality;
+    Stmt * stmt1;
+    Stmt * stmt2;
 
 public:
-    void push_items(std::pair<Expr, Stmt>);
+    void execute();
+
+    If(Expr *, Stmt *, Stmt *);
 };
 
 

@@ -9,6 +9,8 @@
 #include "../inter/stmt/Blank.h"
 #include "../inter/stmt/If.h"
 #include "../inter/stmt/Decl.h"
+#include "../lexer/Num.h"
+#include "../inter/expr/Var.h"
 
 Parser::Parser(Lexer* lexer) {
     this->lexer = lexer;
@@ -170,11 +172,15 @@ Expr * Parser::selfop() {
     }
 }
 
-Factor * Parser::factor() {
+Expr * Parser::factor() {
     switch(look->tag) {
         case Tag::NUM:
+            return new Constant(look);
         case Tag::ID: {
+            Var * factor1 = new Var((Word*)look);
+                    /*
             Factor * factor1 = new Factor(look);
+                     */
             move();
             return factor1;
         }
@@ -197,7 +203,10 @@ Stmt * Parser::stmt() {
             break;
             //return Stmt::NULL;
         }
+        case '{':
+            return block();
         case Tag::IF: {
+            If * _if;
 
             /**
              * @TODO
@@ -207,7 +216,10 @@ Stmt * Parser::stmt() {
             expr = equality();
             match(')');
 
-            Stmt * stmt2;
+            Stmt * stmt2 = stmt();
+            Stmt * stmt3 = NULL;
+
+            /*
             if(look->tag == '{') {
                 // if 后面跟的是一个块
                 stmt2 = block();
@@ -215,9 +227,47 @@ Stmt * Parser::stmt() {
                 // if 后面跟的是一个语句
                 stmt2 = stmt();
             }
+             */
 
-            If * _if = new If();
-            _if->push_items(std::pair<Expr, Stmt>(*expr, *stmt2));
+            if(look->tag == Tag::ELSE) {
+                move();
+                stmt3 = stmt();
+            }
+
+            _if = new If(expr, stmt2, stmt3);
+
+            /*
+            _if->push_items(std::pair<Expr, Stmt>(expr, stmt2));
+
+            //有多个，考虑吧if变成while
+            while (look->tag == Tag::ELSE) {
+                move();
+                if(look->tag == Tag::IF) {
+                    match('(');
+                    expr = equality();
+                    match(')');
+                    if(look->tag == '{') {
+                        // if 后面跟的是一个块
+                        stmt2 = block();
+                    } else {
+                        // if 后面跟的是一个语句
+                        stmt2 = stmt();
+                    }
+                    _if->push_items(std::pair<Expr, Stmt>(expr, stmt2));
+                } else {
+                    if(look->tag == '{') {
+                        // if 后面跟的是一个块
+                        stmt2 = block();
+                    } else {
+                        // if 后面跟的是一个语句
+                        stmt2 = stmt();
+                    }
+                    _if->push_items(std::pair<Expr, Stmt>(Num(1), stmt2));
+                    break;
+                }
+            }
+             */
+
             stmt1 = _if;
         }
         case Tag::INT: {

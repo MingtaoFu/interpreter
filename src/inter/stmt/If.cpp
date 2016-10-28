@@ -2,8 +2,15 @@
 // Created by mingtao on 10/26/16.
 //
 
+#include <iostream>
 #include "If.h"
 
-void If::push_items(std::pair<Expr, Stmt> pair) {
-    if_then->push_back(pair);
+void If::execute() {
+    std::cout << "进入 if 语句, " << (stmt2 ? "带有": "没有") << " else 语句" << std:: endl;
+}
+
+If::If(Expr * equality1, Stmt * stmt3, Stmt * stmt4) {
+    equality = equality1;
+    stmt1 = stmt3;
+    stmt2 = stmt4;
 }
