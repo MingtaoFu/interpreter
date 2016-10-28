@@ -7,6 +7,7 @@
 
 
 #include <stdexcept>
+#include <iostream>
 
 class DuplicateDecl: public std::runtime_error {
 public:

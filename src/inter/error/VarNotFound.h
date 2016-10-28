@@ -7,6 +7,8 @@
 
 
 #include <stdexcept>
+#include <iostream>
+
 
 class VarNotFound: public std::runtime_error {
 public:
