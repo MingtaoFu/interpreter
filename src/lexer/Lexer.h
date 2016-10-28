@@ -21,6 +21,7 @@ public:
     Token* scan();
     Lexer();
 
+
 private:
     std::ifstream input_file;
     char buffers[2][4097];
@@ -28,7 +29,7 @@ private:
     int index = 0;
     char peek = ' ';
     std::map<std::string, Word> words;
-
+    void skipComments();
     void read(char*);
 };
 

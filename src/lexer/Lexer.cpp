@@ -49,6 +49,29 @@ Token* Lexer::scan() {
             continue;
         } else if (peek == '\n') {
             Lexer::line++;
+        } else if (peek == '/')  {
+            if (readch('/')) {
+                while (1) {
+                    readch();
+                    if (peek == '\n') {
+                        Lexer::line++;
+                        break;
+                    }
+                }
+            } else if (readch('*')) {
+                while (1) {
+                    readch();
+                    if (peek == '*' && readch('/')) {
+                        break;
+                    } else if (peek == '\n') {
+                        Lexer::line++;
+                    }
+                }
+            } else {
+                peek = '/';
+                break;
+            }
+
         } else {
             break;
         }
@@ -143,6 +166,7 @@ Token* Lexer::scan() {
         return new Num(value);
     }
 }
+
 
 void Lexer::readch() {
     peek = buffers[buffer_index][index];

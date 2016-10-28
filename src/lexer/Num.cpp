@@ -9,5 +9,5 @@ Num::Num(int v): Token(Tag::NUM) {
 }
 
 std::string Num::toString() {
-    return "" + value;
+    return "" + std::to_string(value);
 }
