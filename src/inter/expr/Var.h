@@ -7,13 +7,15 @@
 
 
 #include "Factor.h"
+#include "../../lexer/Word.h"
+#include "Id.h"
 
 class Var: public Factor {
 public:
     Var(Word *);
     Id * id;
 
-    Constant * execute();
+    int execute();
 };
 
 

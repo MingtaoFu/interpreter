@@ -10,7 +10,7 @@
 Var::Var(Word * word): Factor(word) {
 }
 
-Constant* Var::execute() {
+int Var::execute() {
     std::string name = ((Word*)token)->lexeme;
     Id * id =  Vm::top->get(name);
     if(id) {

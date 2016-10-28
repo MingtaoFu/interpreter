@@ -13,7 +13,7 @@ class SelfOp: public Math {
 public:
     SelfOp(Token *, Expr *);
 
-    Constant * execute();
+    int execute();
 };
 
 

@@ -8,7 +8,6 @@
 
 #include "../../lexer/Token.h"
 #include "../Node.h"
-#include "Constant.h"
 
 class Expr: public Node{
 public:
@@ -19,7 +18,7 @@ public:
     Expr(Token *);
     Expr(Token *, Expr *, Expr *);
 
-    virtual Constant * execute();
+    virtual int execute();
 };
 
 

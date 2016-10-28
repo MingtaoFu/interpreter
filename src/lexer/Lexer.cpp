@@ -163,6 +163,7 @@ Token* Lexer::scan() {
 
         back();
 
+        //std::cout << value << std::endl;
         return new Num(value);
     }
 }

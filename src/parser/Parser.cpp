@@ -2,6 +2,7 @@
 // Created by mingtao on 10/25/16.
 //
 
+#include <iostream>
 #include "Parser.h"
 #include "../inter/expr/Equality.h"
 #include "../inter/expr/SelfOp.h"
@@ -11,6 +12,7 @@
 #include "../inter/stmt/Decl.h"
 #include "../lexer/Num.h"
 #include "../inter/expr/Var.h"
+#include "../inter/expr/Constant.h"
 
 Parser::Parser(Lexer* lexer) {
     this->lexer = lexer;
@@ -23,6 +25,13 @@ Block * Parser::getRoot() {
 
 void Parser::move() {
     look = lexer->scan();
+    /*
+    try {
+        std::cout<< ((Num*)look)->value<<" ssss" <<std::endl;
+    } catch (std::runtime_error e) {
+
+    }
+     */
 }
 
 void Parser::error(std::string) {
@@ -80,13 +89,13 @@ Set * Parser::assign() {
 
     Set * set1;
 
-    Id * id = new Id((Word*)look);
+    Var * var = new Var((Word*)look);
 
     match(Tag::ID);
     match('=');
 
     Expr * equality1 = equality();
-    set1 = new Set(id, equality1);
+    set1 = new Set(var, equality1);
     match(';');
 
     return set1;
@@ -127,10 +136,12 @@ Expr * Parser::rel() {
 
 Expr * Parser::expr() {
     Expr * expr1 = term();
+    //std::cout << ((Num*)look)->value << std::endl;
     while (look->tag == '+' || look->tag == '-') {
         Token * token = look;
         move();
         expr1 = new Expr(token, expr1, term());
+        //std::cout << "分析出了+/-" << std::endl;
     }
     return expr1;
 }
@@ -141,6 +152,7 @@ Expr * Parser::term() {
         Token * token = look;
         move();
         expr1 = new Term(token, expr1, unary());
+        //std::cout << "分析出了乘除" << std::endl;
     }
     return expr1;
 }
@@ -151,6 +163,7 @@ Expr * Parser::unary() {
         case '+': {
             Token *token = look;
             move();
+            std::cout << "分析出了正负" << std::endl;
             return new Unary(token, selfop());
         }
         default:
@@ -165,6 +178,7 @@ Expr * Parser::selfop() {
         case Tag::DECRE: {
             Token * token = look;
             move();
+            std::cout << "分析出了++/--" << std::endl;
             return new SelfOp(token, factor1);
         }
         default:
@@ -174,14 +188,19 @@ Expr * Parser::selfop() {
 
 Expr * Parser::factor() {
     switch(look->tag) {
-        case Tag::NUM:
-            return new Constant(look);
+        case Tag::NUM: {
+            Token * token = look;
+            move();
+            //std::cout << "构建整数常量：" << ((Num*)token)->value <<std::endl;
+            return new Constant(token);
+        }
         case Tag::ID: {
             Var * factor1 = new Var((Word*)look);
                     /*
             Factor * factor1 = new Factor(look);
                      */
             move();
+            std::cout << "分析出了因子" << std::endl;
             return factor1;
         }
         default:
@@ -275,12 +294,14 @@ Stmt * Parser::stmt() {
             //Factor * factor1 = factor();
             Token * token = look;
             match(Tag::ID);
+            Var * var = new Var((Word*)token);
             Id * id = new Id((Word*)token);
+            var->id = id;
             if(look->tag == '=') {
                 Expr * equality1 = equality();
             } else if(look->tag == ';'){
                 match(';');
-                stmt1 = new Decl(id);
+                stmt1 = new Decl(var);
             }
             return stmt1;
         }

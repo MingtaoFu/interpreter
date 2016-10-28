@@ -6,16 +6,15 @@
 #define COMPILER_CONSTANT_H
 
 
-#include "Factor.h"
-#include "Math.h"
+#include "Expr.h"
 
-class Constant: public Node{
+class Constant: public Expr{
 
 public:
-    Constant(int);
+    Constant(Token *);
     int value;
 
-    Constant * execute();
+    int execute();
 };
 
 

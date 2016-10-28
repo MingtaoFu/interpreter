@@ -13,7 +13,7 @@ class Term: public Math {
 public:
     Term(Token *, Expr *, Expr *);
 
-    Constant * execute();
+    int execute();
 };
 
 

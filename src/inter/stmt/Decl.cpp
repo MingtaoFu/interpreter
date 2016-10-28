@@ -6,13 +6,14 @@
 #include "../../vm/Vm.h"
 #include <iostream>
 
-Decl::Decl(Id * id1) {
-    id = id1;
+Decl::Decl(Var * id1) {
+    var = id1;
 }
 
 void Decl::execute() {
-    std::string name = ((Word *)id->op)->lexeme;
-    Vm::top->put(name, *id);
+    Word * word = (Word*)var->token;
+    std::string name = ((Word *)var->token)->lexeme;
+    Vm::top->put(name, *var->id);
     std::cout << "发生声明: " << name << std::endl;
     Vm::top->printCurrentVar();
 }

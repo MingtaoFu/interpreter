@@ -8,11 +8,12 @@
 
 #include "Stmt.h"
 #include "../expr/Id.h"
+#include "../expr/Var.h"
 
 class Decl: public Stmt {
 public:
-    Id * id;
-    Decl(Id *);
+    Var * var;
+    Decl(Var *);
     void execute();
 };
 

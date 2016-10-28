@@ -10,10 +10,6 @@
 Id::Id(Word * word): Factor(word) {
 }
 
-Constant * Id::execute() {
-    if(id->value != NULL) {
-        return id->value;
-    } else {
-        throw VarNotInited(((Word*)id->token)->lexeme);
-    }
+int Id::execute() {
+    return this->value;
 }

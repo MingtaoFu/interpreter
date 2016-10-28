@@ -5,13 +5,9 @@
 #include "Constant.h"
 #include "../../lexer/Num.h"
 
-Constant::Constant(Token * token){
+Constant::Constant(Token * token): Expr(token){
 }
 
-Constant * Constant::execute() {
-    return this;
-}
-
-int Constant::getValue() {
-    return ((Num *)this->op)->value;
+int Constant::execute() {
+    return ((Num*)this->op)->value;
 }

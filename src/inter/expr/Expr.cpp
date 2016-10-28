@@ -2,9 +2,10 @@
 // Created by mingtao on 10/25/16.
 //
 
-#include "Expr.h"
-#include "../../lexer/Num.h"
+
 #include <iostream>
+#include "Expr.h"
+#include "../../lexer/Tag.h"
 
 Expr::Expr(Token * token) {
     op = token;
@@ -17,19 +18,17 @@ Expr::Expr(Token * token, Expr * expr1, Expr * term1) {
     isArith = true;
 }
 
-Constant * Expr::execute() {
+int Expr::execute() {
     if(isArith) {
-        Constant * value1 = expr->execute();
-        Constant * value2 = term->execute();
+        int value1 = expr->execute();
+        int value2 = term->execute();
 
-        std::cout << "执行 expr，发生加/减法" << std::endl;
+        std::cout << "执行 expr，发生加/减法: " << value1 << " + " << value2 << std::endl;
 
         if(op->tag == Tag::PLUS) {
-            Num * num = new Num(value1->getValue() * value2->getValue());
-            return new Constant(num);
+            return value1 + value2;
         }
-        Num * num = new Num(value1->getValue() / value2->getValue());
-        return new Constant(num);
+        return value1 - value2;
 
     } else {
         std::cout << "执行 expr，未发生加/减法" << std::endl;

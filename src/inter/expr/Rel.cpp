@@ -10,20 +10,20 @@ Rel::Rel(Token * token, Expr * expr1, Expr * expr2): Math(token, expr1, expr2) {
 
 }
 
-Constant * Rel::execute() {
-    Constant * value1 = expr1->execute();
-    Constant * value2 = expr2->execute();
+int Rel::execute() {
+    int value1 = expr1->execute();
+    int value2 = expr2->execute();
 
     std::cout << "执行 rel，发生大于/小于比较运算" << std::endl;
 
     switch (op->tag) {
         case Tag::LT:
-            return new Constant(value1->value < value2->value);
+            return value1 < value2;
         case Tag::GT:
-            return new Constant(value1->value > value2->value);
+            return value1 > value2;
         case Tag::LE:
-            return new Constant(value1->value <= value2->value);
+            return value1 <= value2;
         default:
-            return new Constant(value1->value >= value2->value);
+            return value1 >= value2;
     }
 }

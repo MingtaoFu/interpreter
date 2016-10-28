@@ -14,7 +14,7 @@ class Unary: public Math {
 public:
     Unary(Token *, Expr *);
 
-    Constant * execute();
+    int execute();
 };
 
 

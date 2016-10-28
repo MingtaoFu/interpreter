@@ -7,18 +7,19 @@
 #include "../error/VarNotFound.h"
 #include <iostream>
 
-Set::Set(Id * id1, Expr * expr1) {
-    id = id1;
+Set::Set(Var * var1, Expr * expr1) {
+    var = var1;
     expr = expr1;
 }
 
 void Set::execute() {
-    std::string var_name = ((Word*)id->op)->lexeme;
-    id =  Vm::top->get(var_name);
+    std::string var_name = ((Word*)var->token)->lexeme;
+    Id * id = Vm::top->get(var_name);
     if(!id) {
         throw VarNotFound(var_name);
     } else {
-        expr->execute();
-        std::cout << "发生赋值" << std::endl;
+        var->id = id;
+        int a = expr->execute();
+        std::cout << "发生赋值"<<a << std::endl;
     }
 }

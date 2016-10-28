@@ -9,12 +9,13 @@
 #include "Stmt.h"
 #include "../expr/Expr.h"
 #include "../expr/Id.h"
+#include "../expr/Var.h"
 
 class Set: public Stmt {
 public:
-    Id * id;
+    Var * var;
     Expr * expr;
-    Set(Id *, Expr *);
+    Set(Var *, Expr *);
     void execute();
 };
 

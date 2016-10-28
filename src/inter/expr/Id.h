@@ -8,14 +8,13 @@
 
 #include "../../lexer/Word.h"
 #include "Factor.h"
-#include "Constant.h"
 
 class Id: public Factor {
 public:
     Id(Word *);
-    Constant * value;
+    int value;
 
-    Constant * execute();
+    int execute();
 };
 
 
