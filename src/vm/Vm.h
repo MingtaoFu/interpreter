@@ -12,6 +12,7 @@ protected:
     Block * entry;
 
 public:
+    static Env * top;
     void execute();
     void setEntry(Block *);
     Vm(Block *);

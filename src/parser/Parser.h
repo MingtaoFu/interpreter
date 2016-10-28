@@ -21,7 +21,6 @@ private:
 
 protected:
     Block * root;
-    Env * top;
     void move();
     void error(std::string);
     void match(int);

@@ -3,7 +3,8 @@
 //
 
 #include "Vm.h"
-#include "../inter/stmt/Block.h"
+
+Env * Vm::top;
 
 void Vm::execute() {
     entry->execute();

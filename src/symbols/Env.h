@@ -11,16 +11,19 @@
 
 class Env {
 private:
-    std::map<Token, Id> table;
+    std::map<std::string, Id> table;
 
 protected:
     Env * prev;
-    Id * _get(Token);
+    Id * _get(std::string);
 
 public:
     Env(Env *);
-    void put(Token, Id);
-    Id * get(Token);
+    void put(std::string, Id);
+    Id * get(std::string);
+
+    void printCurrentVar();
+    void printAllVar();
 };
 
 

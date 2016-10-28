@@ -41,10 +41,6 @@ Block * Parser::block() {
     Block * block = new  Block();
 
     match('{');
-    Env * saveEnv = top;
-    top = new Env(top);
-
-    block->setEnv(top);
 
     Stmt * stmt1;
     stmt1 = stmt();
@@ -55,7 +51,6 @@ Block * Parser::block() {
     }
 
     match('}');
-    top = saveEnv;
 
     return block;
 }
@@ -69,11 +64,11 @@ void Parser::decl() {
      */
 
     match(Tag::INT);
-    Token* t = look;
+    //Token* t = look;
     match(Tag::ID);
     match(Tag::Semicolon);
-    Id id( (Word *)t );
-    top->put(*t, id);
+    //Id id( (Word *)t );
+    //top->put(*t, id);
 }
 
 Set * Parser::assign() {
