@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Env.h"
+#include "../inter/error/DuplicateDecl.h"
 
 Env::Env(Env* n) {
     table = std::map<std::string, Id>();
@@ -11,9 +12,9 @@ Env::Env(Env* n) {
 }
 
 void Env::put(std::string word, Id id) {
-    if(table.insert(std::pair<std::string, Id>(word, id)).second == false)
-    {
-        std::cout << "Insertion failed. Key was present"<< std::endl;
+    if(!table.insert(std::pair<std::string, Id>(word, id)).second) {
+        //std::cout << "Insertion failed. Key was present"<< std::endl;
+        throw DuplicateDecl(word);
     }
 }
 

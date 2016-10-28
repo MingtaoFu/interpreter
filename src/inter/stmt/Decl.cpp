@@ -11,8 +11,8 @@ Decl::Decl(Id * id1) {
 }
 
 void Decl::execute() {
-    Vm::top->put(((Word *)id->op)->lexeme, *id);
-    std::cout << ((Word *)id->op)->lexeme << std::endl;
-    std::cout << "发生声明" << std::endl;
+    std::string name = ((Word *)id->op)->lexeme;
+    Vm::top->put(name, *id);
+    std::cout << "发生声明: " << name << std::endl;
     Vm::top->printCurrentVar();
 }

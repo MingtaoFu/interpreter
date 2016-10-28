@@ -10,8 +10,7 @@
 
 class VarNotFound: public std::runtime_error {
 public:
-    explicit VarNotFound(const std::string &s);
-
+    explicit VarNotFound(std::string);
 };
 
 

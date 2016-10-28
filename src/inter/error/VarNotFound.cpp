@@ -4,6 +4,6 @@
 
 #include "VarNotFound.h"
 
-VarNotFound::VarNotFound(const std::string &s): std::runtime_error(s) {
+VarNotFound::VarNotFound(std::string s): std::runtime_error(s) {
 
 }
