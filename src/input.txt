@@ -16,11 +16,13 @@
     a = -123;
     a = a + 1;
     printf("hello", a+3*b, b*b);
+
     int i;
-    i = 10;
-    do{
-        a = i--;
-    } while (i);
+    for (i = 10; i != 0 ; i=i-1 )
+    {
+        a = 1;
+    }
+
 
     if(a + 1) {
     }

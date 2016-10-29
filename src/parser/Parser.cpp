@@ -13,6 +13,7 @@
 #include "../inter/stmt/Printf.h"
 #include "../inter/stmt/While.h"
 #include "../inter/stmt/DoWhile.h"
+#include "../inter/stmt/For.h"
 
 #include "../inter/stmt/Break.h"
 
@@ -109,7 +110,6 @@ Set * Parser::assign() {
 
     Expr * equality1 = equality();
     set1 = new Set(var, equality1);
-    match(';');
 
     return set1;
 }
@@ -393,9 +393,29 @@ Stmt * Parser::stmt() {
             return stmt1;
         }
 
+        case Tag::FOR: {
+            For* forLoop = new For();
+            match(Tag::FOR);
+            match('(');
+            forLoop->initStmt = stmt();
+            forLoop->equal = equality();
+            match(';');
+            forLoop->increasement = assign();
+            match(')');
+            forLoop->stmt = stmt();
+            stmt1 = forLoop;
+            return stmt1;
+
+        }
+
 
         default:
-            return assign();
+            stmt1 = assign();
+            if (stmt1 != NULL){
+                match(';');
+            }
+
+            return stmt1;
     }
 
     return stmt1;
