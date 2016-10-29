@@ -14,15 +14,9 @@
     printf("hello", a+3*b, b*b);
     int i;
     i = 10;
-    while (i) {
+    do{
         a = i--;
-        while(1) {
-
-          break;
-        }
-        if (i == 8)
-            break;
-    }
+    } while (i);
 
     if(a + 1) {
     }

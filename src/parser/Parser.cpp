@@ -12,6 +12,7 @@
 #include "../inter/stmt/Decl.h"
 #include "../inter/stmt/Printf.h"
 #include "../inter/stmt/While.h"
+#include "../inter/stmt/DoWhile.h"
 
 #include "../inter/stmt/Break.h"
 
@@ -363,6 +364,20 @@ Stmt * Parser::stmt() {
             stmt1 = new Break();
             return stmt1;
         }
+        case Tag::DO: {
+            match(Tag::DO);
+            DoWhile* doWhileLoop = new DoWhile();
+            doWhileLoop->stmt = stmt();
+            match(Tag::WHILE);
+            match('(');
+            doWhileLoop->expr = equality();
+            match(')');
+            match(';');
+            stmt1 = doWhileLoop;
+            return stmt1;
+        }
+
+
         default:
             return assign();
     }
