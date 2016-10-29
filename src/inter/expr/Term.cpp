@@ -13,7 +13,7 @@ int Term::execute() {
     int value1 = expr1->execute();
     int value2 = expr2->execute();
 
-    std::cout << "执行 term，发生乘/除法" << std::endl;
+//    std::cout << "执行 term，发生乘/除法" << std::endl;
 
     if(op->tag == Tag::MULT) {
         return value1 * value2;

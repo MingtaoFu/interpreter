@@ -16,7 +16,8 @@ public:
     Stmt* stmt = NULL;
     While(){};
     void execute() {
-        std::cout << "执行While" << std::endl;
+        std::cout << "执行 While" << std::endl;
+        std::cout << "执行While判断 \t行号: " << equality->lexline << std::endl;
         while (equality->execute() != 0){
             try {
                 stmt->execute();
@@ -25,7 +26,9 @@ public:
                 std::cout << "while因break退出" << std::endl;
                 break;
             }
+            std::cout << "执行While判断 \t行号: " << equality->lexline << std::endl;
         }
+        std::cout << "退出 While" << std::endl;
     };
 };
 

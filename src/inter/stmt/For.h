@@ -8,6 +8,8 @@
 #include "Stmt.h"
 #include "../error/BreakError.h"
 #include "../expr/Expr.h"
+#include "../../vm/Vm.h"
+#include "../../symbols/Env.h"
 
 class For: public Stmt {
 public:

@@ -10,6 +10,7 @@
 
 class Stmt: public Node {
 public:
+    int lineNumber;
     virtual void execute();
 };
 

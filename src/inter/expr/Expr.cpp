@@ -16,6 +16,7 @@ Expr::Expr(Token * token, Expr * expr1, Expr * term1) {
     expr = expr1;
     term = term1;
     isArith = true;
+    lexline = token->line;
 }
 
 int Expr::execute() {
@@ -23,7 +24,7 @@ int Expr::execute() {
         int value1 = expr->execute();
         int value2 = term->execute();
 
-        std::cout << "执行 expr，发生加/减法: " << value1 << " + " << value2 << std::endl;
+//        std::cout << "执行 expr，发生加/减法: " << value1 << " + " << value2 << std::endl;
 
         if(op->tag == Tag::PLUS) {
             return value1 + value2;
@@ -31,6 +32,8 @@ int Expr::execute() {
         return value1 - value2;
 
     } else {
-        std::cout << "执行 expr，未发生加/减法" << std::endl;
+//        std::cout << "执行 expr，未发生加/减法" << std::endl;
     }
+//    std::cout << "行号: " << lexline << std::endl;
+
 }

@@ -11,19 +11,20 @@ void Block::execute() {
     Env * saveEnv = Vm::top;
     Vm::top = new Env(Vm::top);
 
-    std::cout << "进入块" << std::endl;
+//    std::cout << "进入块" << std::endl;
 
     this->setEnv(Vm::top);
 
     for(auto &stmt : stmts) {
         try {
+//            std::cout << "执行block \t\t行号: " << stmt->lineNumber << std::endl;
             stmt->execute();
         } catch (BreakError aBreak) {
             throw (aBreak);
         }
     }
 
-    std::cout << "出块" << std::endl;
+//    std::cout << "出块" << std::endl;
     Vm::top = saveEnv;
 }
 

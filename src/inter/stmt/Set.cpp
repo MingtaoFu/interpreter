@@ -21,6 +21,6 @@ void Set::execute() {
         var->id = id;
         int a = expr->execute();
         var->setValue(a);
-        std::cout << "发生赋值"<<a << std::endl;
+        std::cout << "发生赋值 "<< a << "\t\t行号: " << lineNumber << std::endl;
     }
 }

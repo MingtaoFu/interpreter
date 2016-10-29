@@ -12,6 +12,7 @@ class Break: public Stmt {
 public:
     Break() {};
     void execute() {
+        std::cout << "break \t\t行号: " << lineNumber << std::endl;
         BreakError r = BreakError("break");
         throw r;
     };

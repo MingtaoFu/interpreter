@@ -14,7 +14,7 @@ int Equality::execute() {
     int value1 = expr1->execute();
     int value2 = expr2->execute();
 
-    std::cout << "执行 equality，发生等于/不等于比较运算" << std::endl;
+//    std::cout << "执行 equality，发生等于/不等于比较运算" << std::endl;
 
     if(op->tag == Tag::EQ) {
         return value1 == value2;

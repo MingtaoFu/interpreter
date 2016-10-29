@@ -25,9 +25,10 @@ public:
 
 
 private:
+    static const int BUFFER_LENTHGH = 4096;
     static int line;
     std::ifstream input_file;
-    char buffers[2][4097];
+    char buffer[4097];
     int buffer_index = 0;
     int index = 0;
     char peek = ' ';

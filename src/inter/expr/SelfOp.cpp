@@ -11,7 +11,7 @@ SelfOp::SelfOp(Token * token, Expr * factor): Math(token, factor, NULL) {
 }
 
 int SelfOp::execute() {
-    std::cout << "执行selfop，发生自增/自减运算" << std::endl;
+//    std::cout << "执行selfop，发生自增/自减运算" << std::endl;
 
     int value = expr1->execute();
 
