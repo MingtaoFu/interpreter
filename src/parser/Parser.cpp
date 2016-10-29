@@ -251,54 +251,12 @@ Stmt * Parser::stmt() {
             Stmt * stmt2 = stmt();
             Stmt * stmt3 = NULL;
 
-            /*
-            if(look->tag == '{') {
-                // if 后面跟的是一个块
-                stmt2 = block();
-            } else {
-                // if 后面跟的是一个语句
-                stmt2 = stmt();
-            }
-             */
-
             if(look->tag == Tag::ELSE) {
                 move();
                 stmt3 = stmt();
             }
 
             _if = new If(expr, stmt2, stmt3);
-
-            /*
-            _if->push_items(std::pair<Expr, Stmt>(expr, stmt2));
-
-            //有多个，考虑吧if变成while
-            while (look->tag == Tag::ELSE) {
-                move();
-                if(look->tag == Tag::IF) {
-                    match('(');
-                    expr = equality();
-                    match(')');
-                    if(look->tag == '{') {
-                        // if 后面跟的是一个块
-                        stmt2 = block();
-                    } else {
-                        // if 后面跟的是一个语句
-                        stmt2 = stmt();
-                    }
-                    _if->push_items(std::pair<Expr, Stmt>(expr, stmt2));
-                } else {
-                    if(look->tag == '{') {
-                        // if 后面跟的是一个块
-                        stmt2 = block();
-                    } else {
-                        // if 后面跟的是一个语句
-                        stmt2 = stmt();
-                    }
-                    _if->push_items(std::pair<Expr, Stmt>(Num(1), stmt2));
-                    break;
-                }
-            }
-             */
 
             stmt1 = _if;
             break;
@@ -342,7 +300,6 @@ Stmt * Parser::stmt() {
             Printf* tmp = new Printf();
             do {
                 Token* token = look;
-
 
                 if (look->tag == Tag::ID || look->tag == Tag::NUM) {
                     Expr* expr = Parser::expr();
@@ -392,7 +349,6 @@ Stmt * Parser::stmt() {
             stmt1 = doWhileLoop;
             return stmt1;
         }
-
 
         default:
             return assign();

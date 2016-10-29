@@ -3,6 +3,10 @@
     int a , c, d = 1;
     int u;
     u = u + 99;
+    if(a == 0) {
+        int p = 9;
+        p = 6;
+    }
     c = c + 8;
     c = c + 8;
     int b = a;
@@ -20,8 +24,9 @@
     i = 10;
     do{
         a = i--;
+        int mm = 9;
     } while (i);
-
+    //mm = 0;
     if(a + 1) {
     }
     if(0) {}
