@@ -16,6 +16,12 @@
     i = 10;
     while (i) {
         a = i--;
+        while(1) {
+
+          break;
+        }
+        if (i == 8)
+            break;
     }
 
     if(a + 1) {

@@ -360,7 +360,7 @@ Stmt * Parser::stmt() {
         case Tag::BREAK: {
             match(Tag::BREAK);
             match(';');
-//            stmt1 = new Break();
+            stmt1 = new Break();
             return stmt1;
         }
         default:
