@@ -174,7 +174,7 @@ Expr * Parser::unary() {
         case '+': {
             Token *token = look;
             move();
-            std::cout << "分析出了正负" << std::endl;
+            //std::cout << "分析出了正负" << std::endl;
             return new Unary(token, selfop());
         }
         default:
@@ -189,7 +189,7 @@ Expr * Parser::selfop() {
         case Tag::DECRE: {
             Token * token = look;
             move();
-            std::cout << "分析出了++/--" << std::endl;
+            //std::cout << "分析出了++/--" << std::endl;
             return new SelfOp(token, factor1);
         }
         default:
@@ -211,7 +211,7 @@ Expr * Parser::factor() {
             Factor * factor1 = new Factor(look);
                      */
             move();
-            std::cout << "分析出了因子" << std::endl;
+            //std::cout << "分析出了因子" << std::endl;
             return factor1;
         }
         default:

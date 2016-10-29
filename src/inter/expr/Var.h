@@ -16,6 +16,7 @@ public:
     Id * id;
 
     int execute();
+    void setValue(int);
 };
 
 

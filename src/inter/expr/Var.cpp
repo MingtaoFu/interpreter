@@ -19,3 +19,7 @@ int Var::execute() {
     }
     throw VarNotFound(name);
 }
+
+void Var::setValue(int value) {
+    id->value = value;
+}
