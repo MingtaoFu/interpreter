@@ -10,6 +10,7 @@
 #include "../inter/stmt/Blank.h"
 #include "../inter/stmt/If.h"
 #include "../inter/stmt/Decl.h"
+#include "../inter/stmt/Printf.h"
 #include "../lexer/Num.h"
 #include "../inter/expr/Var.h"
 #include "../inter/expr/Constant.h"
@@ -308,6 +309,44 @@ Stmt * Parser::stmt() {
                 stmt1 = new Decl(var);
             }
             return stmt1;
+        }
+
+        case Tag::PRINTF: {
+            match(Tag::PRINTF);
+            match('(');
+            Printf* tmp = new Printf();
+            do {
+                Token* token = look;
+
+
+//                if (look->tag == Tag::ID) {
+//                    match(Tag::ID);
+//                    if (look->tag == Tag::COMMA) {
+//                        Var* var = new Var((Word*) token);
+//                        tmp->vars.push_back(var);
+//                    } else {
+//                        Expr* expr = Parser::expr();
+//                        tmp->exprs.push_back(expr);
+//                    }
+//                } else if (look->tag == Tag::NUM) {
+//                    Expr* expr = Parser::expr();
+//                    tmp->exprs.push_back(expr);
+//                }
+                if (look->tag == Tag::ID || look->tag == Tag::NUM) {
+                    Expr* expr = Parser::expr();
+                    tmp->exprs.push_back(expr);
+                }
+                if (look->tag == Tag::COMMA) {
+                    match(',');
+                }
+
+            } while (look->tag != ')');
+            match(')');
+            match('"');
+            stmt1 = tmp;
+            return stmt1;
+
+
         }
         default:
             return assign();

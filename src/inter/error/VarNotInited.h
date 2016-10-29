@@ -7,6 +7,7 @@
 
 
 #include <stdexcept>
+#include <iostream>
 
 class VarNotInited: std::runtime_error {
 public:
