@@ -4,10 +4,7 @@
 
 #include "Break.h"
 
-Break::Break() {
-    this->stmt = Stmt::Enclosing;
-}
 
-void Break::execute() {
 
-}
+
+

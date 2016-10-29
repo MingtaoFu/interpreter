@@ -7,15 +7,26 @@
 
 #include "Stmt.h"
 #include "../expr/Expr.h"
-#include "Block.h"
+#include "../error/BreakError.h"
 #include <iostream>
 
 class While: public Stmt {
 public:
-    Expr* equality;
-    Stmt* lastStmt;
-
-    void execute();
+    Expr* equality = NULL;
+    Stmt* stmt = NULL;
+    While(){};
+    void execute() {
+        std::cout << "执行While" << std::endl;
+        while (equality->execute() != 0){
+            try {
+                stmt->execute();
+            }
+            catch (BreakError aBreak) {
+                std::cout << "while因break退出" << std::endl;
+                break;
+            }
+        }
+    };
 };
 
 

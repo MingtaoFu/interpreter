@@ -6,7 +6,3 @@
 
 
 
-void While::execute() {
-
-    std::cout << "执行While" << std::endl;
-}

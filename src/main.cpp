@@ -7,14 +7,12 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-    /*
-    Lexer lexer;
-    lexer.setFile(argv[1]);
-
-    for (int i = 0;i < 76;i++) {
-        cout << lexer.scan()->toString() << endl;
-    }
-     */
+//    Lexer lexer;
+//    lexer.setFile(argv[1]);
+//
+//    for (int i = 0;i < 250;i++) {
+//        cout << lexer.scan()->toString() << "  " << lexer.getLine() << endl;
+//    }
 
 
     Lexer lexer;

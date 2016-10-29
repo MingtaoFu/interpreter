@@ -6,12 +6,15 @@
 #define COMPILER_BREAK_H
 
 #include "Stmt.h"
+#include "../error/BreakError.h"
 
 class Break: public Stmt {
 public:
-    Stmt* stmt;
-    Break();
-    void execute();
+    Break() {};
+    void execute() {
+        BreakError r = BreakError("break");
+        throw r;
+    };
 
 };
 

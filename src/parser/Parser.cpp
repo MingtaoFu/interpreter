@@ -12,6 +12,9 @@
 #include "../inter/stmt/Decl.h"
 #include "../inter/stmt/Printf.h"
 #include "../inter/stmt/While.h"
+
+#include "../inter/stmt/Break.h"
+
 #include "../lexer/Num.h"
 #include "../inter/expr/Var.h"
 #include "../inter/expr/Constant.h"
@@ -29,7 +32,7 @@ Block * Parser::getRoot() {
 void Parser::move() {
     look = lexer->scan();
     //在最后一个token会出现look为NULL
-    if(look) {
+    if(look ) {
         look->line = Lexer::getLine();
     }
     /*
@@ -68,8 +71,6 @@ Block * Parser::block() {
     while (stmt1 != NULL) {
         block->push_stmt(stmt1);
         stmt1 = stmt();
-        Stmt::after = stmt1;
-
     }
 
     match('}');
@@ -346,20 +347,22 @@ Stmt * Parser::stmt() {
         case Tag::WHILE: {
             match(Tag::WHILE);
             While* whileLoop = new While();
-            savedStmt = Stmt::Enclosing;
-            Stmt::Enclosing = whileLoop;
             match('(');
             Expr* equal = equality();
-            match('(');
-            Stmt* stmt = stmt();
+            match(')');
+            whileLoop->stmt = stmt();
             whileLoop->equality = equal;
-            whileLoop->stmt = stmt;
-            Stmt::Enclosing = savedStmt;
             stmt1 = whileLoop;
             return stmt1;
 
         }
 
+        case Tag::BREAK: {
+            match(Tag::BREAK);
+            match(';');
+//            stmt1 = new Break();
+            return stmt1;
+        }
         default:
             return assign();
     }
