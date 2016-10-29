@@ -19,6 +19,7 @@ public:
             R_PARENTHESE = ')',
             L_BRACE = '{',
             R_BRACE = '}',
+            COMMA  = ',',
     //运算符
             PLUS = '+',
             SUB = '-',
@@ -39,7 +40,9 @@ public:
             FOR = 261,
             DO = 262,
             WHILE = 263,
-            BREAK = 270;
+            BREAK = 270,
+    //函数
+            PRINTF = 271;
 };
 
 

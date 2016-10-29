@@ -21,7 +21,8 @@ Lexer::Lexer() {
     reserve(new Word("do", Tag::DO));
     reserve(new Word("break", Tag::BREAK));
     reserve(new Word("int", Tag::INT));
-    this->line = 1;
+    reserve(new Word("printf", Tag::PRINTF));
+    Lexer::line = 1;
 }
 
 void Lexer::setFile(std::string str) {
@@ -49,6 +50,7 @@ Token* Lexer::scan() {
             continue;
         } else if (peek == '\n') {
             Lexer::line++;
+            std::cout << Lexer::line << " 测试行号" << std::endl;
         } else if (peek == '/')  {
             if (readch('/')) {
                 while (1) {
@@ -68,10 +70,16 @@ Token* Lexer::scan() {
                     }
                 }
             } else {
-                peek = '/';
                 break;
             }
 
+        } else if (peek == '"') {
+            while (1) {
+                readch();
+                if (peek != '\\' && readch('"')) {
+                    break;
+                }
+            }
         } else {
             break;
         }
@@ -128,6 +136,9 @@ Token* Lexer::scan() {
         case ')':
             word = new Word(")", Tag::R_PARENTHESE);
             return word;
+        case ',':
+            word = new Word(",", Tag::COMMA);
+            return word;
         default:
             break;
     }
@@ -150,7 +161,11 @@ Token* Lexer::scan() {
             return &iterator->second;
         }
 
-        word = new Word(b, Tag::ID);
+        if (b.compare("printf") == 0) {
+            word = new Word(b, Tag::PRINTF);
+        } else {
+            word = new Word(b, Tag::ID);
+        }
         words.insert( std::pair<std::string, Word>(b, *word) );
         return word;
 
@@ -179,9 +194,11 @@ void Lexer::back() {
 }
 
 bool Lexer::readch(char c) {
+    char tmp = peek;
     readch();
     if(peek != c) {
         index --;
+        peek = tmp;
         return false;
     }
     peek = ' ';
