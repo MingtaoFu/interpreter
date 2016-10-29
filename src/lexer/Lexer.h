@@ -12,7 +12,9 @@
 
 class Lexer {
 public:
-    static int line;
+    static void lineIncre();
+    static void linePrint();
+    static int getLine();
     void reserve(Word *);
     void setFile(std::string);
     void readch();
@@ -23,6 +25,7 @@ public:
 
 
 private:
+    static int line;
     std::ifstream input_file;
     char buffers[2][4097];
     int buffer_index = 0;

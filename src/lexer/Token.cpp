@@ -6,7 +6,6 @@
 
 Token::Token(int t) {
     tag = t;
-    Lexer::line = line;
 }
 
 std::string Token::toString() {

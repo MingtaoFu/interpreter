@@ -7,17 +7,18 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
-//    Lexer lexer;
-//    lexer.setFile(argv[1]);
-//
-//    for (int i = 0;i < 76;i++) {
-//        cout << lexer.scan()->toString() << endl;
-//    }
-
-//
+    /*
     Lexer lexer;
     lexer.setFile(argv[1]);
-    cout << argv[1] << endl;
+
+    for (int i = 0;i < 76;i++) {
+        cout << lexer.scan()->toString() << endl;
+    }
+     */
+
+
+    Lexer lexer;
+    lexer.setFile(argv[1]);
     //语法分析
     Parser parser = Parser(&lexer);
     parser.program();

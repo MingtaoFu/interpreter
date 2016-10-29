@@ -27,7 +27,10 @@ Block * Parser::getRoot() {
 
 void Parser::move() {
     look = lexer->scan();
-    std::cout << look->line << std::endl;
+    //在最后一个token会出现look为NULL
+    if(look) {
+        look->line = Lexer::getLine();
+    }
     /*
     try {
         std::cout<< ((Num*)look)->value<<" ssss" <<std::endl;
@@ -293,6 +296,7 @@ Stmt * Parser::stmt() {
              */
 
             stmt1 = _if;
+            break;
         }
         case Tag::INT: {
             match(Tag::INT);
@@ -342,7 +346,7 @@ Stmt * Parser::stmt() {
 
             } while (look->tag != ')');
             match(')');
-            match('"');
+            match(';');
             stmt1 = tmp;
             return stmt1;
 

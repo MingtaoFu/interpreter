@@ -9,5 +9,5 @@ void Node::error(std::string) {
 }
 
 Node::Node() {
-    lexline = Lexer::line;
+    lexline = Lexer::getLine();
 }
