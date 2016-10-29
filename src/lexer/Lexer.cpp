@@ -50,7 +50,6 @@ Token* Lexer::scan() {
             continue;
         } else if (peek == '\n') {
             Lexer::line++;
-            std::cout << Lexer::line << " 测试行号" << std::endl;
         } else if (peek == '/')  {
             if (readch('/')) {
                 while (1) {
@@ -161,11 +160,7 @@ Token* Lexer::scan() {
             return &iterator->second;
         }
 
-        if (b.compare("printf") == 0) {
-            word = new Word(b, Tag::PRINTF);
-        } else {
-            word = new Word(b, Tag::ID);
-        }
+        word = new Word(b, Tag::ID);
         words.insert( std::pair<std::string, Word>(b, *word) );
         return word;
 

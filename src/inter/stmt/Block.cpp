@@ -16,6 +16,7 @@ void Block::execute() {
 
     for(auto &stmt : stmts) {
         stmt->execute();
+
     }
 
     std::cout << "出块" << std::endl;

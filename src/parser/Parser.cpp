@@ -11,6 +11,7 @@
 #include "../inter/stmt/If.h"
 #include "../inter/stmt/Decl.h"
 #include "../inter/stmt/Printf.h"
+#include "../inter/stmt/While.h"
 #include "../lexer/Num.h"
 #include "../inter/expr/Var.h"
 #include "../inter/expr/Constant.h"
@@ -60,6 +61,8 @@ Block * Parser::block() {
     while (stmt1 != NULL) {
         block->push_stmt(stmt1);
         stmt1 = stmt();
+        Stmt::after = stmt1;
+
     }
 
     match('}');
@@ -214,7 +217,7 @@ Stmt * Parser::stmt() {
     Expr * expr;
     Stmt * stmt1;
     //保存 break 外部的循环语句
-    Stmt savedStmt;
+    Stmt* savedStmt;
 
     switch (look->tag) {
         case ';': {
@@ -315,19 +318,6 @@ Stmt * Parser::stmt() {
                 Token* token = look;
 
 
-//                if (look->tag == Tag::ID) {
-//                    match(Tag::ID);
-//                    if (look->tag == Tag::COMMA) {
-//                        Var* var = new Var((Word*) token);
-//                        tmp->vars.push_back(var);
-//                    } else {
-//                        Expr* expr = Parser::expr();
-//                        tmp->exprs.push_back(expr);
-//                    }
-//                } else if (look->tag == Tag::NUM) {
-//                    Expr* expr = Parser::expr();
-//                    tmp->exprs.push_back(expr);
-//                }
                 if (look->tag == Tag::ID || look->tag == Tag::NUM) {
                     Expr* expr = Parser::expr();
                     tmp->exprs.push_back(expr);
@@ -338,12 +328,30 @@ Stmt * Parser::stmt() {
 
             } while (look->tag != ')');
             match(')');
-            match('"');
+            match(';');
             stmt1 = tmp;
             return stmt1;
 
 
         }
+
+        case Tag::WHILE: {
+            match(Tag::WHILE);
+            While* whileLoop = new While();
+            savedStmt = Stmt::Enclosing;
+            Stmt::Enclosing = whileLoop;
+            match('(');
+            Expr* equal = equality();
+            match('(');
+            Stmt* stmt = stmt();
+            whileLoop->equality = equal;
+            whileLoop->stmt = stmt;
+            Stmt::Enclosing = savedStmt;
+            stmt1 = whileLoop;
+            return stmt1;
+
+        }
+
         default:
             return assign();
     }
