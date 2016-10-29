@@ -1,8 +1,12 @@
 {
 
-    int a;
-    int b;
-    a = 6;
+    int a , c, d = 1;
+    int u;
+    u = u + 99;
+    c = c + 8;
+    c = c + 8;
+    int b = a;
+    a = b + 100;
     b = a * 3;
     b = 3 * b;
     b = b / 3;

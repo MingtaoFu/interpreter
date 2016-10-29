@@ -299,18 +299,34 @@ Stmt * Parser::stmt() {
             break;
         }
         case Tag::INT: {
+
             match(Tag::INT);
             //Factor * factor1 = factor();
-            Token * token = look;
-            match(Tag::ID);
-            Var * var = new Var((Word*)token);
-            Id * id = new Id((Word*)token);
-            var->id = id;
-            if(look->tag == '=') {
-                Expr * equality1 = equality();
-            } else if(look->tag == ';'){
-                match(';');
-                stmt1 = new Decl(var);
+
+            stmt1 = new Decl();
+            while (1) {
+                Token * token = look;
+                match(Tag::ID);
+
+                Var * var = new Var((Word*)token);
+                Id * id = new Id((Word*)token);
+                var->id = id;
+
+                if(look->tag == '=') {
+                    // 赋值情况
+                    match('=');
+                    Expr * expr1 = equality();
+                    ((Decl*)stmt1)->put(var, expr1);
+                } else {
+                    // 不赋值情况
+                    ((Decl*)stmt1)->put(var, NULL);
+                }
+
+                if(look->tag == ',') {
+                    match(',');
+                } else {
+                    break;
+                }
             }
             return stmt1;
         }

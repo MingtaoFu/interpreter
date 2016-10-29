@@ -6,14 +6,28 @@
 #include "../../vm/Vm.h"
 #include <iostream>
 
-Decl::Decl(Var * id1) {
-    var = id1;
+Decl::Decl() {
+    decls = new std::vector<std::pair<Var*, Expr*>>();
 }
 
 void Decl::execute() {
-    Word * word = (Word*)var->token;
-    std::string name = ((Word *)var->token)->lexeme;
-    Vm::top->put(name, *var->id);
-    std::cout << "发生声明: " << name << std::endl;
-    Vm::top->printCurrentVar();
+    for(auto &i : *decls) {
+        Var * var = i.first;
+        Expr * expr = i.second;
+
+        if(expr) {
+            var->setValue(expr->execute());
+        }
+
+        Word * word = (Word*)var->token;
+        std::string name = word->lexeme;
+        Vm::top->put(name, *var->id);
+        std::cout << "发生声明: " << name << std::endl;
+        Vm::top->printCurrentVar();
+    }
+}
+
+void Decl::put(Var * var, Expr * expr1) {
+    std::pair<Var*, Expr*> pair(var, expr1);
+    decls->push_back(pair);
 }

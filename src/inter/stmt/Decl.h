@@ -6,15 +6,20 @@
 #define COMPILER_DECL_H
 
 
+#include <vector>
 #include "Stmt.h"
 #include "../expr/Id.h"
 #include "../expr/Var.h"
 
 class Decl: public Stmt {
+protected:
+    std::vector<std::pair<Var*, Expr*>> * decls;
 public:
-    Var * var;
-    Decl(Var *);
+    //Var * var;
+    //Expr * expr;
     void execute();
+    void put(Var *, Expr *);
+    Decl();
 };
 
 
