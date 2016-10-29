@@ -13,6 +13,18 @@ void Lexer::reserve(Word * word) {
 
 int Lexer::line = 1;
 
+void Lexer::lineIncre() {
+    line ++;
+}
+
+void Lexer::linePrint() {
+    std::cout << line << "print" << std::endl;
+}
+
+int Lexer::getLine() {
+    return line;
+}
+
 Lexer::Lexer() {
     reserve(new Word("if", Tag::IF));
     reserve(new Word("else", Tag::ELSE));
@@ -22,7 +34,6 @@ Lexer::Lexer() {
     reserve(new Word("break", Tag::BREAK));
     reserve(new Word("int", Tag::INT));
     reserve(new Word("printf", Tag::PRINTF));
-    Lexer::line = 1;
 }
 
 void Lexer::setFile(std::string str) {
@@ -33,7 +44,7 @@ void Lexer::read(char* ch) {
     input_file.read(ch, 4096);
 }
 
-Token* Lexer::scan() {
+Token * Lexer::scan() {
     /**
      * 当前就读到了buffer[1]里
      * @TODO 双缓冲
@@ -49,13 +60,13 @@ Token* Lexer::scan() {
         if (peek == ' ' || peek == '\t' || peek == '\r') {
             continue;
         } else if (peek == '\n') {
-            Lexer::line++;
+            Lexer::lineIncre();
         } else if (peek == '/')  {
             if (readch('/')) {
                 while (1) {
                     readch();
                     if (peek == '\n') {
-                        Lexer::line++;
+                        Lexer::lineIncre();
                         break;
                     }
                 }
@@ -65,7 +76,7 @@ Token* Lexer::scan() {
                     if (peek == '*' && readch('/')) {
                         break;
                     } else if (peek == '\n') {
-                        Lexer::line++;
+                        Lexer::lineIncre();
                     }
                 }
             } else {
@@ -160,7 +171,11 @@ Token* Lexer::scan() {
             return &iterator->second;
         }
 
-        word = new Word(b, Tag::ID);
+        if (b.compare("printf") == 0) {
+            word = new Word(b, Tag::PRINTF);
+        } else {
+            word = new Word(b, Tag::ID);
+        }
         words.insert( std::pair<std::string, Word>(b, *word) );
         return word;
 
@@ -173,7 +188,6 @@ Token* Lexer::scan() {
 
         back();
 
-        //std::cout << value << std::endl;
         return new Num(value);
     }
 }
