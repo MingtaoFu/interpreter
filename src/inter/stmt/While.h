@@ -13,7 +13,6 @@
 class While: public Stmt {
 public:
     Expr* equality;
-    Stmt* stmt;
     Stmt* lastStmt;
 
     void execute();

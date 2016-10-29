@@ -8,6 +8,7 @@
 
 #include "Stmt.h"
 #include "../../symbols/Env.h"
+#include "Break.h"
 #include <vector>
 
 class Block: public Stmt {
@@ -16,6 +17,7 @@ protected:
     Env * env;
 
 public:
+    std::vector<Break*> breaks;
     void execute();
     void setEnv(Env *);
     void push_stmt(Stmt *);
