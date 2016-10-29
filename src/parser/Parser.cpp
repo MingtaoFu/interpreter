@@ -13,6 +13,7 @@
 #include "../lexer/Num.h"
 #include "../inter/expr/Var.h"
 #include "../inter/expr/Constant.h"
+#include "SyntaxError.h"
 
 Parser::Parser(Lexer* lexer) {
     this->lexer = lexer;
@@ -25,6 +26,7 @@ Block * Parser::getRoot() {
 
 void Parser::move() {
     look = lexer->scan();
+    std::cout << look->line << std::endl;
     /*
     try {
         std::cout<< ((Num*)look)->value<<" ssss" <<std::endl;
@@ -34,13 +36,15 @@ void Parser::move() {
      */
 }
 
-void Parser::error(std::string) {
+void Parser::error(std::string s) {
+    throw SyntaxError(s);
 }
 
 void Parser::match(int t) {
     if(look->tag == t) {
         move();
     } else {
+        std::cout <<"行号："<< look->line << std::endl;
         error("syntax error");
     }
 }

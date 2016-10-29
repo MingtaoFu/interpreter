@@ -21,7 +21,7 @@ Lexer::Lexer() {
     reserve(new Word("do", Tag::DO));
     reserve(new Word("break", Tag::BREAK));
     reserve(new Word("int", Tag::INT));
-    this->line = 1;
+    //this->line = 1;
 }
 
 void Lexer::setFile(std::string str) {
@@ -48,7 +48,9 @@ Token* Lexer::scan() {
         if (peek == ' ' || peek == '\t' || peek == '\r') {
             continue;
         } else if (peek == '\n') {
+            std::cout << Lexer::line <<" 哈哈"<<std::endl;
             Lexer::line++;
+            std::cout << Lexer::line <<" 哈哈"<<std::endl;
         } else if (peek == '/')  {
             if (readch('/')) {
                 while (1) {

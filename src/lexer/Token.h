@@ -11,6 +11,7 @@ class Token {
 
 public:
     int tag;
+    int line;
     Token(int t);
     virtual std::string toString();
     inline bool operator < (const Token t) const {
