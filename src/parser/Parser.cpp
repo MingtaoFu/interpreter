@@ -11,6 +11,11 @@
 #include "../inter/stmt/If.h"
 #include "../inter/stmt/Decl.h"
 #include "../inter/stmt/Printf.h"
+#include "../inter/stmt/While.h"
+#include "../inter/stmt/DoWhile.h"
+
+#include "../inter/stmt/Break.h"
+
 #include "../lexer/Num.h"
 #include "../inter/expr/Var.h"
 #include "../inter/expr/Constant.h"
@@ -28,7 +33,7 @@ Block * Parser::getRoot() {
 void Parser::move() {
     look = lexer->scan();
     //在最后一个token会出现look为NULL
-    if(look) {
+    if(look ) {
         look->line = Lexer::getLine();
     }
     /*
@@ -221,7 +226,7 @@ Stmt * Parser::stmt() {
     Expr * expr;
     Stmt * stmt1;
     //保存 break 外部的循环语句
-    Stmt savedStmt;
+    Stmt* savedStmt;
 
     switch (look->tag) {
         case ';': {
@@ -339,19 +344,6 @@ Stmt * Parser::stmt() {
                 Token* token = look;
 
 
-//                if (look->tag == Tag::ID) {
-//                    match(Tag::ID);
-//                    if (look->tag == Tag::COMMA) {
-//                        Var* var = new Var((Word*) token);
-//                        tmp->vars.push_back(var);
-//                    } else {
-//                        Expr* expr = Parser::expr();
-//                        tmp->exprs.push_back(expr);
-//                    }
-//                } else if (look->tag == Tag::NUM) {
-//                    Expr* expr = Parser::expr();
-//                    tmp->exprs.push_back(expr);
-//                }
                 if (look->tag == Tag::ID || look->tag == Tag::NUM) {
                     Expr* expr = Parser::expr();
                     tmp->exprs.push_back(expr);
@@ -368,6 +360,40 @@ Stmt * Parser::stmt() {
 
 
         }
+
+        case Tag::WHILE: {
+            match(Tag::WHILE);
+            While* whileLoop = new While();
+            match('(');
+            Expr* equal = equality();
+            match(')');
+            whileLoop->stmt = stmt();
+            whileLoop->equality = equal;
+            stmt1 = whileLoop;
+            return stmt1;
+
+        }
+
+        case Tag::BREAK: {
+            match(Tag::BREAK);
+            match(';');
+            stmt1 = new Break();
+            return stmt1;
+        }
+        case Tag::DO: {
+            match(Tag::DO);
+            DoWhile* doWhileLoop = new DoWhile();
+            doWhileLoop->stmt = stmt();
+            match(Tag::WHILE);
+            match('(');
+            doWhileLoop->expr = equality();
+            match(')');
+            match(';');
+            stmt1 = doWhileLoop;
+            return stmt1;
+        }
+
+
         default:
             return assign();
     }

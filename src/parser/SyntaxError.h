@@ -7,6 +7,7 @@
 
 
 #include <stdexcept>
+#include <iostream>
 
 class SyntaxError: public std::runtime_error {
 public:

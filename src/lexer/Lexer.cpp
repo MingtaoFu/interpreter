@@ -190,6 +190,7 @@ Token * Lexer::scan() {
 
         return new Num(value);
     }
+    return NULL;
 }
 
 

@@ -4,6 +4,7 @@
 
 #include "Block.h"
 #include "../../vm/Vm.h"
+#include "../error/BreakError.h"
 #include <iostream>
 
 void Block::execute() {
@@ -15,7 +16,11 @@ void Block::execute() {
     this->setEnv(Vm::top);
 
     for(auto &stmt : stmts) {
-        stmt->execute();
+        try {
+            stmt->execute();
+        } catch (BreakError aBreak) {
+            throw (aBreak);
+        }
     }
 
     std::cout << "出块" << std::endl;

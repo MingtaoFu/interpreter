@@ -9,7 +9,7 @@ void Printf::execute() {
     std::cout << "正在执行 Printf 有参数: " ;
     std::cout << std::endl << "exprs:\n";
 
-    for (int i = 0; i < exprs.size(); ++i) {
+    for (int i = exprs.size()-1; i >= 0 ; --i) {
         std::cout << "执行: " << exprs[i] << "\n" ;
         exprs[i]->execute();
         std::cout << std::endl;
