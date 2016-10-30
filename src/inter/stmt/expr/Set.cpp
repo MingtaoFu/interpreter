@@ -20,7 +20,7 @@ int Set::execute() {
         var->id = id;
         int a = expr_r->execute();
         var->setValue(a);
-        std::cout << "发生赋值 "<< a << "\t\t行号: " << lineNumber << std::endl;
+        std::cout << "发生赋值 "<< a << "\t\t行号: " << lexline << std::endl;
         return a;
     }
 }
