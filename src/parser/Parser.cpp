@@ -38,13 +38,7 @@ void Parser::move() {
     if(look ) {
         look->line = Lexer::getLine();
     }
-    /*
-    try {
-        std::cout<< ((Num*)look)->value<<" ssss" <<std::endl;
-    } catch (std::runtime_error e) {
 
-    }
-     */
 }
 
 void Parser::error(std::string s) {
@@ -116,37 +110,19 @@ Expr * Parser::assign() {
         Token * token = look;
         move();
         equality1 = new Set(token, (Var*)equality1, assign());
-        //std::cout << "分析出了赋值, 行号" << look->line <<  std::endl;
     }
     return equality1;
-    /*
-    if(look->tag != Tag::ID) {
-        return equality();
-    }
 
-    Set * set1;
-
-    Var * var = new Var((Word*)look);
-
-    match(Tag::ID);
-    int line = look->line;
-    match('=');
-
-    Expr * equality1 = equality();
-    set1 = new Set(var, equality1);
-    set1->lineNumber = line;
-    return set1;
-     */
 }
 
 Expr * Parser::equality() {
     Expr * rel1 = rel();
     while(look->tag == Tag::EQ || look->tag == Tag::NE) {
         /**
+         *
          * 一个表达式最低优先级为 == !=
          * 可以没有这一项，若没有，直接返回rel对象
          *
-         * @TODO 最低优先级其实还有其他
          */
         Token * token = look;
         move();
@@ -174,29 +150,14 @@ Expr * Parser::rel() {
 
 Expr * Parser::addsub() {
     Expr * expr1 = term();
-    //std::cout << ((Num*)look)->value << std::endl;
     while (look->tag == '+' || look->tag == '-') {
         Token * token = look;
         move();
         expr1 = new AddSub(token, expr1, term());
-        //std::cout << "分析出了+/-" << std::endl;
     }
     return expr1;
 }
 
-/*
-Expr * Parser::expr() {
-    Expr * expr1 = term();
-    //std::cout << ((Num*)look)->value << std::endl;
-    while (look->tag == '+' || look->tag == '-') {
-        Token * token = look;
-        move();
-        expr1 = new Expr(token, expr1, term());
-        //std::cout << "分析出了+/-" << std::endl;
-    }
-    return expr1;
-}
- */
 
 Expr * Parser::term() {
     Expr * expr1 = unary();
@@ -204,7 +165,6 @@ Expr * Parser::term() {
         Token * token = look;
         move();
         expr1 = new Term(token, expr1, unary());
-        //std::cout << "分析出了乘除" << std::endl;
     }
     return expr1;
 }
@@ -215,7 +175,6 @@ Expr * Parser::unary() {
         case '+': {
             Token *token = look;
             move();
-            //std::cout << "分析出了正负" << std::endl;
             return new Unary(token, selfop());
         }
         default:
@@ -230,7 +189,6 @@ Expr * Parser::selfop() {
         case Tag::DECRE: {
             Token * token = look;
             move();
-            //std::cout << "分析出了++/--" << std::endl;
             return new SelfOp(token, factor1);
         }
         default:
@@ -243,17 +201,12 @@ Expr * Parser::factor() {
         case Tag::NUM: {
             Token * token = look;
             move();
-            //std::cout << "构建整数常量：" << ((Num*)token)->value <<std::endl;
             return new Constant(token);
         }
         case Tag::ID: {
             Var * factor1 = new Var((Word*)look);
             factor1->lexline = look->line;
-                    /*
-            Factor * factor1 = new Factor(look);
-                     */
             move();
-            //std::cout << "分析出了因子" << std::endl;
             return factor1;
         }
         default:
@@ -281,9 +234,6 @@ Stmt * Parser::stmt() {
         case Tag::IF: {
             If * _if;
             int line = look->line;
-            /**
-             * @TODO
-             */
             match(Tag::IF);
             match('(');
             expr = comma();
@@ -309,7 +259,6 @@ Stmt * Parser::stmt() {
         case Tag::INT: {
 
             match(Tag::INT);
-            //Factor * factor1 = factor();
 
             stmt1 = new Decl();
             while (1) {
@@ -380,9 +329,12 @@ Stmt * Parser::stmt() {
         }
 
         case Tag::BREAK: {
+            stmt1 = new Break();
+            stmt1->lexline = look->line;
             match(Tag::BREAK);
             match(';');
-            stmt1 = new Break();
+
+
             return stmt1;
         }
         case Tag::DO: {
@@ -403,9 +355,17 @@ Stmt * Parser::stmt() {
             match(Tag::FOR);
             match('(');
             forLoop->initStmt = stmt();
-            forLoop->equal = comma();
+            if (look->tag != ';') {
+                forLoop->equal = comma();
+            } else {
+                forLoop->equal = new Constant(new Num(1));
+            }
             match(';');
-            forLoop->increasement = comma();
+            if (look->tag != ')') {
+                forLoop->increasement = comma();
+            } else {
+                forLoop->increasement = new Blank();
+            }
             match(')');
             forLoop->stmt = stmt();
             stmt1 = forLoop;
