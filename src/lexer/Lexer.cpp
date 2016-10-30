@@ -227,8 +227,8 @@ Token * Lexer::scan() {
         } while (isdigit(peek));
 
         back();
-
-        return new Num(value);
+        Num* num = new Num(value);
+        return num;
     }
     return lastScan();
 }

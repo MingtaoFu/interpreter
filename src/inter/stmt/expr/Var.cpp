@@ -14,6 +14,7 @@ int Var::execute() {
     Id * id =  Vm::top->get(name);
     if(id) {
         this->id = id;
+        Vm::printLine(lexline);
         return id->execute();
     }
     throw VarNotFound(name);

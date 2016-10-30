@@ -9,7 +9,6 @@
 
 int If::execute() {
     std::cout << "执行if的判断 \t\t行号: " << equality->lexline << std::endl;
-    Vm::printLine(equality->lexline);
     int value = equality->execute();
     try {
         if(value == 0) {

@@ -15,6 +15,7 @@ void Vm::printLine(int lineNumber) {
         currentLine = lineNumber;
         char tmp [100];
         sprintf(tmp, "%d ", currentLine);
+        std::cout << "VM 输出: " << currentLine << std::endl;
         outputFile.write(tmp, strlen(tmp));
     }
 }
