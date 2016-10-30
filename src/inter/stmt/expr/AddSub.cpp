@@ -14,10 +14,11 @@ int AddSub::execute() {
     int value1 = expr_l->execute();
     int value2 = expr_r->execute();
 
-    std::cout << "执行 addsub，发生加/减法: " << value1 << " + " << value2 << std::endl;
 
     if(op->tag == Tag::PLUS) {
+        std::cout << "执行 addsub，发生加/减法: " << value1 << " + " << value2 << std::endl;
         return value1 + value2;
     }
+    std::cout << "执行 addsub，发生加/减法: " << value1 << " - " << value2 << std::endl;
     return value1 - value2;
 }

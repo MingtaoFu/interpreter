@@ -9,6 +9,8 @@
 #include "Stmt.h"
 
 class Blank: public Stmt{
+    // 未覆盖 stmt 默认的 execute
+    // 反正 blank 也不会输出行号
 
 };
 
