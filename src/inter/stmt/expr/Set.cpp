@@ -7,7 +7,7 @@
 #include "../../error/VarNotFound.h"
 #include <iostream>
 
-Set::Set(Var * var1, Expr * expr1): Math(NULL, var1, expr1) {
+Set::Set(Token * token, Var * var1, Expr * expr1): Math(token, var1, expr1) {
 }
 
 int Set::execute() {

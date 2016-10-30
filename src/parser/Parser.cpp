@@ -116,7 +116,7 @@ Expr * Parser::assign() {
     while (look->tag == '=') {
         Token * token = look;
         move();
-        equality1 = new Set((Var*)equality1, assign());
+        equality1 = new Set(token, (Var*)equality1, assign());
         //std::cout << "分析出了赋值, 行号" << look->line <<  std::endl;
     }
     return equality1;

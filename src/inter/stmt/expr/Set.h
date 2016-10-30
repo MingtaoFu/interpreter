@@ -14,7 +14,7 @@
 
 class Set: public Math {
 public:
-    Set(Var *, Expr *);
+    Set(Token *, Var *, Expr *);
     int execute();
 };
 
