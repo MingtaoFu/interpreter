@@ -2,13 +2,14 @@
 // Created by mingtao on 10/25/16.
 //
 
+
 #include "Lexer.h"
 #include "Tag.h"
 #include "Num.h"
 #include <iostream>
 
 bool isalpha2(char c) {
-    if(isalpha(c) || c == '_') {
+    if(c == '_' || isalpha(c)) {
         return true;
     }
     return false;
@@ -24,9 +25,6 @@ void Lexer::lineIncre() {
     line ++;
 }
 
-void Lexer::linePrint() {
-    std::cout << line << "print" << std::endl;
-}
 
 int Lexer::getLine() {
     return line;
@@ -43,8 +41,9 @@ Lexer::Lexer() {
     reserve(new Word("printf", Tag::PRINTF));
 }
 
-void Lexer::setFile(std::string str) {
+void Lexer::setFile() {
     input_file.open("input.txt");
+    read(buffer);
 }
 
 void Lexer::read(char* ch) {
@@ -67,18 +66,20 @@ Token * Lexer::lastScan() {
     return word;
 }
 
+
+///
+/// 从缓冲区中\n
+/// 首先跳过空白和注释\n
+/// 然后检查是否发现特殊符号\n
+/// 接着检查保留字的出现情况\n
+/// 返回相应的 token\n
+///
+
+
 Token * Lexer::scan() {
-    /**
-     * 当前就读到了buffer[1]里
-     * @TODO 双缓冲
-     */
 
     Token * token1 = firstScan();
     if(token1) return token1;
-
-    if (buffer[0] == '\0') {
-        read(buffer);
-    }
 
     while (1) {
         readch();
@@ -122,6 +123,7 @@ Token * Lexer::scan() {
 
     Word *word;
     Token *token;
+    //  分析特殊的符号
     switch (peek) {
         case '=':
             if(readch('=')) {
@@ -192,6 +194,8 @@ Token * Lexer::scan() {
             break;
     }
 
+    //  提取单词和数字
+
     if(isalpha2(peek)) {
         std::string b;
         do {
@@ -226,7 +230,6 @@ Token * Lexer::scan() {
 
         return new Num(value);
     }
-    //return NULL;
     return lastScan();
 }
 
