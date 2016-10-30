@@ -9,11 +9,15 @@
 #include "Factor.h"
 #include "../../../lexer/Word.h"
 
+///
+/// \brief 变量的标示类
+///
 class Id: public Factor {
 public:
+    /// \param word : 变量的字 token
     Id(Word *);
-    int value;
-
+    int value;  ///< id 的值
+    /// 执行返回id的值
     int execute();
 };
 

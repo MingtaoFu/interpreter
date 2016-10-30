@@ -10,12 +10,21 @@
 #include "../../../lexer/Word.h"
 #include "Id.h"
 
+///
+/// \brief 变量类
+///
+
+
 class Var: public Factor {
 public:
+    ///
+    /// \param word : 变量名的 token
+    ///
     Var(Word *);
-    Id * id;
-
+    Id * id; ///< 作用域的内的id
+    /// \return 变量的值
     int execute();
+    /// 设置变量的值
     void setValue(int);
 };
 

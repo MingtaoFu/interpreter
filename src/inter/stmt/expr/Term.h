@@ -9,10 +9,17 @@
 #include "Math.h"
 #include "Unary.h"
 
+///
+/// \brief 乘除运算符类
+///
+
 class Term: public Math {
 public:
-    Term(Token *, Expr *, Expr *);
-
+    /// \param  token   : 运算符
+    /// \param  expr1   : 左表达式
+    /// \param  expr2   : 右表达式
+    Term(Token * token, Expr * expr1, Expr * expr2);
+    /// 计算
     int execute();
 };
 

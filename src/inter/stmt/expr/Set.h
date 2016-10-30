@@ -12,9 +12,17 @@
 #include "../expr/Var.h"
 #include "Math.h"
 
+///
+/// \brief 赋值运算符类
+///
+
 class Set: public Math {
 public:
-    Set(Token *, Var *, Expr *);
+    /// \param  token   : 运算符
+    /// \param  var     : 变量
+    /// \param  expr    : 右表达式
+    Set(Token * token, Var * var, Expr * expr);
+    /// 返回复制后的变量值
     int execute();
 };
 

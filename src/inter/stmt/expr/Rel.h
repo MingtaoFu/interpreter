@@ -8,10 +8,17 @@
 
 #include "Math.h"
 
+///
+/// \brief 大小于运算符类
+///
+
 class Rel: public Math {
 public:
-    Rel(Token *, Expr *, Expr *);
-
+    /// \param  token   : 运算符
+    /// \param  expr1   : 左表达式
+    /// \param  expr2   : 右表达式
+    Rel(Token * token, Expr * expr1, Expr * expr2);
+    /// 返回复制后的变量
     int execute();
 };
 

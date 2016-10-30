@@ -9,10 +9,18 @@
 #include "../../../lexer/Token.h"
 #include "Expr.h"
 
+///
+/// \brief 数学运算的根类
+///
+
 class Math: public Expr {
 public:
-    Expr * expr_l, * expr_r;
-    Math(Token *, Expr *, Expr *);
+    Expr * expr_l;  ///< 左表达式
+    Expr * expr_r;  ///< 右表达式
+    /// \param  token   : 运算符
+    /// \param  expr1   : 左表达式
+    /// \param  expr2   : 右表达式
+    Math(Token * token, Expr * expr1, Expr * expr2);
 };
 
 

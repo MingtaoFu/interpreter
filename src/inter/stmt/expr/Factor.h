@@ -9,12 +9,14 @@
 #include "Expr.h"
 #include "Math.h"
 
+///
+/// \brief 运算因子类
+///
 class Factor: public Math {
 public:
-    Token * token;
+    Token * token;  ///< 标识运算因子类型的 token
+    /// \param  token : 标识运算因子类型的 token
     Factor(Token *);
-
-    //Constant * execute();
 };
 
 

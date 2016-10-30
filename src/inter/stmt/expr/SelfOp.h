@@ -9,10 +9,16 @@
 #include "Math.h"
 #include "../../stmt/Stmt.h"
 
+///
+/// \brief 赋值运算符类
+///
+
 class SelfOp: public Math {
 public:
-    SelfOp(Token *, Expr *);
-
+    /// \param  token   : 运算符
+    /// \param  expr    : 表达式
+    SelfOp(Token * token, Expr * expr);
+    /// 返回复制后的变量值
     int execute();
 };
 

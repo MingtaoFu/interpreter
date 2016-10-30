@@ -10,10 +10,16 @@
 #include "Rel.h"
 #include "../../../lexer/Token.h"
 
+///
+/// \brief 等于不等于表达式类
+///
 class Equality: public Math {
 public:
-    Equality(Token *, Expr *, Expr *);
-
+    /// \param  token   : 标识运算符的 token
+    /// \param  expr1   : 左表达式
+    /// \param  expr2   : 右表达式
+    Equality(Token * token, Expr * expr1, Expr *expr2);
+    /// \return 执行后的值
     int execute();
 };
 

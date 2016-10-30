@@ -8,10 +8,16 @@
 
 #include "Math.h"
 
+///
+/// \brief 加减表达式类
+///
 class AddSub: public Math {
 public:
-    AddSub(Token *, Expr *, Expr *);
-
+    /// \param  token   : 运算符的 token
+    /// \param  expr1   : 左表达式
+    /// \param  expr2   : 右表达式
+    AddSub(Token * token, Expr * expr1, Expr * expr2);
+    /// \return 运算后的值
     int execute();
 };
 
