@@ -71,11 +71,10 @@ Block * Parser::block() {
     if(look->tag != '}') {
 
         Stmt * stmt1;
-        stmt1 = stmt();
 
         while (look->tag != '}') {
-            block->push_stmt(stmt1);
             stmt1 = stmt();
+            block->push_stmt(stmt1);
         }
     }
 
@@ -403,7 +402,7 @@ Stmt * Parser::stmt() {
             forLoop->initStmt = stmt();
             forLoop->equal = comma();
             match(';');
-            forLoop->increasement = assign();
+            forLoop->increasement = comma();
             match(')');
             forLoop->stmt = stmt();
             stmt1 = forLoop;

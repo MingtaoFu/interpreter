@@ -14,6 +14,7 @@ int Block::execute() {
 //    std::cout << "进入块" << std::endl;
 
     this->setEnv(Vm::top);
+//    std::cout << "块中有 " << stmts.size() << " 个stmt" << std::endl;
 
     for(auto &stmt : stmts) {
         try {
@@ -26,7 +27,7 @@ int Block::execute() {
 
 //    std::cout << "出块" << std::endl;
     Vm::top = saveEnv;
-    return NULL;
+    return 0;
 }
 
 void Block::setEnv(Env * env) {

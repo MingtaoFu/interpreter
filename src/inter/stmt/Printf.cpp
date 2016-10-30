@@ -11,5 +11,5 @@ int Printf::execute() {
     for (int i = exprs.size()-1; i >= 0 ; --i) {
         exprs[i]->execute();
     }
-    return NULL;
+    return 0;
 }

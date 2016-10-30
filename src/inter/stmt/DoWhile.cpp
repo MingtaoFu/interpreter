@@ -18,5 +18,5 @@ int DoWhile::execute() {
         }
         std::cout << "执行while判断 \t行号: " << expr->lexline << std::endl;
     } while (expr->execute() != 0);
-    return NULL;
+    return 0;
 }

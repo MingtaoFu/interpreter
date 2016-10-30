@@ -27,7 +27,7 @@ int If::execute() {
     } catch (BreakError aBreak) {
         throw (aBreak);
     }
-    return NULL;
+    return 0;
 }
 
 If::If(Expr * equality1, Stmt * stmt3, Stmt * stmt4) {

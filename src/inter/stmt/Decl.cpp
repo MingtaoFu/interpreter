@@ -27,7 +27,7 @@ int Decl::execute() {
 //        std::cout << "发生声明: " << name << std::endl;
 //        Vm::top->printCurrentVar();
     }
-    return NULL;
+    return 0;
 }
 
 void Decl::put(Var * var, Expr * expr1) {

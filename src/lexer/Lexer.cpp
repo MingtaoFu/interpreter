@@ -148,6 +148,20 @@ Token * Lexer::scan() {
         case ',':
             word = new Word(",", Tag::COMMA);
             return word;
+        case '<':
+            if(readch('=')) {
+                word = new Word("<=", Tag::LE);
+            } else {
+                word = new Word("<", Tag::LT);
+            }
+            return word;
+        case '>':
+            if(readch('=')) {
+                word = new Word(">=", Tag::GE);
+            } else {
+                word = new Word(">", Tag::GT);
+            }
+            return word;
         default:
             break;
     }

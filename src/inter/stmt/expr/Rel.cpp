@@ -14,7 +14,7 @@ int Rel::execute() {
     int value1 = expr_l->execute();
     int value2 = expr_r->execute();
 
-    std::cout << "执行 rel，发生大于/小于比较运算" << std::endl;
+    std::cout << "发生大于/小于比较运算\t 行号: " << lexline << std::endl;
 
     switch (op->tag) {
         case Tag::LT:

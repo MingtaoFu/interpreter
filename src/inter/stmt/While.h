@@ -27,7 +27,7 @@ public:
             std::cout << "执行While判断 \t行号: " << equality->lexline << std::endl;
         }
         std::cout << "退出 While" << std::endl;
-        return NULL;
+        return 0;
     };
 };
 

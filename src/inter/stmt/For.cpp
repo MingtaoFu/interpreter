@@ -24,5 +24,5 @@ int For::execute() {
     }
     Vm::top = savedEnv;
     std::cout << "结束 for 循环" << std::endl;
-    return NULL;
+    return 0;
 }
