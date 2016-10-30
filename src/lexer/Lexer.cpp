@@ -7,6 +7,13 @@
 #include "Num.h"
 #include <iostream>
 
+bool isalpha2(char c) {
+    if(isalpha(c) || c == '_') {
+        return true;
+    }
+    return false;
+}
+
 void Lexer::reserve(Word * word) {
     words.insert(std::pair<std::string, Word>(word->lexeme, *word));
 }
@@ -166,16 +173,13 @@ Token * Lexer::scan() {
             break;
     }
 
-    /**
-     * @TODO 判断下划线
-     */
-    if(isalpha(peek)) {
+    if(isalpha2(peek)) {
         std::string b;
         do {
             b.append(1, peek);
 
             readch();
-        } while (isalnum(peek));
+        } while (isdigit(peek) || isalpha2(peek));
 
         index--;
 
