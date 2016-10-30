@@ -1,2 +1,7 @@
 .idea
 .swp
+CMakeCache.txt
+CMakeFiles
+*.cmake
+include
+Makefile
