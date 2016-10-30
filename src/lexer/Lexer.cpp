@@ -51,11 +51,30 @@ void Lexer::read(char* ch) {
     input_file.read(ch, Lexer::BUFFER_LENTHGH);
 }
 
+Token * Lexer::firstScan() {
+    static bool isFirst = true;
+    if(isFirst) {
+        Word * word = new Word("{", Tag::L_BRACE);
+        isFirst = false;
+        return word;
+    } else {
+        return NULL;
+    }
+}
+
+Token * Lexer::lastScan() {
+    Word * word = new Word("}", Tag::R_BRACE);
+    return word;
+}
+
 Token * Lexer::scan() {
     /**
      * 当前就读到了buffer[1]里
      * @TODO 双缓冲
      */
+
+    Token * token1 = firstScan();
+    if(token1) return token1;
 
     if (buffer[0] == '\0') {
         read(buffer);
@@ -207,7 +226,8 @@ Token * Lexer::scan() {
 
         return new Num(value);
     }
-    return NULL;
+    //return NULL;
+    return lastScan();
 }
 
 

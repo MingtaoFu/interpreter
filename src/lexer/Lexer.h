@@ -35,6 +35,9 @@ private:
     std::map<std::string, Word> words;
     void skipComments();
     void read(char*);
+    Token * firstScan();
+    Token * lastScan();
+    bool readFinished = false;
 };
 
 #endif //COMPILER_LEXER_H

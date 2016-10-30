@@ -1,4 +1,4 @@
-{int _i_1 = 2;
+int _i_1 = 2;
  int _j_1 = 0;
  for ( ; _i_1 > 0; _i_1--){
  	printf("hello world!");
@@ -77,4 +77,3 @@
     b = -a + 1;
     b = a == 0;
     */
-}
