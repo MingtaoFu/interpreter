@@ -81,16 +81,9 @@ Block * Parser::block() {
  * 对声明的解析
  */
 void Parser::decl() {
-    /**
-     * @TODO 一次声明多个变量 与 有初始化 的情况
-     */
-
     match(Tag::INT);
-    //Token* t = look;
     match(Tag::ID);
     match(Tag::Semicolon);
-    //Id id( (Word *)t );
-    //top->put(*t, id);
 }
 
 Expr* Parser::comma() {
@@ -104,7 +97,6 @@ Expr* Parser::comma() {
 }
 
 Expr * Parser::assign() {
-    //没有判断左值是否合法
     Expr * equality1 = equality();
     while (look->tag == '=') {
         Token * token = look;
@@ -223,14 +215,18 @@ Stmt * Parser::stmt() {
     Stmt* savedStmt;
 
     switch (look->tag) {
+        //  处理空语句
         case ';': {
             move();
             stmt1 = new Blank();
             break;
-            //return Stmt::NULL;
         }
+
+        // 处理 block
         case '{':
             return block();
+
+        // 处理分析 if 语句结构
         case Tag::IF: {
             If * _if;
             int line = look->line;
@@ -256,6 +252,8 @@ Stmt * Parser::stmt() {
             stmt1 = _if;
             break;
         }
+
+        // 处理分析 声明的语句结构
         case Tag::INT: {
 
             match(Tag::INT);
@@ -290,6 +288,7 @@ Stmt * Parser::stmt() {
             return stmt1;
         }
 
+        // 处理 printf 函数结构
         case Tag::PRINTF: {
             match(Tag::PRINTF);
             match('(');
@@ -311,10 +310,9 @@ Stmt * Parser::stmt() {
             match(';');
             stmt1 = tmp;
             return stmt1;
-
-
         }
 
+        //  处理 while 循环语句结构
         case Tag::WHILE: {
             match(Tag::WHILE);
             While* whileLoop = new While();
@@ -328,15 +326,16 @@ Stmt * Parser::stmt() {
 
         }
 
+        // 处理 break 关键字
         case Tag::BREAK: {
             stmt1 = new Break();
             stmt1->lexline = look->line;
             match(Tag::BREAK);
             match(';');
-
-
             return stmt1;
         }
+
+        //  处理 do while 循环语句结构
         case Tag::DO: {
             match(Tag::DO);
             DoWhile* doWhileLoop = new DoWhile();
@@ -350,6 +349,7 @@ Stmt * Parser::stmt() {
             return stmt1;
         }
 
+        // 处理 for 循环语句结构
         case Tag::FOR: {
             For* forLoop = new For();
             match(Tag::FOR);
@@ -373,13 +373,12 @@ Stmt * Parser::stmt() {
 
         }
 
-
+        // 处理单行语句结构
         default:
             stmt1 = comma();
             if (stmt1 != NULL){
                 match(';');
             }
-
             return stmt1;
     }
 

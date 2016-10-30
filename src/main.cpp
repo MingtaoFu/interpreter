@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
 
     Lexer lexer;
-    lexer.setFile("");
+    lexer.setFile();
     //语法分析
     Parser parser = Parser(&lexer);
     parser.program();

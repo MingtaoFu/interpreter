@@ -14,19 +14,15 @@ int Decl::execute() {
     for(auto &i : *decls) {
         Var * var = i.first;
         Expr * expr = i.second;
-
         if(expr) {
             std::cout << "执行声明中赋值 \t行号: " << expr->lexline << std::endl;
             Vm::printLine(expr->lexline);
             var->setValue(expr->execute());
-
         }
 
         Word * word = (Word*)var->token;
         std::string name = word->lexeme;
         Vm::top->put(name, *var->id);
-//        std::cout << "发生声明: " << name << std::endl;
-//        Vm::top->printCurrentVar();
     }
     return 0;
 }

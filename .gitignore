@@ -5,3 +5,6 @@ CMakeFiles
 *.cmake
 include
 Makefile
+Doxyfile
+documentation
+output.txt

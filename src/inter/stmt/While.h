@@ -15,24 +15,7 @@ public:
     Expr* equality = NULL;
     Stmt* stmt = NULL;
     While(){};
-    int execute() {
-        std::cout<< "开始 While 循环" << std::endl;
-//        std::cout << "执行While判断 \t行号: " << equality->lexline << std::endl;
-        Vm::printLine(equality->lexline);
-        while (equality->execute() != 0){
-            try {
-                stmt->execute();
-            }
-            catch (BreakError aBreak) {
-//                std::cout << "while因break退出" << std::endl;
-                break;
-            }
-            std::cout << "执行While判断 \t行号: " << equality->lexline << std::endl;
-            Vm::printLine(equality->lexline);
-        }
-        std::cout<< "结束 While 循环" << std::endl;
-        return 0;
-    };
+    int execute();
 };
 
 
