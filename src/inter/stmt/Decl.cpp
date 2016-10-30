@@ -16,7 +16,8 @@ int Decl::execute() {
         Expr * expr = i.second;
 
         if(expr) {
-            std::cout << "执行声明中赋值 \t行号: " << expr->lexline << std::endl;
+//            std::cout << "执行声明中赋值 \t行号: " << expr->lexline << std::endl;
+            Vm::printLine(expr->lexline);
             var->setValue(expr->execute());
 
         }

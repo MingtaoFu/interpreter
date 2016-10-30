@@ -12,6 +12,6 @@ Expr::Expr(Token * token) {
 }
 
 int Expr::execute() {
-    std::cout << "执行 expr，未发生加/减法" << std::endl;
-    return NULL;
+//    std::cout << "执行 expr，未发生加/减法" << std::endl;
+    return 0;
 }

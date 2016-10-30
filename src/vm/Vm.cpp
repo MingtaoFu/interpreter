@@ -5,6 +5,14 @@
 #include "Vm.h"
 
 Env * Vm::top;
+int Vm::currentLine = 0;
+
+void Vm::printLine(int lineNumber) {
+    if (lineNumber != currentLine) {
+        currentLine = lineNumber;
+        std::cout << "正在执行 行号:\t\t" << currentLine << std::endl;
+    }
+}
 
 void Vm::execute() {
     entry->execute();

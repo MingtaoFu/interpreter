@@ -5,10 +5,12 @@
 #include <iostream>
 #include "If.h"
 #include "../error/BreakError.h"
+#include "../../vm/Vm.h"
 
 int If::execute() {
 //    std::cout << "进入 if 语句, " << (stmt2 ? "带有": "没有") << " else 语句" << std:: endl;
-    std::cout << "执行if的判断 \t\t行号: " << equality->lexline << std::endl;
+//    std::cout << "执行if的判断 \t\t行号: " << equality->lexline << std::endl;
+    Vm::printLine(equality->lineNumber);
     int value = equality->execute();
     try {
         if(value == 0) {

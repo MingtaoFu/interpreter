@@ -8,11 +8,15 @@
 #include "../inter/stmt/Block.h"
 
 class Vm {
+private:
+    static int currentLine;
+
 protected:
     Block * entry;
 
 public:
     static Env * top;
+    static void printLine(int lineNumber);
     void execute();
     void setEntry(Block *);
     Vm(Block *);
