@@ -271,7 +271,8 @@ Stmt * Parser::stmt() {
                 if(look->tag == '=') {
                     // 赋值情况
                     match('=');
-                    Expr * expr1 = comma();
+                    // 不可使用 comma, 因为声明中带有逗号
+                    Expr * expr1 = assign();
                     ((Decl*)stmt1)->put(var, expr1);
                 } else {
                     // 不赋值情况
