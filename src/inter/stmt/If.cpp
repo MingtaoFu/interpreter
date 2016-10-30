@@ -9,20 +9,20 @@
 
 int If::execute() {
 //    std::cout << "进入 if 语句, " << (stmt2 ? "带有": "没有") << " else 语句" << std:: endl;
-//    std::cout << "执行if的判断 \t\t行号: " << equality->lexline << std::endl;
-    Vm::printLine(equality->lineNumber);
+    std::cout << "执行if的判断 \t\t行号: " << equality->lexline << std::endl;
+    Vm::printLine(equality->lexline);
     int value = equality->execute();
     try {
         if(value == 0) {
 //            std::cout << "if 条件不满足" << std::endl;
             if(stmt2) {
-//                std::cout << "执行else内语句 \t行号: "  << stmt2->lineNumber << std::endl;
+                std::cout << "执行else内语句 \t行号: "  << stmt2->lexline << std::endl;
                 stmt2->execute();
 
             }
         } else {
 //            std::cout << "if 条件满足" << std::endl;
-//            std::cout << "执行 if 内语句 \t行号: "  << stmt1->lineNumber << std::endl;
+            std::cout << "执行 if 内语句 \t行号: "  << stmt1->lexline << std::endl;
             stmt1->execute();
 
         }

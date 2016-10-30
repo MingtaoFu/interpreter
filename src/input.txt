@@ -1,14 +1,14 @@
-{int _i_1 = 2;
- int _j_1 = 0;
- for ( ; _i_1 > 0; _i_1--){
+{int i = 2;
+ int j = 0;
+ for ( ; i > 0; i--){
  	printf("hello world!");
- 	while (_j_1 <= 2){
+ 	while (j <= 2){
  		printf("hello world!");
- 		_j_1++;
+ 		j++;
  	}
  }
-/*
-    int a , c, d = 1;
+
+    /*int a , c, d = 1;
     a = c = d;
     int u;
     a++;
@@ -21,9 +21,23 @@
         int p = 9;
         p = 6;
     }
+
+
     c = c + 8;
     c = c + 8;
     int b = a;
+    if(a + 1) {
+            if(0) {}
+            else if(1) {}
+            if(345 / 2 == 0 == 0) a = 1;else b=2;
+            if(666==1) {
+                a = 1;
+                a = 2;
+            } else {
+                b = 2;
+                b = 2;
+            }
+        }
     a = b + 100;
     b = a * 3;
     b = 3 * b;
@@ -54,18 +68,7 @@
         i = i;
     }
 
-    if(a + 1) {
-    }
-    if(0) {}
-    else if(1) {}
-    if(345 / 2 == 0 == 0) a = 1;else b=2;
-    if(666==1) {
-        a = 1;
-        a = 2;
-    } else {
-        b = 2;
-        b = 2;
-    }
+
     a = 2;
     b = 23 + 1;
     b = 4 / 3;
@@ -76,5 +79,5 @@
     b = -a;
     b = -a + 1;
     b = a == 0;
-    */
+*/
 }

@@ -44,7 +44,7 @@ Lexer::Lexer() {
 }
 
 void Lexer::setFile(std::string str) {
-    input_file.open(str);
+    input_file.open("input.txt");
 }
 
 void Lexer::read(char* ch) {

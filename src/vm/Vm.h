@@ -6,6 +6,8 @@
 #define COMPILER_VM_H
 
 #include "../inter/stmt/Block.h"
+#include <iostream>
+#include <fstream>
 
 class Vm {
 private:

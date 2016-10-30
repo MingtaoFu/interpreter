@@ -15,6 +15,7 @@ int AddSub::execute() {
     int value1 = expr_l->execute();
     int value2 = expr_r->execute();
 
+    std::cout << "发生加/减法 \t\t行号: " << lexline << std::endl;
     Vm::printLine(lexline);
     if(op->tag == Tag::PLUS) {
         //std::cout << "执行 addsub，发生加/减法: " << value1 << " + " << value2 << std::endl;

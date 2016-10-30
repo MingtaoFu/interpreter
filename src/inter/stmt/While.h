@@ -27,7 +27,7 @@ public:
 //                std::cout << "while因break退出" << std::endl;
                 break;
             }
-//            std::cout << "执行While判断 \t行号: " << equality->lexline << std::endl;
+            std::cout << "执行While判断 \t行号: " << equality->lexline << std::endl;
             Vm::printLine(equality->lexline);
         }
         std::cout<< "结束 While 循环" << std::endl;

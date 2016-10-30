@@ -11,7 +11,6 @@
 class Stmt: public Node {
 public:
     virtual int execute();
-    int lineNumber;
 };
 
 

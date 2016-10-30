@@ -12,7 +12,7 @@ class Break: public Stmt {
 public:
     Break() {};
     int execute() {
-        std::cout << "break \t\t行号: " << lineNumber << std::endl;
+        std::cout << "break \t\t行号: " << lexline << std::endl;
         BreakError r = BreakError("break");
         throw r;
     };

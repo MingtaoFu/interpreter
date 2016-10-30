@@ -288,9 +288,12 @@ Stmt * Parser::stmt() {
             match('(');
             expr = comma();
             match(')');
-
+            Token* token = look;
             Stmt * stmt2 = stmt();
             Stmt * stmt3 = NULL;
+            if (token!= NULL && look == NULL) {
+                int a;
+            }
 
             if(look->tag == Tag::ELSE) {
                 move();
@@ -298,7 +301,7 @@ Stmt * Parser::stmt() {
             }
 
             _if = new If(expr, stmt2, stmt3);
-            _if->lineNumber = line;
+            _if->lexline = line;
 
             stmt1 = _if;
             break;
@@ -311,7 +314,7 @@ Stmt * Parser::stmt() {
             stmt1 = new Decl();
             while (1) {
                 Token * token = look;
-                stmt1->lineNumber = look->line;
+                stmt1->lexline = look->line;
                 match(Tag::ID);
 
                 Var * var = new Var((Word*)token);
@@ -342,7 +345,7 @@ Stmt * Parser::stmt() {
             match(Tag::PRINTF);
             match('(');
             Printf* tmp = new Printf();
-            tmp->lineNumber = look->line;
+            tmp->lexline = look->line;
             do {
                 Token* token = look;
 
