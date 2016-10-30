@@ -353,6 +353,7 @@ Stmt * Parser::stmt() {
         // 处理 for 循环语句结构
         case Tag::FOR: {
             For* forLoop = new For();
+            forLoop->lexline = look->line;
             match(Tag::FOR);
             match('(');
             forLoop->initStmt = stmt();
@@ -360,6 +361,7 @@ Stmt * Parser::stmt() {
                 forLoop->equal = comma();
             } else {
                 forLoop->equal = new Constant(new Num(1));
+                forLoop->equal->lexline = forLoop->lexline;
             }
             match(';');
             if (look->tag != ')') {
@@ -377,6 +379,7 @@ Stmt * Parser::stmt() {
         // 处理单行语句结构
         default:
             stmt1 = comma();
+            stmt1->lexline = look->line;
             if (stmt1 != NULL){
                 match(';');
             }
