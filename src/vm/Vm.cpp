@@ -3,6 +3,7 @@
 //
 
 #include "Vm.h"
+#include <string.h>
 
 Env * Vm::top;
 int Vm::currentLine = 0;
