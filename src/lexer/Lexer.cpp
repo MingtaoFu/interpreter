@@ -41,7 +41,7 @@ void Lexer::setFile(std::string str) {
 }
 
 void Lexer::read(char* ch) {
-    input_file.read(ch, 4096);
+    input_file.read(ch, Lexer::BUFFER_LENTHGH);
 }
 
 Token * Lexer::scan() {
@@ -49,7 +49,6 @@ Token * Lexer::scan() {
      * 当前就读到了buffer[1]里
      * @TODO 双缓冲
      */
-    char *buffer = buffers[buffer_index];
 
     if (buffer[0] == '\0') {
         read(buffer);
@@ -195,8 +194,13 @@ Token * Lexer::scan() {
 
 
 void Lexer::readch() {
-    peek = buffers[buffer_index][index];
+    peek = buffer[index];
     index ++;
+    if (index > Lexer::BUFFER_LENTHGH) {
+        read(buffer);
+        index = 1;
+        peek = buffer[0];
+    }
 }
 
 void Lexer::back() {

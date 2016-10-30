@@ -9,10 +9,11 @@
 
 class Node {
 protected:
-    int lexline = 0;
+
     void error(std::string);
 
 public:
+    int lexline = 0;
     Node();
 };
 

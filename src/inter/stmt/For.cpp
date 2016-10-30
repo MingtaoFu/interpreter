@@ -5,10 +5,16 @@
 #include "For.h"
 
 
+
 int For::execute() {
-    std::cout << "执行 for 循环" << std::endl;
+    Env* savedEnv = Vm::top;
+    Env* top = new Env(Vm::top);
+
+    std::cout << "开始 for 循环"  << std::endl;
+
     for (initStmt->execute(); equal->execute() ; increasement->execute()) {
         try {
+//            std::cout << "执行 for-block \t行号: " << stmt->lineNumber << std::endl;
             stmt->execute();
         } catch (BreakError aBreak) {
             std::cout << "for meet break" << std::endl;
@@ -16,6 +22,7 @@ int For::execute() {
         }
 
     }
+    Vm::top = savedEnv;
     std::cout << "结束 for 循环" << std::endl;
     return NULL;
 }

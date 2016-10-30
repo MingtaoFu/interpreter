@@ -130,12 +130,12 @@ Expr * Parser::assign() {
     Var * var = new Var((Word*)look);
 
     match(Tag::ID);
-
+    int line = look->line;
     match('=');
 
     Expr * equality1 = equality();
     set1 = new Set(var, equality1);
-
+    set1->lineNumber = line;
     return set1;
      */
 }
@@ -249,6 +249,7 @@ Expr * Parser::factor() {
         }
         case Tag::ID: {
             Var * factor1 = new Var((Word*)look);
+            factor1->lexline = look->line;
                     /*
             Factor * factor1 = new Factor(look);
                      */
@@ -280,7 +281,7 @@ Stmt * Parser::stmt() {
             return block();
         case Tag::IF: {
             If * _if;
-
+            int line = look->line;
             /**
              * @TODO
              */
@@ -298,6 +299,7 @@ Stmt * Parser::stmt() {
             }
 
             _if = new If(expr, stmt2, stmt3);
+            _if->lineNumber = line;
 
             stmt1 = _if;
             break;
@@ -310,6 +312,7 @@ Stmt * Parser::stmt() {
             stmt1 = new Decl();
             while (1) {
                 Token * token = look;
+                stmt1->lineNumber = look->line;
                 match(Tag::ID);
 
                 Var * var = new Var((Word*)token);
@@ -340,6 +343,7 @@ Stmt * Parser::stmt() {
             match(Tag::PRINTF);
             match('(');
             Printf* tmp = new Printf();
+            tmp->lineNumber = look->line;
             do {
                 Token* token = look;
 
