@@ -6,8 +6,8 @@
 #define COMPILER_ID_H
 
 
-#include "../../lexer/Word.h"
 #include "Factor.h"
+#include "../../../lexer/Word.h"
 
 class Id: public Factor {
 public:

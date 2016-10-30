@@ -6,9 +6,9 @@
 #define COMPILER_CONSTANT_H
 
 
-#include "Expr.h"
+#include "Math.h"
 
-class Constant: public Expr{
+class Constant: public Math{
 
 public:
     Constant(Token *);

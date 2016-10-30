@@ -6,7 +6,7 @@
 
 
 
-void DoWhile::execute() {
+int DoWhile::execute() {
     std::cout << "执行 do while :" << std::endl;
     do {
         try {
@@ -17,4 +17,5 @@ void DoWhile::execute() {
         }
 
     } while (expr->execute() != 0);
+    return NULL;
 }

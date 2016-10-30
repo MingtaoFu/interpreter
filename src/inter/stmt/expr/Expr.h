@@ -6,17 +6,13 @@
 #define COMPILER_EXPR_H
 
 
-#include "../../lexer/Token.h"
-#include "../Node.h"
+#include "../Stmt.h"
+#include "../../../lexer/Token.h"
 
-class Expr: public Node{
+class Expr: public Stmt{
 public:
-    bool isArith = false;
     Token * op;
-    Expr * expr;
-    Expr * term;
     Expr(Token *);
-    Expr(Token *, Expr *, Expr *);
 
     virtual int execute();
 };

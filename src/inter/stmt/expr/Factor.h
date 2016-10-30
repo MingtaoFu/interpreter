@@ -7,8 +7,9 @@
 
 
 #include "Expr.h"
+#include "Math.h"
 
-class Factor: public Expr {
+class Factor: public Math {
 public:
     Token * token;
     Factor(Token *);

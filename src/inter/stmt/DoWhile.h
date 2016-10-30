@@ -7,16 +7,14 @@
 
 #include "Stmt.h"
 #include "../error/BreakError.h"
-#include "../expr/Expr.h"
+#include "expr/Expr.h"
+
 class DoWhile: public Stmt {
 public:
     Stmt* stmt;
     Expr* expr;
 
-    void execute();
-
-
-
+    int execute();
 };
 
 

@@ -7,7 +7,7 @@
 
 
 #include "Stmt.h"
-#include "../expr/Expr.h"
+#include "expr/Expr.h"
 #include <vector>
 
 class If: public Stmt {
@@ -17,7 +17,7 @@ protected:
     Stmt * stmt2;
 
 public:
-    void execute();
+    int execute();
 
     If(Expr *, Stmt *, Stmt *);
 };

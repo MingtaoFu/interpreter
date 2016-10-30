@@ -4,7 +4,7 @@
 
 #include "Printf.h"
 
-void Printf::execute() {
+int Printf::execute() {
 
     std::cout << "正在执行 Printf 有参数: " ;
     std::cout << std::endl << "exprs:\n";
@@ -14,5 +14,5 @@ void Printf::execute() {
         exprs[i]->execute();
         std::cout << std::endl;
     }
-
+    return NULL;
 }

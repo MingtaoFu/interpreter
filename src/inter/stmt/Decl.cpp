@@ -10,7 +10,7 @@ Decl::Decl() {
     decls = new std::vector<std::pair<Var*, Expr*>>();
 }
 
-void Decl::execute() {
+int Decl::execute() {
     for(auto &i : *decls) {
         Var * var = i.first;
         Expr * expr = i.second;
@@ -25,6 +25,7 @@ void Decl::execute() {
         std::cout << "发生声明: " << name << std::endl;
         Vm::top->printCurrentVar();
     }
+    return NULL;
 }
 
 void Decl::put(Var * var, Expr * expr1) {

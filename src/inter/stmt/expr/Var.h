@@ -7,7 +7,7 @@
 
 
 #include "Factor.h"
-#include "../../lexer/Word.h"
+#include "../../../lexer/Word.h"
 #include "Id.h"
 
 class Var: public Factor {

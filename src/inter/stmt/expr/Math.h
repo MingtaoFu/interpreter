@@ -6,12 +6,12 @@
 #define COMPILER_MATH_H
 
 
-#include "../../lexer/Token.h"
+#include "../../../lexer/Token.h"
 #include "Expr.h"
 
 class Math: public Expr {
 public:
-    Expr * expr1, * expr2;
+    Expr * expr_l, * expr_r;
     Math(Token *, Expr *, Expr *);
 };
 

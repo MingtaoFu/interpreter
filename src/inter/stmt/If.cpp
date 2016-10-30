@@ -6,7 +6,7 @@
 #include "If.h"
 #include "../error/BreakError.h"
 
-void If::execute() {
+int If::execute() {
     std::cout << "进入 if 语句, " << (stmt2 ? "带有": "没有") << " else 语句" << std:: endl;
     int value = equality->execute();
     try {
@@ -22,8 +22,7 @@ void If::execute() {
     } catch (BreakError aBreak) {
         throw (aBreak);
     }
-
-
+    return NULL;
 }
 
 If::If(Expr * equality1, Stmt * stmt3, Stmt * stmt4) {

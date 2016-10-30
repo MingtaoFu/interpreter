@@ -10,7 +10,7 @@
 
 class Stmt: public Node {
 public:
-    virtual void execute();
+    virtual int execute();
 };
 
 

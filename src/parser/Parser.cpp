@@ -4,9 +4,6 @@
 
 #include <iostream>
 #include "Parser.h"
-#include "../inter/expr/Equality.h"
-#include "../inter/expr/SelfOp.h"
-#include "../inter/expr/Term.h"
 #include "../inter/stmt/Blank.h"
 #include "../inter/stmt/If.h"
 #include "../inter/stmt/Decl.h"
@@ -18,9 +15,13 @@
 #include "../inter/stmt/Break.h"
 
 #include "../lexer/Num.h"
-#include "../inter/expr/Var.h"
-#include "../inter/expr/Constant.h"
 #include "SyntaxError.h"
+#include "../inter/stmt/expr/Equality.h"
+#include "../inter/stmt/expr/Term.h"
+#include "../inter/stmt/expr/SelfOp.h"
+#include "../inter/stmt/expr/Constant.h"
+#include "../inter/stmt/expr/AddSub.h"
+#include "../inter/stmt/expr/Comma.h"
 
 Parser::Parser(Lexer* lexer) {
     this->lexer = lexer;
@@ -67,12 +68,15 @@ Block * Parser::block() {
 
     match('{');
 
-    Stmt * stmt1;
-    stmt1 = stmt();
+    if(look->tag != '}') {
 
-    while (stmt1 != NULL) {
-        block->push_stmt(stmt1);
+        Stmt * stmt1;
         stmt1 = stmt();
+
+        while (look->tag != '}') {
+            block->push_stmt(stmt1);
+            stmt1 = stmt();
+        }
     }
 
     match('}');
@@ -96,9 +100,29 @@ void Parser::decl() {
     //top->put(*t, id);
 }
 
-Set * Parser::assign() {
+Expr* Parser::comma() {
+    Expr * expr1 = assign();
+    while (look->tag == Tag::COMMA) {
+        Token * token = look;
+        move();
+        expr1 = new Comma(token, expr1, assign());
+    }
+    return expr1;
+}
+
+Expr * Parser::assign() {
+    //没有判断左值是否合法
+    Expr * equality1 = equality();
+    while (look->tag == '=') {
+        Token * token = look;
+        move();
+        equality1 = new Set((Var*)equality1, assign());
+        //std::cout << "分析出了赋值, 行号" << look->line <<  std::endl;
+    }
+    return equality1;
+    /*
     if(look->tag != Tag::ID) {
-        return NULL;
+        return equality();
     }
 
     Set * set1;
@@ -106,12 +130,14 @@ Set * Parser::assign() {
     Var * var = new Var((Word*)look);
 
     match(Tag::ID);
+
     match('=');
 
     Expr * equality1 = equality();
     set1 = new Set(var, equality1);
 
     return set1;
+     */
 }
 
 Expr * Parser::equality() {
@@ -131,7 +157,7 @@ Expr * Parser::equality() {
 }
 
 Expr * Parser::rel() {
-    Expr *expr1 = expr();
+    Expr *expr1 = addsub();
     switch (look->tag) {
         case '<':
         case '>':
@@ -140,13 +166,26 @@ Expr * Parser::rel() {
 
             Token * token = look;
             move();
-            return new Rel(token, expr1, expr());
+            return new Rel(token, expr1, addsub());
         }
         default:
             return expr1;
     }
 }
 
+Expr * Parser::addsub() {
+    Expr * expr1 = term();
+    //std::cout << ((Num*)look)->value << std::endl;
+    while (look->tag == '+' || look->tag == '-') {
+        Token * token = look;
+        move();
+        expr1 = new AddSub(token, expr1, term());
+        //std::cout << "分析出了+/-" << std::endl;
+    }
+    return expr1;
+}
+
+/*
 Expr * Parser::expr() {
     Expr * expr1 = term();
     //std::cout << ((Num*)look)->value << std::endl;
@@ -158,6 +197,7 @@ Expr * Parser::expr() {
     }
     return expr1;
 }
+ */
 
 Expr * Parser::term() {
     Expr * expr1 = unary();
@@ -217,6 +257,7 @@ Expr * Parser::factor() {
             return factor1;
         }
         default:
+            std::cout <<"行号："<< look->line << std::endl;
             error("syntax error");
             return NULL;
     }
@@ -245,7 +286,7 @@ Stmt * Parser::stmt() {
              */
             match(Tag::IF);
             match('(');
-            expr = equality();
+            expr = comma();
             match(')');
 
             Stmt * stmt2 = stmt();
@@ -278,7 +319,7 @@ Stmt * Parser::stmt() {
                 if(look->tag == '=') {
                     // 赋值情况
                     match('=');
-                    Expr * expr1 = equality();
+                    Expr * expr1 = comma();
                     ((Decl*)stmt1)->put(var, expr1);
                 } else {
                     // 不赋值情况
@@ -291,6 +332,7 @@ Stmt * Parser::stmt() {
                     break;
                 }
             }
+            match(';');
             return stmt1;
         }
 
@@ -302,7 +344,7 @@ Stmt * Parser::stmt() {
                 Token* token = look;
 
                 if (look->tag == Tag::ID || look->tag == Tag::NUM) {
-                    Expr* expr = Parser::expr();
+                    Expr* expr = Parser::assign();
                     tmp->exprs.push_back(expr);
                 }
                 if (look->tag == Tag::COMMA) {
@@ -322,7 +364,7 @@ Stmt * Parser::stmt() {
             match(Tag::WHILE);
             While* whileLoop = new While();
             match('(');
-            Expr* equal = equality();
+            Expr* equal = comma();
             match(')');
             whileLoop->stmt = stmt();
             whileLoop->equality = equal;
@@ -343,7 +385,7 @@ Stmt * Parser::stmt() {
             doWhileLoop->stmt = stmt();
             match(Tag::WHILE);
             match('(');
-            doWhileLoop->expr = equality();
+            doWhileLoop->expr = comma();
             match(')');
             match(';');
             stmt1 = doWhileLoop;
@@ -355,7 +397,7 @@ Stmt * Parser::stmt() {
             match(Tag::FOR);
             match('(');
             forLoop->initStmt = stmt();
-            forLoop->equal = equality();
+            forLoop->equal = comma();
             match(';');
             forLoop->increasement = assign();
             match(')');
@@ -367,7 +409,7 @@ Stmt * Parser::stmt() {
 
 
         default:
-            stmt1 = assign();
+            stmt1 = comma();
             if (stmt1 != NULL){
                 match(';');
             }

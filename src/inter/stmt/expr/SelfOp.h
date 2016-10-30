@@ -7,7 +7,7 @@
 
 
 #include "Math.h"
-#include "../stmt/Stmt.h"
+#include "../../stmt/Stmt.h"
 
 class SelfOp: public Math {
 public:

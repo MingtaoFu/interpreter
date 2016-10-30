@@ -4,15 +4,15 @@
 
 #include <iostream>
 #include "Rel.h"
-#include "../../lexer/Tag.h"
+#include "../../../lexer/Tag.h"
 
 Rel::Rel(Token * token, Expr * expr1, Expr * expr2): Math(token, expr1, expr2) {
 
 }
 
 int Rel::execute() {
-    int value1 = expr1->execute();
-    int value2 = expr2->execute();
+    int value1 = expr_l->execute();
+    int value2 = expr_r->execute();
 
     std::cout << "执行 rel，发生大于/小于比较运算" << std::endl;
 

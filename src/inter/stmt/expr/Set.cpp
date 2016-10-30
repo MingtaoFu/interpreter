@@ -3,24 +3,24 @@
 //
 
 #include "Set.h"
-#include "../../vm/Vm.h"
-#include "../error/VarNotFound.h"
+#include "../../../vm/Vm.h"
+#include "../../error/VarNotFound.h"
 #include <iostream>
 
-Set::Set(Var * var1, Expr * expr1) {
-    var = var1;
-    expr = expr1;
+Set::Set(Var * var1, Expr * expr1): Math(NULL, var1, expr1) {
 }
 
-void Set::execute() {
+int Set::execute() {
+    Var * var = (Var*)expr_l;
     std::string var_name = ((Word*)var->token)->lexeme;
     Id * id = Vm::top->get(var_name);
     if(!id) {
         throw VarNotFound(var_name);
     } else {
         var->id = id;
-        int a = expr->execute();
+        int a = expr_r->execute();
         var->setValue(a);
         std::cout << "发生赋值"<<a << std::endl;
+        return a;
     }
 }

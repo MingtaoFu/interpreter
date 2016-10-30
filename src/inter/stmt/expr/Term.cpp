@@ -3,15 +3,15 @@
 //
 
 #include "Term.h"
-#include "../../lexer/Tag.h"
+#include "../../../lexer/Tag.h"
 #include <iostream>
 
 Term::Term(Token * token, Expr * term1, Expr * unary1): Math(token, term1, unary1) {
 }
 
 int Term::execute() {
-    int value1 = expr1->execute();
-    int value2 = expr2->execute();
+    int value1 = expr_l->execute();
+    int value2 = expr_r->execute();
 
     std::cout << "执行 term，发生乘/除法" << std::endl;
 

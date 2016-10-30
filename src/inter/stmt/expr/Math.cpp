@@ -5,6 +5,6 @@
 #include "Math.h"
 
 Math::Math(Token * token, Expr * expr1, Expr * expr2): Expr(token) {
-    this->expr1 = expr1;
-    this->expr2 = expr2;
+    this->expr_l = expr1;
+    this->expr_r = expr2;
 }

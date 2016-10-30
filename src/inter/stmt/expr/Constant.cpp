@@ -3,9 +3,9 @@
 //
 
 #include "Constant.h"
-#include "../../lexer/Num.h"
+#include "../../../lexer/Num.h"
 
-Constant::Constant(Token * token): Expr(token){
+Constant::Constant(Token * token): Math(token, NULL, NULL){
 }
 
 int Constant::execute() {

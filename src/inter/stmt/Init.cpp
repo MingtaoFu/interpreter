@@ -5,6 +5,7 @@
 #include "Init.h"
 #include <iostream>
 
-void Init::execute() {
+int Init::execute() {
     std::cout << "发生初始化" << std::endl;
+    return NULL;
 }

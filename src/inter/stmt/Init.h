@@ -10,7 +10,7 @@
 
 class Init: public Stmt {
 public:
-    void execute();
+    int execute();
 };
 
 

@@ -5,6 +5,7 @@
 #include "Stmt.h"
 #include <iostream>
 
-void Stmt::execute() {
+int Stmt::execute() {
     std::cout << "执行 stmt 上的 execute" << std::endl;
+    return NULL;
 }

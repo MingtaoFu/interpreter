@@ -11,8 +11,7 @@
 #include "../inter/Node.h"
 #include "../inter/stmt/Stmt.h"
 #include "../inter/stmt/Block.h"
-#include "../inter/stmt/Set.h"
-#include "../inter/expr/Factor.h"
+#include "../inter/stmt/expr/Set.h"
 
 class Parser {
 private:
@@ -27,10 +26,12 @@ protected:
 
     Block * block();
     void decl();
-    Set * assign();
     Stmt * stmt();
+    Expr * comma();
+    Expr * assign();
     Expr * equality();
     Expr * rel();
+    Expr * addsub();
     Expr * expr();
     Expr * term();
     Expr * unary();

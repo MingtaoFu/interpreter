@@ -3,11 +3,8 @@
 //
 
 #include "Factor.h"
-#include "../../vm/Vm.h"
-#include "../error/VarNotFound.h"
-#include "../error/VarNotInited.h"
 
-Factor::Factor(Token * token1): Expr(NULL) {
+Factor::Factor(Token * token1): Math(token1, NULL, NULL) {
     token = token1;
 }
 

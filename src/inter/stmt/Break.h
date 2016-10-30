@@ -11,7 +11,7 @@
 class Break: public Stmt {
 public:
     Break() {};
-    void execute() {
+    int execute() {
         BreakError r = BreakError("break");
         throw r;
     };

@@ -8,8 +8,7 @@
 
 #include <vector>
 #include "Stmt.h"
-#include "../expr/Id.h"
-#include "../expr/Var.h"
+#include "expr/Var.h"
 
 class Decl: public Stmt {
 protected:
@@ -17,7 +16,7 @@ protected:
 public:
     //Var * var;
     //Expr * expr;
-    void execute();
+    int execute();
     void put(Var *, Expr *);
     Decl();
 };

@@ -7,7 +7,7 @@
 #include "../error/BreakError.h"
 #include <iostream>
 
-void Block::execute() {
+int Block::execute() {
     Env * saveEnv = Vm::top;
     Vm::top = new Env(Vm::top);
 
@@ -25,6 +25,7 @@ void Block::execute() {
 
     std::cout << "出块" << std::endl;
     Vm::top = saveEnv;
+    return NULL;
 }
 
 void Block::setEnv(Env * env) {

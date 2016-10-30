@@ -3,9 +3,8 @@
 //
 
 #include "Var.h"
-#include "../../vm/Vm.h"
-#include "../error/VarNotInited.h"
-#include "../error/VarNotFound.h"
+#include "../../../vm/Vm.h"
+#include "../../error/VarNotFound.h"
 
 Var::Var(Word * word): Factor(word) {
 }

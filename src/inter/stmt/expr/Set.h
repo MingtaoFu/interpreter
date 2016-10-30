@@ -6,17 +6,16 @@
 #define COMPILER_SET_H
 
 
-#include "Stmt.h"
+#include "../Stmt.h"
 #include "../expr/Expr.h"
 #include "../expr/Id.h"
 #include "../expr/Var.h"
+#include "Math.h"
 
-class Set: public Stmt {
+class Set: public Math {
 public:
-    Var * var;
-    Expr * expr;
     Set(Var *, Expr *);
-    void execute();
+    int execute();
 };
 
 

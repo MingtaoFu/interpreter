@@ -8,7 +8,7 @@
 
 #include "Math.h"
 #include "Rel.h"
-#include "../../lexer/Token.h"
+#include "../../../lexer/Token.h"
 
 class Equality: public Math {
 public:

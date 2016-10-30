@@ -6,7 +6,6 @@
 #define COMPILER_WHILE_H
 
 #include "Stmt.h"
-#include "../expr/Expr.h"
 #include "../error/BreakError.h"
 #include <iostream>
 
@@ -15,7 +14,7 @@ public:
     Expr* equality = NULL;
     Stmt* stmt = NULL;
     While(){};
-    void execute() {
+    int execute() {
         std::cout << "执行While" << std::endl;
         while (equality->execute() != 0){
             try {
@@ -26,6 +25,7 @@ public:
                 break;
             }
         }
+        return NULL;
     };
 };
 

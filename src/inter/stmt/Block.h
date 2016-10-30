@@ -18,7 +18,7 @@ protected:
 
 public:
     std::vector<Break*> breaks;
-    void execute();
+    int execute();
     void setEnv(Env *);
     void push_stmt(Stmt *);
 };

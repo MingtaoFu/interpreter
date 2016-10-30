@@ -5,7 +5,7 @@
 #include "For.h"
 
 
-void For::execute() {
+int For::execute() {
     std::cout << "执行 for 循环" << std::endl;
     for (initStmt->execute(); equal->execute() ; increasement->execute()) {
         try {
@@ -17,4 +17,5 @@ void For::execute() {
 
     }
     std::cout << "结束 for 循环" << std::endl;
+    return NULL;
 }

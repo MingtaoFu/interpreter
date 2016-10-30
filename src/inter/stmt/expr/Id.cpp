@@ -3,9 +3,6 @@
 //
 
 #include "Id.h"
-#include "../../vm/Vm.h"
-#include "../error/VarNotFound.h"
-#include "../error/VarNotInited.h"
 
 Id::Id(Word * word): Factor(word) {
 }
