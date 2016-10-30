@@ -12,6 +12,7 @@
 
 class Var: public Factor {
 public:
+    bool isVar();
     Var(Word *);
     Id * id;
 

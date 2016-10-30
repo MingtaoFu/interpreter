@@ -15,6 +15,7 @@ public:
     Expr(Token *);
 
     virtual int execute();
+    virtual bool isVar();
 };
 
 

@@ -12,8 +12,14 @@ AddSub::AddSub(Token * token, Expr * expr1, Expr * expr2): Math(token, expr1, ex
 }
 
 int AddSub::execute() {
-    int value1 = expr_l->execute();
-    int value2 = expr_r->execute();
+    int value1, value2;
+    if(expr_l->isVar()) {
+        value2 = expr_r->execute();
+        value1 = expr_l->execute();
+    } else {
+        value1 = expr_l->execute();
+        value2 = expr_r->execute();
+    }
 
     std::cout << "发生加/减法 \t\t行号: " << lexline << std::endl;
     Vm::printLine(lexline);

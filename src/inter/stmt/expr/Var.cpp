@@ -23,3 +23,7 @@ int Var::execute() {
 void Var::setValue(int value) {
     id->value = value;
 }
+
+bool Var::isVar() {
+    return true;
+}
