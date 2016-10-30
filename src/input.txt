@@ -1,4 +1,6 @@
 
+
+printf("");
 while(1){
     break;
 }

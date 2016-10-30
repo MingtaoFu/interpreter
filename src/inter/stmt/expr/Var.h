@@ -20,6 +20,7 @@ public:
     ///
     /// \param word : 变量名的 token
     ///
+    bool isVar();
     Var(Word *);
     Id * id; ///< 作用域的内的id
     /// \return 变量的值

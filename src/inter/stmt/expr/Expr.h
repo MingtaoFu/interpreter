@@ -19,6 +19,7 @@ public:
     Expr(Token *);
     /// \return 执行后的值
     virtual int execute();
+    virtual bool isVar();
 };
 
 
