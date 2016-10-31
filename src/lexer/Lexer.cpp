@@ -112,7 +112,11 @@ Token * Lexer::scan() {
         } else if (peek == '"') {
             while (1) {
                 readch();
-                if ( (peek != '\\' && readch('"')) || peek == '"') {
+                if (peek =='\\') {
+                    readch();
+                    continue;
+                }
+                if (peek == '"') {
                     break;
                 }
             }
