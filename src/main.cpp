@@ -16,7 +16,10 @@ int main(int argc, char** argv) {
 
 
     Lexer lexer;
-    lexer.setFile();
+    if(!lexer.setFile()) {
+        std::cout << "当前目录没有 input.txt !" << std::endl;
+        return 0;
+    }
     //语法分析
     Parser parser = Parser(&lexer);
     parser.program();

@@ -41,9 +41,13 @@ Lexer::Lexer() {
     reserve(new Word("printf", Tag::PRINTF));
 }
 
-void Lexer::setFile() {
+bool Lexer::setFile() {
     input_file.open("input.txt");
+    if(!input_file.is_open()) {
+        return false;
+    }
     read(buffer);
+    return true;
 }
 
 void Lexer::read(char* ch) {

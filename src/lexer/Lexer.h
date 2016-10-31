@@ -25,7 +25,7 @@ public:
     /// 录入保留字
     void reserve(Word *);
     ///  设置源文件
-    void setFile();
+    bool setFile();
     /// 获取下一个字符
     void readch();
     /// \brief look ahead 方法
