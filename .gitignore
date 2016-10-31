@@ -1,5 +1,5 @@
 .idea
-.swp
+*.swp
 CMakeCache.txt
 CMakeFiles
 *.cmake
@@ -7,3 +7,6 @@ include
 Makefile
 Doxyfile
 output.txt
+test
+*.js
+*.c
