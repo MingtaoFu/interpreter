@@ -106,7 +106,7 @@ Token * Lexer::scan() {
                     }
                 }
             } else {
-                break;
+                continue;
             }
 
         } else if (peek == '"') {
