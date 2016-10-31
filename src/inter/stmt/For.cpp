@@ -8,7 +8,7 @@
 
 int For::execute() {
     Env* savedEnv = Vm::top;
-    Env* top = new Env(Vm::top);
+    Vm::top = new Env(Vm::top);
 
     std::cout << "开始 for 循环 \t行号: " << lexline << std::endl;
 //    Vm::printLine(lexline);
