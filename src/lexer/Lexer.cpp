@@ -48,6 +48,7 @@ void Lexer::setFile() {
 
 void Lexer::read(char* ch) {
     input_file.read(ch, Lexer::BUFFER_LENTHGH);
+    ch[input_file.gcount()] = '\0';
 }
 
 Token * Lexer::firstScan() {
@@ -62,8 +63,13 @@ Token * Lexer::firstScan() {
 }
 
 Token * Lexer::lastScan() {
-    Word * word = new Word("}", Tag::R_BRACE);
-    return word;
+    static bool isLast = true;
+    if(isLast) {
+        Word * word = new Word("}", Tag::R_BRACE);
+        return word;
+    } else {
+        return NULL;
+    }
 }
 
 
@@ -234,7 +240,9 @@ Token * Lexer::scan() {
         Num* num = new Num(value);
         return num;
     }
-    return lastScan();
+
+    Token * token2 = lastScan();
+    return token2;
 }
 
 
@@ -245,6 +253,7 @@ void Lexer::readch() {
         read(buffer);
         index = 1;
         peek = buffer[0];
+
     }
 }
 
