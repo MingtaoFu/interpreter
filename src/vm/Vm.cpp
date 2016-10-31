@@ -11,10 +11,17 @@ std::ofstream outputFile;
 
 void Vm::printLine(int lineNumber) {
     // 判断是否进入的一行
+    static bool isFirstLine = true;
     if (lineNumber != currentLine) {
+
         currentLine = lineNumber;
         char tmp [100];
-        sprintf(tmp, "%d ", currentLine);
+        if (isFirstLine) {
+            sprintf(tmp, "%d", currentLine);
+            isFirstLine = false;
+        } else {
+            sprintf(tmp, " %d", currentLine);
+        }
         std::cout << "VM 输出: " << currentLine << std::endl;
         outputFile.write(tmp, strlen(tmp));
     }
