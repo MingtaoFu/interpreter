@@ -1,0 +1,276 @@
+\hypertarget{class_lexer}{}\section{Lexer Class Reference}
+\label{class_lexer}\index{Lexer@{Lexer}}
+
+
+Class \hyperlink{class_lexer}{Lexer} 词法分析器  
+
+
+
+
+{\ttfamily \#include $<$Lexer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_lexer_ae96c693bf6eba38f21adab5fc94c18b1}{reserve} (\hyperlink{class_word}{Word} $\ast$)
+\begin{DoxyCompactList}\small\item\em 录入保留字 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_a9d7cdd99b7b18e3450cc365971bf76d2}{set\+File} ()
+\begin{DoxyCompactList}\small\item\em 设置源文件 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_a5c91a26ad6b4294bf7bb8d4c46ea529b}{readch} ()
+\begin{DoxyCompactList}\small\item\em 获取下一个字符 \end{DoxyCompactList}\item 
+bool \hyperlink{class_lexer_acbe68a5d98ebc3b3a87fd27f000030a5}{readch} (char c)
+\begin{DoxyCompactList}\small\item\em look ahead 方法 \end{DoxyCompactList}\item 
+void \hyperlink{class_lexer_ae28380e5c67144a1aeaf37f33ab11fb2}{back} ()
+\begin{DoxyCompactList}\small\item\em 字符回退 \end{DoxyCompactList}\item 
+\hyperlink{class_token}{Token} $\ast$ \hyperlink{class_lexer_a2085b8262f6237de60583375ee2731f4}{scan} ()
+\begin{DoxyCompactList}\small\item\em 扫描下一个 token \end{DoxyCompactList}\item 
+\hyperlink{class_lexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}{Lexer} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_lexer_a48478c1d6556ce949e7808bf3e2604b7}{line\+Incre} ()
+\item 
+static int \hyperlink{class_lexer_a0ede40225695d9eb9b42d275584cf8f0}{get\+Line} ()
+\begin{DoxyCompactList}\small\item\em 获取 token 行号 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_lexer_abb0f5b7f1e6fd685c8c8e9074553c67f}{read} (char $\ast$)
+\begin{DoxyCompactList}\small\item\em 读取文件进入buffer中 \end{DoxyCompactList}\item 
+\hyperlink{class_token}{Token} $\ast$ \hyperlink{class_lexer_aa5f52af80cfc8de7841d2ac6bc736662}{first\+Scan} ()
+\item 
+\hyperlink{class_token}{Token} $\ast$ \hyperlink{class_lexer_a28eb3e3a349bcbc7a0b03e16bb42192f}{last\+Scan} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ifstream \hyperlink{class_lexer_a606dd5cec5ec316ca1b1df40823fb853}{input\+\_\+file}
+\begin{DoxyCompactList}\small\item\em 输入文件 \end{DoxyCompactList}\item 
+char \hyperlink{class_lexer_a372c56c466c70d808bdcdb11e94bd914}{buffer} \mbox{[}4097\mbox{]}
+\begin{DoxyCompactList}\small\item\em 缓冲区 \end{DoxyCompactList}\item 
+int \hyperlink{class_lexer_a266317e9b89ad0e681fdb21032ef00f8}{index} = 0
+\begin{DoxyCompactList}\small\item\em 缓冲区读取指针 \end{DoxyCompactList}\item 
+char \hyperlink{class_lexer_a1c13ae056a34e7ec483c561152bb8d49}{peek} = \textquotesingle{} \textquotesingle{}
+\begin{DoxyCompactList}\small\item\em 当前扫描到的字符 \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \hyperlink{class_word}{Word} $>$ \hyperlink{class_lexer_add52df03b8546bfe059f4e1832141c16}{words}
+\begin{DoxyCompactList}\small\item\em 单词保留区 \end{DoxyCompactList}\item 
+bool \hyperlink{class_lexer_a123d0134daef2ce492f0707342456afc}{read\+Finished} = false
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_lexer_af8222e02dc3180feb942b4a6d3083a22}{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+T\+H\+GH} = 4096
+\begin{DoxyCompactList}\small\item\em 读取文件的缓冲区大小 \end{DoxyCompactList}\item 
+static int \hyperlink{class_lexer_a35d0802ee5cced4c5294fb6dc77ad2f4}{line} = 1
+\begin{DoxyCompactList}\small\item\em 当前行 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{class_lexer}{Lexer} 词法分析器 
+
+该类用于把源文件分析成token流, 便于语法分析时对元素的提取 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_lexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}\label{class_lexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}} 
+\index{Lexer@{Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{Lexer()}{Lexer()}}
+{\footnotesize\ttfamily Lexer\+::\+Lexer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lexer_ae28380e5c67144a1aeaf37f33ab11fb2}\label{class_lexer_ae28380e5c67144a1aeaf37f33ab11fb2}} 
+\index{Lexer@{Lexer}!back@{back}}
+\index{back@{back}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily void Lexer\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+字符回退 
+
+\mbox{\Hypertarget{class_lexer_aa5f52af80cfc8de7841d2ac6bc736662}\label{class_lexer_aa5f52af80cfc8de7841d2ac6bc736662}} 
+\index{Lexer@{Lexer}!first\+Scan@{first\+Scan}}
+\index{first\+Scan@{first\+Scan}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{first\+Scan()}{firstScan()}}
+{\footnotesize\ttfamily \hyperlink{class_token}{Token} $\ast$ Lexer\+::first\+Scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_lexer_a0ede40225695d9eb9b42d275584cf8f0}\label{class_lexer_a0ede40225695d9eb9b42d275584cf8f0}} 
+\index{Lexer@{Lexer}!get\+Line@{get\+Line}}
+\index{get\+Line@{get\+Line}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{get\+Line()}{getLine()}}
+{\footnotesize\ttfamily int Lexer\+::get\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+获取 token 行号 
+
+\mbox{\Hypertarget{class_lexer_a28eb3e3a349bcbc7a0b03e16bb42192f}\label{class_lexer_a28eb3e3a349bcbc7a0b03e16bb42192f}} 
+\index{Lexer@{Lexer}!last\+Scan@{last\+Scan}}
+\index{last\+Scan@{last\+Scan}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{last\+Scan()}{lastScan()}}
+{\footnotesize\ttfamily \hyperlink{class_token}{Token} $\ast$ Lexer\+::last\+Scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_lexer_a48478c1d6556ce949e7808bf3e2604b7}\label{class_lexer_a48478c1d6556ce949e7808bf3e2604b7}} 
+\index{Lexer@{Lexer}!line\+Incre@{line\+Incre}}
+\index{line\+Incre@{line\+Incre}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{line\+Incre()}{lineIncre()}}
+{\footnotesize\ttfamily void Lexer\+::line\+Incre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_lexer_abb0f5b7f1e6fd685c8c8e9074553c67f}\label{class_lexer_abb0f5b7f1e6fd685c8c8e9074553c67f}} 
+\index{Lexer@{Lexer}!read@{read}}
+\index{read@{read}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Lexer\+::read (\begin{DoxyParamCaption}\item[{char $\ast$}]{ch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+读取文件进入buffer中 
+
+\mbox{\Hypertarget{class_lexer_a5c91a26ad6b4294bf7bb8d4c46ea529b}\label{class_lexer_a5c91a26ad6b4294bf7bb8d4c46ea529b}} 
+\index{Lexer@{Lexer}!readch@{readch}}
+\index{readch@{readch}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{readch()}{readch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Lexer\+::readch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取下一个字符 
+
+\mbox{\Hypertarget{class_lexer_acbe68a5d98ebc3b3a87fd27f000030a5}\label{class_lexer_acbe68a5d98ebc3b3a87fd27f000030a5}} 
+\index{Lexer@{Lexer}!readch@{readch}}
+\index{readch@{readch}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{readch()}{readch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Lexer\+::readch (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+look ahead 方法 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & 判断下一个字符是否为c \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_lexer_ae96c693bf6eba38f21adab5fc94c18b1}\label{class_lexer_ae96c693bf6eba38f21adab5fc94c18b1}} 
+\index{Lexer@{Lexer}!reserve@{reserve}}
+\index{reserve@{reserve}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily void Lexer\+::reserve (\begin{DoxyParamCaption}\item[{\hyperlink{class_word}{Word} $\ast$}]{word }\end{DoxyParamCaption})}
+
+
+
+录入保留字 
+
+\mbox{\Hypertarget{class_lexer_a2085b8262f6237de60583375ee2731f4}\label{class_lexer_a2085b8262f6237de60583375ee2731f4}} 
+\index{Lexer@{Lexer}!scan@{scan}}
+\index{scan@{scan}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily \hyperlink{class_token}{Token} $\ast$ Lexer\+::scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+扫描下一个 token 
+
+从缓冲区中~\newline
+首先跳过空白和注释~\newline
+然后检查是否发现特殊符号~\newline
+接着检查保留字的出现情况~\newline
+返回相应的 token~\newline
+\mbox{\Hypertarget{class_lexer_a9d7cdd99b7b18e3450cc365971bf76d2}\label{class_lexer_a9d7cdd99b7b18e3450cc365971bf76d2}} 
+\index{Lexer@{Lexer}!set\+File@{set\+File}}
+\index{set\+File@{set\+File}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{set\+File()}{setFile()}}
+{\footnotesize\ttfamily void Lexer\+::set\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+设置源文件 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_lexer_a372c56c466c70d808bdcdb11e94bd914}\label{class_lexer_a372c56c466c70d808bdcdb11e94bd914}} 
+\index{Lexer@{Lexer}!buffer@{buffer}}
+\index{buffer@{buffer}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char Lexer\+::buffer\mbox{[}4097\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+缓冲区 
+
+\mbox{\Hypertarget{class_lexer_af8222e02dc3180feb942b4a6d3083a22}\label{class_lexer_af8222e02dc3180feb942b4a6d3083a22}} 
+\index{Lexer@{Lexer}!B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+T\+H\+GH@{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+T\+H\+GH}}
+\index{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+T\+H\+GH@{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+T\+H\+GH}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+T\+H\+GH}{BUFFER\_LENTHGH}}
+{\footnotesize\ttfamily const int Lexer\+::\+B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+T\+H\+GH = 4096\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+读取文件的缓冲区大小 
+
+\mbox{\Hypertarget{class_lexer_a266317e9b89ad0e681fdb21032ef00f8}\label{class_lexer_a266317e9b89ad0e681fdb21032ef00f8}} 
+\index{Lexer@{Lexer}!index@{index}}
+\index{index@{index}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int Lexer\+::index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+缓冲区读取指针 
+
+\mbox{\Hypertarget{class_lexer_a606dd5cec5ec316ca1b1df40823fb853}\label{class_lexer_a606dd5cec5ec316ca1b1df40823fb853}} 
+\index{Lexer@{Lexer}!input\+\_\+file@{input\+\_\+file}}
+\index{input\+\_\+file@{input\+\_\+file}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{input\+\_\+file}{input\_file}}
+{\footnotesize\ttfamily std\+::ifstream Lexer\+::input\+\_\+file\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+输入文件 
+
+\mbox{\Hypertarget{class_lexer_a35d0802ee5cced4c5294fb6dc77ad2f4}\label{class_lexer_a35d0802ee5cced4c5294fb6dc77ad2f4}} 
+\index{Lexer@{Lexer}!line@{line}}
+\index{line@{line}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily int Lexer\+::line = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+当前行 
+
+\mbox{\Hypertarget{class_lexer_a1c13ae056a34e7ec483c561152bb8d49}\label{class_lexer_a1c13ae056a34e7ec483c561152bb8d49}} 
+\index{Lexer@{Lexer}!peek@{peek}}
+\index{peek@{peek}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{peek}{peek}}
+{\footnotesize\ttfamily char Lexer\+::peek = \textquotesingle{} \textquotesingle{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+当前扫描到的字符 
+
+\mbox{\Hypertarget{class_lexer_a123d0134daef2ce492f0707342456afc}\label{class_lexer_a123d0134daef2ce492f0707342456afc}} 
+\index{Lexer@{Lexer}!read\+Finished@{read\+Finished}}
+\index{read\+Finished@{read\+Finished}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{read\+Finished}{readFinished}}
+{\footnotesize\ttfamily bool Lexer\+::read\+Finished = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_lexer_add52df03b8546bfe059f4e1832141c16}\label{class_lexer_add52df03b8546bfe059f4e1832141c16}} 
+\index{Lexer@{Lexer}!words@{words}}
+\index{words@{words}!Lexer@{Lexer}}
+\subsubsection{\texorpdfstring{words}{words}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \hyperlink{class_word}{Word}$>$ Lexer\+::words\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+单词保留区 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/lexer/\hyperlink{_lexer_8h}{Lexer.\+h}\item 
+src/lexer/\hyperlink{_lexer_8cpp}{Lexer.\+cpp}\end{DoxyCompactItemize}

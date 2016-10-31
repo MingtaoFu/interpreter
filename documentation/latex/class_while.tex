@@ -1,0 +1,79 @@
+\hypertarget{class_while}{}\section{While Class Reference}
+\label{class_while}\index{While@{While}}
+
+
+{\ttfamily \#include $<$While.\+h$>$}
+
+Inheritance diagram for While\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_while}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_while_aacee45c95a102a5a1ec711bbc29c92a7}{While} ()
+\item 
+int \hyperlink{class_while_a23b58565983130bb54577f4399ffd822}{execute} ()
+\begin{DoxyCompactList}\small\item\em 抽象的执行方法 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_while_a14af77714254099c0cc465944ef67dd3}{equality} = N\+U\+LL
+\item 
+\hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_while_a97dfbf50f27b969c5b765ecfb1ef4ac2}{stmt} = N\+U\+LL
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_while_aacee45c95a102a5a1ec711bbc29c92a7}\label{class_while_aacee45c95a102a5a1ec711bbc29c92a7}} 
+\index{While@{While}!While@{While}}
+\index{While@{While}!While@{While}}
+\subsubsection{\texorpdfstring{While()}{While()}}
+{\footnotesize\ttfamily While\+::\+While (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_while_a23b58565983130bb54577f4399ffd822}\label{class_while_a23b58565983130bb54577f4399ffd822}} 
+\index{While@{While}!execute@{execute}}
+\index{execute@{execute}!While@{While}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int While\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+抽象的执行方法 
+
+因为表达式以及各种语句都是可执行的~\newline
+设立这个方法利用多态可以实现整个语法树的执行~\newline
+ \begin{DoxyReturn}{Returns}
+int \+: 表达式或语句执行后获得的值 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_while_a14af77714254099c0cc465944ef67dd3}\label{class_while_a14af77714254099c0cc465944ef67dd3}} 
+\index{While@{While}!equality@{equality}}
+\index{equality@{equality}!While@{While}}
+\subsubsection{\texorpdfstring{equality}{equality}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr}$\ast$ While\+::equality = N\+U\+LL}
+
+\mbox{\Hypertarget{class_while_a97dfbf50f27b969c5b765ecfb1ef4ac2}\label{class_while_a97dfbf50f27b969c5b765ecfb1ef4ac2}} 
+\index{While@{While}!stmt@{stmt}}
+\index{stmt@{stmt}!While@{While}}
+\subsubsection{\texorpdfstring{stmt}{stmt}}
+{\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt}$\ast$ While\+::stmt = N\+U\+LL}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inter/stmt/\hyperlink{_while_8h}{While.\+h}\item 
+src/inter/stmt/\hyperlink{_while_8cpp}{While.\+cpp}\end{DoxyCompactItemize}

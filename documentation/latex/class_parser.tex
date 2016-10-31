@@ -1,0 +1,284 @@
+\hypertarget{class_parser}{}\section{Parser Class Reference}
+\label{class_parser}\index{Parser@{Parser}}
+
+
+语法分析类  
+
+
+
+
+{\ttfamily \#include $<$Parser.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parser_a25929f4bcec5c5ff010218f001203b73}{Parser} (\hyperlink{class_lexer}{Lexer} $\ast$\hyperlink{class_parser_a8a8214126b0b0455e3ce375f3e9b20bf}{lexer})
+\item 
+void \hyperlink{class_parser_af213985eb12738d0dbf7d505a8795ea2}{program} ()
+\begin{DoxyCompactList}\small\item\em 分析函数入口 \end{DoxyCompactList}\item 
+\hyperlink{class_block}{Block} $\ast$ \hyperlink{class_parser_ad05b2f1f2e9f60a7373961da0588eb5b}{get\+Root} ()
+\begin{DoxyCompactList}\small\item\em 获取语法树的根节点 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_parser_ae6cc5bf3ee250c954a36bd16f7559d79}{move} ()
+\begin{DoxyCompactList}\small\item\em 扫描的 token 前移 \end{DoxyCompactList}\item 
+void \hyperlink{class_parser_a0915f6c61a1a70038a8608ff7a823b5a}{error} (std\+::string)
+\begin{DoxyCompactList}\small\item\em 抛出错误 \end{DoxyCompactList}\item 
+void \hyperlink{class_parser_a009517efe4fe90b136071179beb32360}{match} (int)
+\begin{DoxyCompactList}\small\item\em 根据语法匹配关键 token \end{DoxyCompactList}\item 
+\hyperlink{class_block}{Block} $\ast$ \hyperlink{class_parser_a2e96322fd6d40261ab256a726634c1b3}{block} ()
+\begin{DoxyCompactList}\small\item\em 生成 块 对象 \end{DoxyCompactList}\item 
+void \hyperlink{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}{decl} ()
+\begin{DoxyCompactList}\small\item\em 完成声明语句 \end{DoxyCompactList}\item 
+\hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_parser_ab1ae72a37dbe2118ab65ad8f4dec4630}{stmt} ()
+\begin{DoxyCompactList}\small\item\em 生成 语句 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_abf18837a6acc9b543969706108d1191f}{comma} ()
+\begin{DoxyCompactList}\small\item\em 生成 逗号表达式 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_a24a9ce00f5db17f1e2b2019d6791a7e3}{assign} ()
+\begin{DoxyCompactList}\small\item\em 生成 赋值表达式 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_acf81bd28478a78855da7271b0dd7a09d}{equality} ()
+\begin{DoxyCompactList}\small\item\em 生成 等于表达式 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_a8ca8a4997cc230fb127ddb34986e9ffd}{rel} ()
+\begin{DoxyCompactList}\small\item\em 生成 打小于表达式 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_a198213e9e10727dab4b6f54ee781958b}{addsub} ()
+\begin{DoxyCompactList}\small\item\em 生成 加减表达式 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_a3809fe1d71ccaf111e4c6dc57f86640f}{term} ()
+\begin{DoxyCompactList}\small\item\em 生成 表达式项 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_ac58cd88a976f4a7d147f5f815724f6a6}{unary} ()
+\begin{DoxyCompactList}\small\item\em 生成 符号表达式 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_a3d5348cd92711fd39aea2b959e029e99}{selfop} ()
+\begin{DoxyCompactList}\small\item\em 生成 自增自减表达式 对象 \end{DoxyCompactList}\item 
+\hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_ac85a997e91604de1d3505b3c8aaddf3b}{factor} ()
+\begin{DoxyCompactList}\small\item\em 生成 因子 对象 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_block}{Block} $\ast$ \hyperlink{class_parser_a2c2aa893bb15b76ceea0330cad0c75cb}{root}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lexer}{Lexer} $\ast$ \hyperlink{class_parser_a8a8214126b0b0455e3ce375f3e9b20bf}{lexer}
+\item 
+\hyperlink{class_token}{Token} $\ast$ \hyperlink{class_parser_ac5d56e87794ceab4e8346bf4a60a5625}{look}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+语法分析类 
+
+用于构建抽象语法树, 以便虚拟机去执行 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_parser_a25929f4bcec5c5ff010218f001203b73}\label{class_parser_a25929f4bcec5c5ff010218f001203b73}} 
+\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{\hyperlink{class_lexer}{Lexer} $\ast$}]{lexer }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lexer} & \+: 语法分析器对象 \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_parser_a198213e9e10727dab4b6f54ee781958b}\label{class_parser_a198213e9e10727dab4b6f54ee781958b}} 
+\index{Parser@{Parser}!addsub@{addsub}}
+\index{addsub@{addsub}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{addsub()}{addsub()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::addsub (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 加减表达式 对象 
+
+\mbox{\Hypertarget{class_parser_a24a9ce00f5db17f1e2b2019d6791a7e3}\label{class_parser_a24a9ce00f5db17f1e2b2019d6791a7e3}} 
+\index{Parser@{Parser}!assign@{assign}}
+\index{assign@{assign}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{assign()}{assign()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::assign (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 赋值表达式 对象 
+
+\mbox{\Hypertarget{class_parser_a2e96322fd6d40261ab256a726634c1b3}\label{class_parser_a2e96322fd6d40261ab256a726634c1b3}} 
+\index{Parser@{Parser}!block@{block}}
+\index{block@{block}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{block()}{block()}}
+{\footnotesize\ttfamily \hyperlink{class_block}{Block} $\ast$ Parser\+::block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 块 对象 
+
+对块的解析 \mbox{\Hypertarget{class_parser_abf18837a6acc9b543969706108d1191f}\label{class_parser_abf18837a6acc9b543969706108d1191f}} 
+\index{Parser@{Parser}!comma@{comma}}
+\index{comma@{comma}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{comma()}{comma()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::comma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 逗号表达式 对象 
+
+\mbox{\Hypertarget{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}\label{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}} 
+\index{Parser@{Parser}!decl@{decl}}
+\index{decl@{decl}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{decl()}{decl()}}
+{\footnotesize\ttfamily void Parser\+::decl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+完成声明语句 
+
+对声明的解析 \mbox{\Hypertarget{class_parser_acf81bd28478a78855da7271b0dd7a09d}\label{class_parser_acf81bd28478a78855da7271b0dd7a09d}} 
+\index{Parser@{Parser}!equality@{equality}}
+\index{equality@{equality}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{equality()}{equality()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::equality (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 等于表达式 对象 
+
+一个表达式最低优先级为 == != 可以没有这一项，若没有，直接返回rel对象\mbox{\Hypertarget{class_parser_a0915f6c61a1a70038a8608ff7a823b5a}\label{class_parser_a0915f6c61a1a70038a8608ff7a823b5a}} 
+\index{Parser@{Parser}!error@{error}}
+\index{error@{error}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void Parser\+::error (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+抛出错误 
+
+\mbox{\Hypertarget{class_parser_ac85a997e91604de1d3505b3c8aaddf3b}\label{class_parser_ac85a997e91604de1d3505b3c8aaddf3b}} 
+\index{Parser@{Parser}!factor@{factor}}
+\index{factor@{factor}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{factor()}{factor()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::factor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 因子 对象 
+
+\mbox{\Hypertarget{class_parser_ad05b2f1f2e9f60a7373961da0588eb5b}\label{class_parser_ad05b2f1f2e9f60a7373961da0588eb5b}} 
+\index{Parser@{Parser}!get\+Root@{get\+Root}}
+\index{get\+Root@{get\+Root}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{get\+Root()}{getRoot()}}
+{\footnotesize\ttfamily \hyperlink{class_block}{Block} $\ast$ Parser\+::get\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+获取语法树的根节点 
+
+\mbox{\Hypertarget{class_parser_a009517efe4fe90b136071179beb32360}\label{class_parser_a009517efe4fe90b136071179beb32360}} 
+\index{Parser@{Parser}!match@{match}}
+\index{match@{match}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily void Parser\+::match (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+根据语法匹配关键 token 
+
+\mbox{\Hypertarget{class_parser_ae6cc5bf3ee250c954a36bd16f7559d79}\label{class_parser_ae6cc5bf3ee250c954a36bd16f7559d79}} 
+\index{Parser@{Parser}!move@{move}}
+\index{move@{move}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Parser\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+扫描的 token 前移 
+
+\mbox{\Hypertarget{class_parser_af213985eb12738d0dbf7d505a8795ea2}\label{class_parser_af213985eb12738d0dbf7d505a8795ea2}} 
+\index{Parser@{Parser}!program@{program}}
+\index{program@{program}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{program()}{program()}}
+{\footnotesize\ttfamily void Parser\+::program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+分析函数入口 
+
+\mbox{\Hypertarget{class_parser_a8ca8a4997cc230fb127ddb34986e9ffd}\label{class_parser_a8ca8a4997cc230fb127ddb34986e9ffd}} 
+\index{Parser@{Parser}!rel@{rel}}
+\index{rel@{rel}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{rel()}{rel()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::rel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 打小于表达式 对象 
+
+\mbox{\Hypertarget{class_parser_a3d5348cd92711fd39aea2b959e029e99}\label{class_parser_a3d5348cd92711fd39aea2b959e029e99}} 
+\index{Parser@{Parser}!selfop@{selfop}}
+\index{selfop@{selfop}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{selfop()}{selfop()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::selfop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 自增自减表达式 对象 
+
+\mbox{\Hypertarget{class_parser_ab1ae72a37dbe2118ab65ad8f4dec4630}\label{class_parser_ab1ae72a37dbe2118ab65ad8f4dec4630}} 
+\index{Parser@{Parser}!stmt@{stmt}}
+\index{stmt@{stmt}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{stmt()}{stmt()}}
+{\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt} $\ast$ Parser\+::stmt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 语句 对象 
+
+\mbox{\Hypertarget{class_parser_a3809fe1d71ccaf111e4c6dc57f86640f}\label{class_parser_a3809fe1d71ccaf111e4c6dc57f86640f}} 
+\index{Parser@{Parser}!term@{term}}
+\index{term@{term}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{term()}{term()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::term (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 表达式项 对象 
+
+\mbox{\Hypertarget{class_parser_ac58cd88a976f4a7d147f5f815724f6a6}\label{class_parser_ac58cd88a976f4a7d147f5f815724f6a6}} 
+\index{Parser@{Parser}!unary@{unary}}
+\index{unary@{unary}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{unary()}{unary()}}
+{\footnotesize\ttfamily \hyperlink{class_expr}{Expr} $\ast$ Parser\+::unary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+生成 符号表达式 对象 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_parser_a8a8214126b0b0455e3ce375f3e9b20bf}\label{class_parser_a8a8214126b0b0455e3ce375f3e9b20bf}} 
+\index{Parser@{Parser}!lexer@{lexer}}
+\index{lexer@{lexer}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{lexer}{lexer}}
+{\footnotesize\ttfamily \hyperlink{class_lexer}{Lexer}$\ast$ Parser\+::lexer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_ac5d56e87794ceab4e8346bf4a60a5625}\label{class_parser_ac5d56e87794ceab4e8346bf4a60a5625}} 
+\index{Parser@{Parser}!look@{look}}
+\index{look@{look}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{look}{look}}
+{\footnotesize\ttfamily \hyperlink{class_token}{Token}$\ast$ Parser\+::look\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_parser_a2c2aa893bb15b76ceea0330cad0c75cb}\label{class_parser_a2c2aa893bb15b76ceea0330cad0c75cb}} 
+\index{Parser@{Parser}!root@{root}}
+\index{root@{root}!Parser@{Parser}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \hyperlink{class_block}{Block}$\ast$ Parser\+::root\hspace{0.3cm}{\ttfamily [protected]}}
+
+语法树的根节点 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/parser/\hyperlink{_parser_8h}{Parser.\+h}\item 
+src/parser/\hyperlink{_parser_8cpp}{Parser.\+cpp}\end{DoxyCompactItemize}

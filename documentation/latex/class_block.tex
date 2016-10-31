@@ -1,0 +1,95 @@
+\hypertarget{class_block}{}\section{Block Class Reference}
+\label{class_block}\index{Block@{Block}}
+
+
+{\ttfamily \#include $<$Block.\+h$>$}
+
+Inheritance diagram for Block\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_block}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_block_a8e03f15df4e43cd6c802341c3bda6b33}{execute} ()
+\begin{DoxyCompactList}\small\item\em 抽象的执行方法 \end{DoxyCompactList}\item 
+void \hyperlink{class_block_aa48058bd426766898bf31df828b3dac2}{set\+Env} (\hyperlink{class_env}{Env} $\ast$)
+\item 
+void \hyperlink{class_block_acd012454c035cc7e0d508365752221ff}{push\+\_\+stmt} (\hyperlink{class_stmt}{Stmt} $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{class_break}{Break} $\ast$ $>$ \hyperlink{class_block_a8cdf287fcbcf92cc429c78b79464b363}{breaks}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{class_stmt}{Stmt} $\ast$ $>$ \hyperlink{class_block_a88f627f956bdc80d9d697f0755130d34}{stmts}
+\item 
+\hyperlink{class_env}{Env} $\ast$ \hyperlink{class_block_a85617f1e8f9f4b998e9b1ebc4c3b37c4}{env}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_block_a8e03f15df4e43cd6c802341c3bda6b33}\label{class_block_a8e03f15df4e43cd6c802341c3bda6b33}} 
+\index{Block@{Block}!execute@{execute}}
+\index{execute@{execute}!Block@{Block}}
+\subsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily int Block\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+抽象的执行方法 
+
+因为表达式以及各种语句都是可执行的~\newline
+设立这个方法利用多态可以实现整个语法树的执行~\newline
+ \begin{DoxyReturn}{Returns}
+int \+: 表达式或语句执行后获得的值 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt}.
+
+\mbox{\Hypertarget{class_block_acd012454c035cc7e0d508365752221ff}\label{class_block_acd012454c035cc7e0d508365752221ff}} 
+\index{Block@{Block}!push\+\_\+stmt@{push\+\_\+stmt}}
+\index{push\+\_\+stmt@{push\+\_\+stmt}!Block@{Block}}
+\subsubsection{\texorpdfstring{push\+\_\+stmt()}{push\_stmt()}}
+{\footnotesize\ttfamily void Block\+::push\+\_\+stmt (\begin{DoxyParamCaption}\item[{\hyperlink{class_stmt}{Stmt} $\ast$}]{stmt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_block_aa48058bd426766898bf31df828b3dac2}\label{class_block_aa48058bd426766898bf31df828b3dac2}} 
+\index{Block@{Block}!set\+Env@{set\+Env}}
+\index{set\+Env@{set\+Env}!Block@{Block}}
+\subsubsection{\texorpdfstring{set\+Env()}{setEnv()}}
+{\footnotesize\ttfamily void Block\+::set\+Env (\begin{DoxyParamCaption}\item[{\hyperlink{class_env}{Env} $\ast$}]{env }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_block_a8cdf287fcbcf92cc429c78b79464b363}\label{class_block_a8cdf287fcbcf92cc429c78b79464b363}} 
+\index{Block@{Block}!breaks@{breaks}}
+\index{breaks@{breaks}!Block@{Block}}
+\subsubsection{\texorpdfstring{breaks}{breaks}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_break}{Break}$\ast$$>$ Block\+::breaks}
+
+\mbox{\Hypertarget{class_block_a85617f1e8f9f4b998e9b1ebc4c3b37c4}\label{class_block_a85617f1e8f9f4b998e9b1ebc4c3b37c4}} 
+\index{Block@{Block}!env@{env}}
+\index{env@{env}!Block@{Block}}
+\subsubsection{\texorpdfstring{env}{env}}
+{\footnotesize\ttfamily \hyperlink{class_env}{Env}$\ast$ Block\+::env\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_block_a88f627f956bdc80d9d697f0755130d34}\label{class_block_a88f627f956bdc80d9d697f0755130d34}} 
+\index{Block@{Block}!stmts@{stmts}}
+\index{stmts@{stmts}!Block@{Block}}
+\subsubsection{\texorpdfstring{stmts}{stmts}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_stmt}{Stmt} $\ast$$>$ Block\+::stmts\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/inter/stmt/\hyperlink{_block_8h}{Block.\+h}\item 
+src/inter/stmt/\hyperlink{_block_8cpp}{Block.\+cpp}\end{DoxyCompactItemize}

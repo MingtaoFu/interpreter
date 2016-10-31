@@ -1,0 +1,97 @@
+\hypertarget{class_env}{}\section{Env Class Reference}
+\label{class_env}\index{Env@{Env}}
+
+
+{\ttfamily \#include $<$Env.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_env_ab9d20c5b47453e30038f156cc5e25c0f}{Env} (\hyperlink{class_env}{Env} $\ast$)
+\item 
+void \hyperlink{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}{put} (std\+::string, \hyperlink{class_id}{Id})
+\item 
+\hyperlink{class_id}{Id} $\ast$ \hyperlink{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}{get} (std\+::string)
+\item 
+void \hyperlink{class_env_a398c166330482abb7e38c546bc3974cf}{print\+Current\+Var} ()
+\item 
+void \hyperlink{class_env_a8ba6704ef2039c2329569efc99f1e087}{print\+All\+Var} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_id}{Id} $\ast$ \hyperlink{class_env_aca71253ff9d30153d0834a47cd35a351}{\+\_\+get} (std\+::string)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_env}{Env} $\ast$ \hyperlink{class_env_a79a41e9166e949e4c1320ffe3750cb29}{prev}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{class_id}{Id} $>$ \hyperlink{class_env_ab93397b135a614cb1c7e6057a00a8d85}{table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_env_ab9d20c5b47453e30038f156cc5e25c0f}\label{class_env_ab9d20c5b47453e30038f156cc5e25c0f}} 
+\index{Env@{Env}!Env@{Env}}
+\index{Env@{Env}!Env@{Env}}
+\subsubsection{\texorpdfstring{Env()}{Env()}}
+{\footnotesize\ttfamily Env\+::\+Env (\begin{DoxyParamCaption}\item[{\hyperlink{class_env}{Env} $\ast$}]{n }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_env_aca71253ff9d30153d0834a47cd35a351}\label{class_env_aca71253ff9d30153d0834a47cd35a351}} 
+\index{Env@{Env}!\+\_\+get@{\+\_\+get}}
+\index{\+\_\+get@{\+\_\+get}!Env@{Env}}
+\subsubsection{\texorpdfstring{\+\_\+get()}{\_get()}}
+{\footnotesize\ttfamily \hyperlink{class_id}{Id} $\ast$ Env\+::\+\_\+get (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+在当前表中查找 \mbox{\Hypertarget{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}\label{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}} 
+\index{Env@{Env}!get@{get}}
+\index{get@{get}!Env@{Env}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \hyperlink{class_id}{Id} $\ast$ Env\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})}
+
+在表链中查找 迭代实现 \mbox{\Hypertarget{class_env_a8ba6704ef2039c2329569efc99f1e087}\label{class_env_a8ba6704ef2039c2329569efc99f1e087}} 
+\index{Env@{Env}!print\+All\+Var@{print\+All\+Var}}
+\index{print\+All\+Var@{print\+All\+Var}!Env@{Env}}
+\subsubsection{\texorpdfstring{print\+All\+Var()}{printAllVar()}}
+{\footnotesize\ttfamily void Env\+::print\+All\+Var (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+打印作用域链所有变量 调试使用 \mbox{\Hypertarget{class_env_a398c166330482abb7e38c546bc3974cf}\label{class_env_a398c166330482abb7e38c546bc3974cf}} 
+\index{Env@{Env}!print\+Current\+Var@{print\+Current\+Var}}
+\index{print\+Current\+Var@{print\+Current\+Var}!Env@{Env}}
+\subsubsection{\texorpdfstring{print\+Current\+Var()}{printCurrentVar()}}
+{\footnotesize\ttfamily void Env\+::print\+Current\+Var (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+打印当前block作用域变量 调试使用 \mbox{\Hypertarget{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}\label{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}} 
+\index{Env@{Env}!put@{put}}
+\index{put@{put}!Env@{Env}}
+\subsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily void Env\+::put (\begin{DoxyParamCaption}\item[{std\+::string}]{word,  }\item[{\hyperlink{class_id}{Id}}]{id }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_env_a79a41e9166e949e4c1320ffe3750cb29}\label{class_env_a79a41e9166e949e4c1320ffe3750cb29}} 
+\index{Env@{Env}!prev@{prev}}
+\index{prev@{prev}!Env@{Env}}
+\subsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily \hyperlink{class_env}{Env}$\ast$ Env\+::prev\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_env_ab93397b135a614cb1c7e6057a00a8d85}\label{class_env_ab93397b135a614cb1c7e6057a00a8d85}} 
+\index{Env@{Env}!table@{table}}
+\index{table@{table}!Env@{Env}}
+\subsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \hyperlink{class_id}{Id}$>$ Env\+::table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/symbols/\hyperlink{_env_8h}{Env.\+h}\item 
+src/symbols/\hyperlink{_env_8cpp}{Env.\+cpp}\end{DoxyCompactItemize}
