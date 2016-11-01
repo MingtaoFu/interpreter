@@ -6,7 +6,7 @@
 #include "../../vm/Vm.h"
 
 int Break::execute() {
-    std::cout << "break \t\t行号: " << lexline << std::endl;
+    //std::cout << "break \t\t行号: " << lexline << std::endl;
     Vm::printLine(lexline);
     BreakError r = BreakError("break");
     throw r;

@@ -21,7 +21,7 @@ int Rel::execute() {
         value2 = expr_r->execute();
     }
 
-    std::cout << "发生大于/小于比较运算\t 行号: " << lexline << std::endl;
+    //std::cout << "发生大于/小于比较运算\t 行号: " << lexline << std::endl;
     Vm::printLine(lexline);
     switch (op->tag) {
         case Tag::LT:

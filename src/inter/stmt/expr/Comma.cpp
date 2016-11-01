@@ -12,7 +12,7 @@ Comma::Comma(Token * token, Expr * expr1, Expr * expr2): Math(token, expr1, expr
 int Comma::execute() {
     expr_l->execute();
     int value = expr_r->execute();
-    std::cout << "发生逗号运算 \t\t行号: " << lexline << std::endl;
+    //std::cout << "发生逗号运算 \t\t行号: " << lexline << std::endl;
     Vm::printLine(lexline);
     return value;
 

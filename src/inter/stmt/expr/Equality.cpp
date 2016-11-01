@@ -20,7 +20,7 @@ int Equality::execute() {
         value2 = expr_r->execute();
     }
 
-    std::cout << "发生等于/不等于比较运算 \t\t行号: " << lexline << std::endl;
+    //std::cout << "发生等于/不等于比较运算 \t\t行号: " << lexline << std::endl;
     Vm::printLine(lexline);
     if(op->tag == Tag::EQ) {
         return value1 == value2;

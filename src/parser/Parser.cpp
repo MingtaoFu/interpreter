@@ -77,16 +77,13 @@ Block * Parser::block() {
     return block;
 }
 
-/**
- * 对声明的解析
- */
-void Parser::decl() {
-    match(Tag::INT);
-    match(Tag::ID);
-    match(Tag::Semicolon);
-}
-
 Expr* Parser::comma() {
+    ///
+    /// 逗号表达式视为 两个赋值表达式 进行逗号运算
+    /// 第二个赋值运算 与 逗号 可以不存在(降级为赋值)
+    /// 若存在多个逗号
+    /// 迭代地生成多个逗号表达式
+    ///
     Expr * expr1 = assign();
     while (look->tag == Tag::COMMA) {
         Token * token = look;
@@ -97,6 +94,20 @@ Expr* Parser::comma() {
 }
 
 Expr * Parser::assign() {
+    ///
+    /// 赋值表达式视为 变量名 与 等于/不等表达式 进行赋值运算
+    /// 变量名 与 等于符号 可以不存在(降级为判断相等)
+    /// 若存在连等
+    /// 递归地生成多个赋值表达式
+    /// -----------------
+    /// 有一点与 逗号表达式 不同
+    /// 逗号表达式的结合性为 从左到右
+    /// 所以第二个表达式必须是比 逗号表达式 优先级更低的赋值运算
+    /// 而赋值运算结合性从右到左
+    /// 检测到等号后，右侧允许出现赋值
+    /// 所以第二个表达式依然是赋值
+    /// -----------------
+    ///
     Expr * equality1 = equality();
     while (look->tag == '=') {
         Token * token = look;
@@ -104,18 +115,11 @@ Expr * Parser::assign() {
         equality1 = new Set(token, (Var*)equality1, assign());
     }
     return equality1;
-
 }
 
 Expr * Parser::equality() {
     Expr * rel1 = rel();
     while(look->tag == Tag::EQ || look->tag == Tag::NE) {
-        /**
-         *
-         * 一个表达式最低优先级为 == !=
-         * 可以没有这一项，若没有，直接返回rel对象
-         *
-         */
         Token * token = look;
         move();
         rel1 = new Equality(token, rel1, rel());

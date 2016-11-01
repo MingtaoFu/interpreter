@@ -37,8 +37,6 @@ protected:
 
     /// 生成 块 对象
     Block * block();
-    /// 完成声明语句
-    void decl();
     /// 生成 语句 对象
     Stmt * stmt();
     /// 生成 逗号表达式 对象

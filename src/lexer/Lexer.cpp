@@ -115,9 +115,7 @@ Token * Lexer::scan() {
                         Lexer::lineIncre();
                     }
                 }
-            } else {
-                break;
-            }
+            } else break;
 
         } else if (peek == '"') {
             while (1) {
