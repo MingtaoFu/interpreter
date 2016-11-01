@@ -9,12 +9,14 @@
 #include "../error/BreakError.h"
 #include "../../vm/Vm.h"
 #include <iostream>
-
+///
+/// \brief while循环语句类
+///
 class While: public Stmt {
 public:
-    Expr* equality = NULL;
-    Stmt* stmt = NULL;
-    While(){};
+    Expr* equality = NULL; ///< 条件判断语句
+    Stmt* stmt = NULL; ///< 循环体
+    /// 执行While语句块
     int execute();
 };
 

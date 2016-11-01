@@ -5,7 +5,12 @@
 #ifndef COMPILE_TAG_H
 #define COMPILE_TAG_H
 
-
+///
+/// \brief tag类
+///
+/// 用于定义所有关键符号
+/// 的枚举值
+///
 class Tag {
 public:
     static const int

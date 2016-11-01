@@ -7,9 +7,12 @@
 
 #include "Stmt.h"
 #include "../error/BreakError.h"
-
+///
+/// \brief 循环中断类
+///
 class Break: public Stmt {
 public:
+    /// 执行循环中断,抛出中断异常
     int execute();
 
 };

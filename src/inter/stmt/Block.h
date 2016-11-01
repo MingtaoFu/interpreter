@@ -11,15 +11,20 @@
 #include "Break.h"
 #include <vector>
 
+///
+/// \brief 语句块类
+///
 class Block: public Stmt {
 protected:
-    std::vector<Stmt *> stmts;
-    Env * env;
+    std::vector<Stmt *> stmts; ///< 储存该块中的所有语句
+    Env * env; ///< 储存当前的变量环境
 
 public:
-    std::vector<Break*> breaks;
+    /// 启动执行该块中的语句
     int execute();
+    /// 设置变量环境
     void setEnv(Env *);
+    /// 向块中添加语句
     void push_stmt(Stmt *);
 };
 

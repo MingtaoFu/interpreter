@@ -9,7 +9,12 @@
 #include <stdexcept>
 #include <iostream>
 
-
+///
+/// \brief VarNotFound类
+///
+/// 未定义变量错误\n
+/// 若在作用域中使用未声明的变量,将抛出此错误
+///
 class VarNotFound: public std::runtime_error {
 public:
     explicit VarNotFound(std::string);

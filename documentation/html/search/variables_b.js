@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['peek',['peek',['../class_lexer.html#a1c13ae056a34e7ec483c561152bb8d49',1,'Lexer']]],
-  ['plus',['PLUS',['../class_tag.html#aa94fc1145460d63eb408321dd9b2b4c6',1,'Tag']]],
-  ['prev',['prev',['../class_env.html#a79a41e9166e949e4c1320ffe3750cb29',1,'Env']]],
-  ['printf',['PRINTF',['../class_tag.html#a85ff0086e29d3d6a8f6c78695df0bd52',1,'Tag']]]
+  ['value',['value',['../class_constant.html#a132c9bc0ec98681bcbf723d87ddd722d',1,'Constant::value()'],['../class_id.html#af7f7ed479b45ce150b88481b7b996e32',1,'Id::value()'],['../class_num.html#a40cb04ca1ed295495a2e4b358b984fb8',1,'Num::value()']]]
 ];

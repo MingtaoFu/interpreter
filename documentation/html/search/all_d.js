@@ -1,16 +1,11 @@
 var searchData=
 [
   ['parser',['Parser',['../class_parser.html',1,'Parser'],['../class_parser.html#a25929f4bcec5c5ff010218f001203b73',1,'Parser::Parser()']]],
-  ['parser_2ecpp',['Parser.cpp',['../_parser_8cpp.html',1,'']]],
-  ['parser_2eh',['Parser.h',['../_parser_8h.html',1,'']]],
   ['peek',['peek',['../class_lexer.html#a1c13ae056a34e7ec483c561152bb8d49',1,'Lexer']]],
-  ['plus',['PLUS',['../class_tag.html#aa94fc1145460d63eb408321dd9b2b4c6',1,'Tag']]],
   ['prev',['prev',['../class_env.html#a79a41e9166e949e4c1320ffe3750cb29',1,'Env']]],
   ['printallvar',['printAllVar',['../class_env.html#a8ba6704ef2039c2329569efc99f1e087',1,'Env']]],
   ['printcurrentvar',['printCurrentVar',['../class_env.html#a398c166330482abb7e38c546bc3974cf',1,'Env']]],
-  ['printf',['Printf',['../class_printf.html',1,'Printf'],['../class_tag.html#a85ff0086e29d3d6a8f6c78695df0bd52',1,'Tag::PRINTF()']]],
-  ['printf_2ecpp',['Printf.cpp',['../_printf_8cpp.html',1,'']]],
-  ['printf_2eh',['Printf.h',['../_printf_8h.html',1,'']]],
+  ['printf',['Printf',['../class_printf.html',1,'']]],
   ['printline',['printLine',['../class_vm.html#a376141bb4182218ac7a499043eb18a6c',1,'Vm']]],
   ['program',['program',['../class_parser.html#af213985eb12738d0dbf7d505a8795ea2',1,'Parser']]],
   ['push_5fstmt',['push_stmt',['../class_block.html#acd012454c035cc7e0d508365752221ff',1,'Block']]],

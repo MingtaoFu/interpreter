@@ -2,6 +2,11 @@
 \label{class_do_while}\index{Do\+While@{Do\+While}}
 
 
+do-\/while循环语句类  
+
+
+
+
 {\ttfamily \#include $<$Do\+While.\+h$>$}
 
 Inheritance diagram for Do\+While\+:\begin{figure}[H]
@@ -13,39 +18,22 @@ Inheritance diagram for Do\+While\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_do_while_adb6934e033f44c6b52b1079faf1d84cf}\label{class_do_while_adb6934e033f44c6b52b1079faf1d84cf}} 
 int \hyperlink{class_do_while_adb6934e033f44c6b52b1079faf1d84cf}{execute} ()
-\begin{DoxyCompactList}\small\item\em 抽象的执行方法 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 执行do-\/while循环语句 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_do_while_a0aee68f104ddceeb30a4e061cf315e0f}\label{class_do_while_a0aee68f104ddceeb30a4e061cf315e0f}} 
 \hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_do_while_a0aee68f104ddceeb30a4e061cf315e0f}{stmt}
-\item 
+\begin{DoxyCompactList}\small\item\em 循环体语句 \end{DoxyCompactList}\item 
 \hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_do_while_a55d5ffb9c6bee10f8375f028705e4901}{expr}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_do_while_adb6934e033f44c6b52b1079faf1d84cf}\label{class_do_while_adb6934e033f44c6b52b1079faf1d84cf}} 
-\index{Do\+While@{Do\+While}!execute@{execute}}
-\index{execute@{execute}!Do\+While@{Do\+While}}
-\subsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily int Do\+While\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-抽象的执行方法 
-
-因为表达式以及各种语句都是可执行的~\newline
-设立这个方法利用多态可以实现整个语法树的执行~\newline
- \begin{DoxyReturn}{Returns}
-int \+: 表达式或语句执行后获得的值 
-\end{DoxyReturn}
-
-
-Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt}.
-
-
+\subsection{Detailed Description}
+do-\/while循环语句类 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_do_while_a55d5ffb9c6bee10f8375f028705e4901}\label{class_do_while_a55d5ffb9c6bee10f8375f028705e4901}} 
@@ -54,15 +42,9 @@ Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt
 \subsubsection{\texorpdfstring{expr}{expr}}
 {\footnotesize\ttfamily \hyperlink{class_expr}{Expr}$\ast$ Do\+While\+::expr}
 
-\mbox{\Hypertarget{class_do_while_a0aee68f104ddceeb30a4e061cf315e0f}\label{class_do_while_a0aee68f104ddceeb30a4e061cf315e0f}} 
-\index{Do\+While@{Do\+While}!stmt@{stmt}}
-\index{stmt@{stmt}!Do\+While@{Do\+While}}
-\subsubsection{\texorpdfstring{stmt}{stmt}}
-{\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt}$\ast$ Do\+While\+::stmt}
-
-
+条件表达式 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/inter/stmt/\hyperlink{_do_while_8h}{Do\+While.\+h}\item 
-src/inter/stmt/\hyperlink{_do_while_8cpp}{Do\+While.\+cpp}\end{DoxyCompactItemize}
+src/inter/stmt/Do\+While.\+h\item 
+src/inter/stmt/Do\+While.\+cpp\end{DoxyCompactItemize}

@@ -2,6 +2,11 @@
 \label{class_word}\index{Word@{Word}}
 
 
+字类  
+
+
+
+
 {\ttfamily \#include $<$Word.\+h$>$}
 
 Inheritance diagram for Word\+:\begin{figure}[H]
@@ -24,6 +29,11 @@ std\+::string \hyperlink{class_word_a34691d869ec57b2a0b7a8eb41230b92a}{lexeme} =
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+字类 
+
+代表关键字, 变量名等的 对应类 
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_word_acb127ce0ab789dc0ecfc407dec786ac2}\label{class_word_acb127ce0ab789dc0ecfc407dec786ac2}} 
 \index{Word@{Word}!Word@{Word}}
@@ -31,6 +41,13 @@ std\+::string \hyperlink{class_word_a34691d869ec57b2a0b7a8eb41230b92a}{lexeme} =
 \subsubsection{\texorpdfstring{Word()}{Word()}}
 {\footnotesize\ttfamily Word\+::\+Word (\begin{DoxyParamCaption}\item[{std\+::string}]{s,  }\item[{int}]{tag }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: 该字的字符串 \\
+\hline
+{\em tag} & \+: 该字的类型 \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -40,6 +57,9 @@ std\+::string \hyperlink{class_word_a34691d869ec57b2a0b7a8eb41230b92a}{lexeme} =
 \subsubsection{\texorpdfstring{to\+String()}{toString()}}
 {\footnotesize\ttfamily std\+::string Word\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+将字输出成字符串 \begin{DoxyReturn}{Returns}
+该字的字符串 
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_token_a8863381edabce7bc1e92473b445ba81f}{Token}.
@@ -53,9 +73,9 @@ Reimplemented from \hyperlink{class_token_a8863381edabce7bc1e92473b445ba81f}{Tok
 \subsubsection{\texorpdfstring{lexeme}{lexeme}}
 {\footnotesize\ttfamily std\+::string Word\+::lexeme = \char`\"{}\char`\"{}}
 
-
+改字的字符串信息 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/lexer/\hyperlink{_word_8h}{Word.\+h}\item 
-src/lexer/\hyperlink{_word_8cpp}{Word.\+cpp}\end{DoxyCompactItemize}
+src/lexer/Word.\+h\item 
+src/lexer/Word.\+cpp\end{DoxyCompactItemize}

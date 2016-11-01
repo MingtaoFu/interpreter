@@ -1,0 +1,16 @@
+digraph "If"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="If",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Stmt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_stmt.html",tooltip="Stmt类 "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Node",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_node.html",tooltip="Node类 "];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" equality" ];
+  Node6 [label="Expr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_expr.html",tooltip="运算表达式类 "];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" op" ];
+  Node7 [label="Token",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_token.html",tooltip="token类 "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stmt1\nstmt2" ];
+}

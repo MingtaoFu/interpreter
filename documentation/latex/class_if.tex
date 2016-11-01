@@ -2,6 +2,11 @@
 \label{class_if}\index{If@{If}}
 
 
+if语句类  
+
+
+
+
 {\ttfamily \#include $<$If.\+h$>$}
 
 Inheritance diagram for If\+:\begin{figure}[H]
@@ -13,21 +18,28 @@ Inheritance diagram for If\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_if_aeadf929258ccd07a239879c118fb152f}\label{class_if_aeadf929258ccd07a239879c118fb152f}} 
 int \hyperlink{class_if_aeadf929258ccd07a239879c118fb152f}{execute} ()
-\begin{DoxyCompactList}\small\item\em 抽象的执行方法 \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 开始执行if语句 \end{DoxyCompactList}\item 
 \hyperlink{class_if_a398387169436db838e9935b985a8f4a9}{If} (\hyperlink{class_expr}{Expr} $\ast$, \hyperlink{class_stmt}{Stmt} $\ast$, \hyperlink{class_stmt}{Stmt} $\ast$)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_if_a84f2d73109cd8030fcc244ef741b5803}\label{class_if_a84f2d73109cd8030fcc244ef741b5803}} 
 \hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_if_a84f2d73109cd8030fcc244ef741b5803}{equality}
-\item 
+\begin{DoxyCompactList}\small\item\em if判断表达式 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_if_a3ece7870e5d5b11dd42457e22af00a72}\label{class_if_a3ece7870e5d5b11dd42457e22af00a72}} 
 \hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_if_a3ece7870e5d5b11dd42457e22af00a72}{stmt1}
-\item 
+\begin{DoxyCompactList}\small\item\em if语句块部分 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_if_aaf8a095b5a986832928ebdcdb263d41c}\label{class_if_aaf8a095b5a986832928ebdcdb263d41c}} 
 \hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_if_aaf8a095b5a986832928ebdcdb263d41c}{stmt2}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em else语句块部分,没有则为\+N\+U\+LL \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+if语句类 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_if_a398387169436db838e9935b985a8f4a9}\label{class_if_a398387169436db838e9935b985a8f4a9}} 
@@ -37,51 +49,17 @@ int \hyperlink{class_if_aeadf929258ccd07a239879c118fb152f}{execute} ()
 {\footnotesize\ttfamily If\+::\+If (\begin{DoxyParamCaption}\item[{\hyperlink{class_expr}{Expr} $\ast$}]{equality1,  }\item[{\hyperlink{class_stmt}{Stmt} $\ast$}]{stmt3,  }\item[{\hyperlink{class_stmt}{Stmt} $\ast$}]{stmt4 }\end{DoxyParamCaption})}
 
 
-
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_if_aeadf929258ccd07a239879c118fb152f}\label{class_if_aeadf929258ccd07a239879c118fb152f}} 
-\index{If@{If}!execute@{execute}}
-\index{execute@{execute}!If@{If}}
-\subsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily int If\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-抽象的执行方法 
-
-因为表达式以及各种语句都是可执行的~\newline
-设立这个方法利用多态可以实现整个语法树的执行~\newline
- \begin{DoxyReturn}{Returns}
-int \+: 表达式或语句执行后获得的值 
-\end{DoxyReturn}
-
-
-Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt}.
-
-
-
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_if_a84f2d73109cd8030fcc244ef741b5803}\label{class_if_a84f2d73109cd8030fcc244ef741b5803}} 
-\index{If@{If}!equality@{equality}}
-\index{equality@{equality}!If@{If}}
-\subsubsection{\texorpdfstring{equality}{equality}}
-{\footnotesize\ttfamily \hyperlink{class_expr}{Expr}$\ast$ If\+::equality\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{class_if_a3ece7870e5d5b11dd42457e22af00a72}\label{class_if_a3ece7870e5d5b11dd42457e22af00a72}} 
-\index{If@{If}!stmt1@{stmt1}}
-\index{stmt1@{stmt1}!If@{If}}
-\subsubsection{\texorpdfstring{stmt1}{stmt1}}
-{\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt}$\ast$ If\+::stmt1\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{class_if_aaf8a095b5a986832928ebdcdb263d41c}\label{class_if_aaf8a095b5a986832928ebdcdb263d41c}} 
-\index{If@{If}!stmt2@{stmt2}}
-\index{stmt2@{stmt2}!If@{If}}
-\subsubsection{\texorpdfstring{stmt2}{stmt2}}
-{\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt}$\ast$ If\+::stmt2\hspace{0.3cm}{\ttfamily [protected]}}
-
+\begin{DoxyParams}{Parameters}
+{\em expr} & \+: 条件表达式 \\
+\hline
+{\em stmt1} & \+: if 语句块 \\
+\hline
+{\em stmt2} & \+: else 语句块 \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/inter/stmt/\hyperlink{_if_8h}{If.\+h}\item 
-src/inter/stmt/\hyperlink{_if_8cpp}{If.\+cpp}\end{DoxyCompactItemize}
+src/inter/stmt/If.\+h\item 
+src/inter/stmt/If.\+cpp\end{DoxyCompactItemize}

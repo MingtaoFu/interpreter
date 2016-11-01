@@ -8,12 +8,14 @@
 #include "Stmt.h"
 #include "../error/BreakError.h"
 #include "expr/Expr.h"
-
+///
+/// \brief do-while循环语句类
+///
 class DoWhile: public Stmt {
 public:
-    Stmt* stmt;
-    Expr* expr;
-
+    Stmt* stmt; ///< 循环体语句
+    Expr* expr; ///< 条件表达式
+    /// 执行do-while循环语句
     int execute();
 };
 

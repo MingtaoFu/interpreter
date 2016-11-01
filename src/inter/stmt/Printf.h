@@ -10,11 +10,13 @@
 #include <vector>
 #include <iostream>
 
-
+///
+/// \brief 输出语句块类
+///
 class Printf: public Stmt{
 public:
-    std::vector<Expr*> exprs;
-
+    std::vector<Expr*> exprs; ///< 参数中的表达式
+    /// 执行输出语句
     int execute();
 
 };

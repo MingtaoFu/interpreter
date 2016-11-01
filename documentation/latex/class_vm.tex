@@ -12,8 +12,10 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_vm_a37a0791ef2b63e41421446993d0e7e4d}\label{class_vm_a37a0791ef2b63e41421446993d0e7e4d}} 
 void \hyperlink{class_vm_a37a0791ef2b63e41421446993d0e7e4d}{execute} ()
 \begin{DoxyCompactList}\small\item\em 执行整个语法树 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_vm_af036edc52fab207ca28530c06b6d0c67}\label{class_vm_af036edc52fab207ca28530c06b6d0c67}} 
 void \hyperlink{class_vm_af036edc52fab207ca28530c06b6d0c67}{set\+Entry} (\hyperlink{class_block}{Block} $\ast$)
 \begin{DoxyCompactList}\small\item\em 设置语法树入口 \end{DoxyCompactList}\item 
 \hyperlink{class_vm_a4a37106b5b5b9382baa79dea901db8ba}{Vm} (\hyperlink{class_block}{Block} $\ast$)
@@ -21,6 +23,7 @@ void \hyperlink{class_vm_af036edc52fab207ca28530c06b6d0c67}{set\+Entry} (\hyperl
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_vm_a376141bb4182218ac7a499043eb18a6c}\label{class_vm_a376141bb4182218ac7a499043eb18a6c}} 
 static void \hyperlink{class_vm_a376141bb4182218ac7a499043eb18a6c}{print\+Line} (int line\+Number)
 \begin{DoxyCompactList}\small\item\em 输出行号 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
@@ -31,11 +34,13 @@ static \hyperlink{class_env}{Env} $\ast$ \hyperlink{class_vm_a1a83823801a5ab090d
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_vm_ab5aae972ea15ddfd01362e27ed797a51}\label{class_vm_ab5aae972ea15ddfd01362e27ed797a51}} 
 \hyperlink{class_block}{Block} $\ast$ \hyperlink{class_vm_ab5aae972ea15ddfd01362e27ed797a51}{entry}
 \begin{DoxyCompactList}\small\item\em 语法树的入口 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_vm_acfa435ede93d1ba8fe2250fd3469de15}\label{class_vm_acfa435ede93d1ba8fe2250fd3469de15}} 
 static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line} = 0
 \begin{DoxyCompactList}\small\item\em 运行到的当前行 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -59,60 +64,7 @@ static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line}
 \end{DoxyParams}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_vm_a37a0791ef2b63e41421446993d0e7e4d}\label{class_vm_a37a0791ef2b63e41421446993d0e7e4d}} 
-\index{Vm@{Vm}!execute@{execute}}
-\index{execute@{execute}!Vm@{Vm}}
-\subsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily void Vm\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-执行整个语法树 
-
-\mbox{\Hypertarget{class_vm_a376141bb4182218ac7a499043eb18a6c}\label{class_vm_a376141bb4182218ac7a499043eb18a6c}} 
-\index{Vm@{Vm}!print\+Line@{print\+Line}}
-\index{print\+Line@{print\+Line}!Vm@{Vm}}
-\subsubsection{\texorpdfstring{print\+Line()}{printLine()}}
-{\footnotesize\ttfamily void Vm\+::print\+Line (\begin{DoxyParamCaption}\item[{int}]{line\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-输出行号 
-
-\mbox{\Hypertarget{class_vm_af036edc52fab207ca28530c06b6d0c67}\label{class_vm_af036edc52fab207ca28530c06b6d0c67}} 
-\index{Vm@{Vm}!set\+Entry@{set\+Entry}}
-\index{set\+Entry@{set\+Entry}!Vm@{Vm}}
-\subsubsection{\texorpdfstring{set\+Entry()}{setEntry()}}
-{\footnotesize\ttfamily void Vm\+::set\+Entry (\begin{DoxyParamCaption}\item[{\hyperlink{class_block}{Block} $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-设置语法树入口 
-
-
-
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_vm_acfa435ede93d1ba8fe2250fd3469de15}\label{class_vm_acfa435ede93d1ba8fe2250fd3469de15}} 
-\index{Vm@{Vm}!current\+Line@{current\+Line}}
-\index{current\+Line@{current\+Line}!Vm@{Vm}}
-\subsubsection{\texorpdfstring{current\+Line}{currentLine}}
-{\footnotesize\ttfamily int Vm\+::current\+Line = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
-
-
-
-运行到的当前行 
-
-\mbox{\Hypertarget{class_vm_ab5aae972ea15ddfd01362e27ed797a51}\label{class_vm_ab5aae972ea15ddfd01362e27ed797a51}} 
-\index{Vm@{Vm}!entry@{entry}}
-\index{entry@{entry}!Vm@{Vm}}
-\subsubsection{\texorpdfstring{entry}{entry}}
-{\footnotesize\ttfamily \hyperlink{class_block}{Block}$\ast$ Vm\+::entry\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-语法树的入口 
-
 \mbox{\Hypertarget{class_vm_a1a83823801a5ab090d9ad20527a6c638}\label{class_vm_a1a83823801a5ab090d9ad20527a6c638}} 
 \index{Vm@{Vm}!top@{top}}
 \index{top@{top}!Vm@{Vm}}
@@ -123,5 +75,5 @@ static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/vm/\hyperlink{_vm_8h}{Vm.\+h}\item 
-src/vm/\hyperlink{_vm_8cpp}{Vm.\+cpp}\end{DoxyCompactItemize}
+src/vm/Vm.\+h\item 
+src/vm/Vm.\+cpp\end{DoxyCompactItemize}

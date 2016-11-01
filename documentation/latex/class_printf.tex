@@ -2,6 +2,11 @@
 \label{class_printf}\index{Printf@{Printf}}
 
 
+输出语句块类  
+
+
+
+
 {\ttfamily \#include $<$Printf.\+h$>$}
 
 Inheritance diagram for Printf\+:\begin{figure}[H]
@@ -13,8 +18,9 @@ Inheritance diagram for Printf\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_printf_a0343199e28647ced40b9d74a284ff5f3}\label{class_printf_a0343199e28647ced40b9d74a284ff5f3}} 
 int \hyperlink{class_printf_a0343199e28647ced40b9d74a284ff5f3}{execute} ()
-\begin{DoxyCompactList}\small\item\em 抽象的执行方法 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 执行输出语句 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,27 +29,8 @@ std\+::vector$<$ \hyperlink{class_expr}{Expr} $\ast$ $>$ \hyperlink{class_printf
 \subsection*{Additional Inherited Members}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_printf_a0343199e28647ced40b9d74a284ff5f3}\label{class_printf_a0343199e28647ced40b9d74a284ff5f3}} 
-\index{Printf@{Printf}!execute@{execute}}
-\index{execute@{execute}!Printf@{Printf}}
-\subsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily int Printf\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-抽象的执行方法 
-
-因为表达式以及各种语句都是可执行的~\newline
-设立这个方法利用多态可以实现整个语法树的执行~\newline
- \begin{DoxyReturn}{Returns}
-int \+: 表达式或语句执行后获得的值 
-\end{DoxyReturn}
-
-
-Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt}.
-
-
+\subsection{Detailed Description}
+输出语句块类 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_printf_ab07a181eb9cd79c9018e172332d44ce5}\label{class_printf_ab07a181eb9cd79c9018e172332d44ce5}} 
@@ -52,9 +39,9 @@ Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt
 \subsubsection{\texorpdfstring{exprs}{exprs}}
 {\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_expr}{Expr}$\ast$$>$ Printf\+::exprs}
 
-
+参数中的表达式 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/inter/stmt/\hyperlink{_printf_8h}{Printf.\+h}\item 
-src/inter/stmt/\hyperlink{_printf_8cpp}{Printf.\+cpp}\end{DoxyCompactItemize}
+src/inter/stmt/Printf.\+h\item 
+src/inter/stmt/Printf.\+cpp\end{DoxyCompactItemize}

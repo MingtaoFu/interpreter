@@ -10,13 +10,16 @@
 #include "expr/Expr.h"
 #include "../../vm/Vm.h"
 #include "../../symbols/Env.h"
-
+///
+/// \brief for循环语句类
+///
 class For: public Stmt {
 public:
-    Stmt* initStmt;
-    Expr* equal;
-    Stmt* increasement;
-    Stmt* stmt;
+    Stmt* initStmt; ///<  初始化语句
+    Expr* equal; ///< 条件判断语句
+    Stmt* increasement; ///< 循环条件增长语句
+    Stmt* stmt; ///< 循环体语句块
+    /// 执行for循环语句
     int execute();
 
 };

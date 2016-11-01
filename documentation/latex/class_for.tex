@@ -2,6 +2,11 @@
 \label{class_for}\index{For@{For}}
 
 
+for循环语句类  
+
+
+
+
 {\ttfamily \#include $<$For.\+h$>$}
 
 Inheritance diagram for For\+:\begin{figure}[H]
@@ -13,72 +18,39 @@ Inheritance diagram for For\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_for_ad099d6d48c640dd5127285e59bbaba15}\label{class_for_ad099d6d48c640dd5127285e59bbaba15}} 
 int \hyperlink{class_for_ad099d6d48c640dd5127285e59bbaba15}{execute} ()
-\begin{DoxyCompactList}\small\item\em 抽象的执行方法 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 执行for循环语句 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_for_a056889fe255686012e6a9197c2d514e7}\label{class_for_a056889fe255686012e6a9197c2d514e7}} 
 \hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_for_a056889fe255686012e6a9197c2d514e7}{init\+Stmt}
-\item 
+\begin{DoxyCompactList}\small\item\em 初始化语句 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_for_a215e09b14cddca31190dc69cd783d886}\label{class_for_a215e09b14cddca31190dc69cd783d886}} 
 \hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_for_a215e09b14cddca31190dc69cd783d886}{equal}
-\item 
+\begin{DoxyCompactList}\small\item\em 条件判断语句 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_for_a2d0ace8af086310ef5a11d9641dc81e6}\label{class_for_a2d0ace8af086310ef5a11d9641dc81e6}} 
 \hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_for_a2d0ace8af086310ef5a11d9641dc81e6}{increasement}
-\item 
+\begin{DoxyCompactList}\small\item\em 循环条件增长语句 \end{DoxyCompactList}\item 
 \hyperlink{class_stmt}{Stmt} $\ast$ \hyperlink{class_for_af269abab55eae120cccbd1c76b0c5011}{stmt}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_for_ad099d6d48c640dd5127285e59bbaba15}\label{class_for_ad099d6d48c640dd5127285e59bbaba15}} 
-\index{For@{For}!execute@{execute}}
-\index{execute@{execute}!For@{For}}
-\subsubsection{\texorpdfstring{execute()}{execute()}}
-{\footnotesize\ttfamily int For\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-抽象的执行方法 
-
-因为表达式以及各种语句都是可执行的~\newline
-设立这个方法利用多态可以实现整个语法树的执行~\newline
- \begin{DoxyReturn}{Returns}
-int \+: 表达式或语句执行后获得的值 
-\end{DoxyReturn}
-
-
-Reimplemented from \hyperlink{class_stmt_abdc3261770c3c5bd3ce5b3ba6eedfaa4}{Stmt}.
-
-
+\subsection{Detailed Description}
+for循环语句类 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_for_a215e09b14cddca31190dc69cd783d886}\label{class_for_a215e09b14cddca31190dc69cd783d886}} 
-\index{For@{For}!equal@{equal}}
-\index{equal@{equal}!For@{For}}
-\subsubsection{\texorpdfstring{equal}{equal}}
-{\footnotesize\ttfamily \hyperlink{class_expr}{Expr}$\ast$ For\+::equal}
-
-\mbox{\Hypertarget{class_for_a2d0ace8af086310ef5a11d9641dc81e6}\label{class_for_a2d0ace8af086310ef5a11d9641dc81e6}} 
-\index{For@{For}!increasement@{increasement}}
-\index{increasement@{increasement}!For@{For}}
-\subsubsection{\texorpdfstring{increasement}{increasement}}
-{\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt}$\ast$ For\+::increasement}
-
-\mbox{\Hypertarget{class_for_a056889fe255686012e6a9197c2d514e7}\label{class_for_a056889fe255686012e6a9197c2d514e7}} 
-\index{For@{For}!init\+Stmt@{init\+Stmt}}
-\index{init\+Stmt@{init\+Stmt}!For@{For}}
-\subsubsection{\texorpdfstring{init\+Stmt}{initStmt}}
-{\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt}$\ast$ For\+::init\+Stmt}
-
 \mbox{\Hypertarget{class_for_af269abab55eae120cccbd1c76b0c5011}\label{class_for_af269abab55eae120cccbd1c76b0c5011}} 
 \index{For@{For}!stmt@{stmt}}
 \index{stmt@{stmt}!For@{For}}
 \subsubsection{\texorpdfstring{stmt}{stmt}}
 {\footnotesize\ttfamily \hyperlink{class_stmt}{Stmt}$\ast$ For\+::stmt}
 
-
+循环体语句块 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/inter/stmt/\hyperlink{_for_8h}{For.\+h}\item 
-src/inter/stmt/\hyperlink{_for_8cpp}{For.\+cpp}\end{DoxyCompactItemize}
+src/inter/stmt/For.\+h\item 
+src/inter/stmt/For.\+cpp\end{DoxyCompactItemize}

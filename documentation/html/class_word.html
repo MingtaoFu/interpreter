@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Word Class Reference</title>
+<title>C Compiler: Word Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">C Compiler
    </div>
   </td>
  </tr>
@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>字类  
+ <a href="class_word.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_word_8h_source.html">Word.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Word:</div>
@@ -74,7 +77,7 @@ Inheritance diagram for Word:</div>
  <div class="center">
   <img src="class_word.png" usemap="#Word_map" alt=""/>
   <map id="Word_map" name="Word_map">
-<area href="class_token.html" alt="Token" shape="rect" coords="0,0,46,24"/>
+<area href="class_token.html" title="token类 " alt="Token" shape="rect" coords="0,0,46,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -87,7 +90,9 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_class_token"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_token')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_token.html">Token</a></td></tr>
 <tr class="memitem:a29580f176bfba9981aeec62946114675 inherit pub_methods_class_token"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_token.html#a29580f176bfba9981aeec62946114675">Token</a> (int t)</td></tr>
 <tr class="separator:a29580f176bfba9981aeec62946114675 inherit pub_methods_class_token"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a745ea87ba20ab7e4d3f9061c62c179ca inherit pub_methods_class_token"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_token.html#a745ea87ba20ab7e4d3f9061c62c179ca">operator&lt;</a> (const <a class="el" href="class_token.html">Token</a> t) const</td></tr>
+<tr class="memitem:a745ea87ba20ab7e4d3f9061c62c179ca inherit pub_methods_class_token"><td class="memItemLeft" align="right" valign="top"><a id="a745ea87ba20ab7e4d3f9061c62c179ca"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_token.html#a745ea87ba20ab7e4d3f9061c62c179ca">operator&lt;</a> (const <a class="el" href="class_token.html">Token</a> t) const</td></tr>
+<tr class="memdesc:a745ea87ba20ab7e4d3f9061c62c179ca inherit pub_methods_class_token"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载token的比较符,用于比较token <br /></td></tr>
 <tr class="separator:a745ea87ba20ab7e4d3f9061c62c179ca inherit pub_methods_class_token"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -95,12 +100,17 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a34691d869ec57b2a0b7a8eb41230b92a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_word.html#a34691d869ec57b2a0b7a8eb41230b92a">lexeme</a> = &quot;&quot;</td></tr>
 <tr class="separator:a34691d869ec57b2a0b7a8eb41230b92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_token"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_token')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_token.html">Token</a></td></tr>
-<tr class="memitem:a2a4b0e1b648c2a9be1976004eb3c4ff0 inherit pub_attribs_class_token"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_token.html#a2a4b0e1b648c2a9be1976004eb3c4ff0">tag</a></td></tr>
+<tr class="memitem:a2a4b0e1b648c2a9be1976004eb3c4ff0 inherit pub_attribs_class_token"><td class="memItemLeft" align="right" valign="top"><a id="a2a4b0e1b648c2a9be1976004eb3c4ff0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_token.html#a2a4b0e1b648c2a9be1976004eb3c4ff0">tag</a></td></tr>
+<tr class="memdesc:a2a4b0e1b648c2a9be1976004eb3c4ff0 inherit pub_attribs_class_token"><td class="mdescLeft">&#160;</td><td class="mdescRight">该token的类型 <br /></td></tr>
 <tr class="separator:a2a4b0e1b648c2a9be1976004eb3c4ff0 inherit pub_attribs_class_token"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b96c2a31d7c374fd2bd1986794f80dd inherit pub_attribs_class_token"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_token.html#a4b96c2a31d7c374fd2bd1986794f80dd">line</a></td></tr>
 <tr class="separator:a4b96c2a31d7c374fd2bd1986794f80dd inherit pub_attribs_class_token"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>字类 </p>
+<p>代表关键字, 变量名等的 对应类 </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acb127ce0ab789dc0ecfc407dec786ac2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb127ce0ab789dc0ecfc407dec786ac2">&sect;&nbsp;</a></span>Word()</h2>
 
@@ -126,6 +136,13 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>: 该字的字符串 </td></tr>
+    <tr><td class="paramname">tag</td><td>: 该字的类型 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -152,6 +169,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>将字输出成字符串 </p><dl class="section return"><dt>Returns</dt><dd>该字的字符串 </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_token.html#a8863381edabce7bc1e92473b445ba81f">Token</a>.</p>
 
@@ -169,12 +187,13 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>改字的字符串信息 </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/lexer/<a class="el" href="_word_8h_source.html">Word.h</a></li>
-<li>src/lexer/<a class="el" href="_word_8cpp.html">Word.cpp</a></li>
+<li>src/lexer/Word.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

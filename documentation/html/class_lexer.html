@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Lexer Class Reference</title>
+<title>C Compiler: Lexer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">C Compiler
    </div>
   </td>
  </tr>
@@ -77,217 +77,98 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae96c693bf6eba38f21adab5fc94c18b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#ae96c693bf6eba38f21adab5fc94c18b1">reserve</a> (<a class="el" href="class_word.html">Word</a> *)</td></tr>
-<tr class="memdesc:ae96c693bf6eba38f21adab5fc94c18b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">录入保留字  <a href="#ae96c693bf6eba38f21adab5fc94c18b1">More...</a><br /></td></tr>
+<tr class="memitem:ae96c693bf6eba38f21adab5fc94c18b1"><td class="memItemLeft" align="right" valign="top"><a id="ae96c693bf6eba38f21adab5fc94c18b1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#ae96c693bf6eba38f21adab5fc94c18b1">reserve</a> (<a class="el" href="class_word.html">Word</a> *)</td></tr>
+<tr class="memdesc:ae96c693bf6eba38f21adab5fc94c18b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">录入保留字 <br /></td></tr>
 <tr class="separator:ae96c693bf6eba38f21adab5fc94c18b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d7cdd99b7b18e3450cc365971bf76d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a9d7cdd99b7b18e3450cc365971bf76d2">setFile</a> ()</td></tr>
-<tr class="memdesc:a9d7cdd99b7b18e3450cc365971bf76d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源文件  <a href="#a9d7cdd99b7b18e3450cc365971bf76d2">More...</a><br /></td></tr>
-<tr class="separator:a9d7cdd99b7b18e3450cc365971bf76d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c91a26ad6b4294bf7bb8d4c46ea529b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a5c91a26ad6b4294bf7bb8d4c46ea529b">readch</a> ()</td></tr>
-<tr class="memdesc:a5c91a26ad6b4294bf7bb8d4c46ea529b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取下一个字符  <a href="#a5c91a26ad6b4294bf7bb8d4c46ea529b">More...</a><br /></td></tr>
+<tr class="memitem:a3fafe4fb32f4da95a08d1062996b0409"><td class="memItemLeft" align="right" valign="top"><a id="a3fafe4fb32f4da95a08d1062996b0409"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a3fafe4fb32f4da95a08d1062996b0409">setFile</a> ()</td></tr>
+<tr class="memdesc:a3fafe4fb32f4da95a08d1062996b0409"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源文件 <br /></td></tr>
+<tr class="separator:a3fafe4fb32f4da95a08d1062996b0409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c91a26ad6b4294bf7bb8d4c46ea529b"><td class="memItemLeft" align="right" valign="top"><a id="a5c91a26ad6b4294bf7bb8d4c46ea529b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a5c91a26ad6b4294bf7bb8d4c46ea529b">readch</a> ()</td></tr>
+<tr class="memdesc:a5c91a26ad6b4294bf7bb8d4c46ea529b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取下一个字符 <br /></td></tr>
 <tr class="separator:a5c91a26ad6b4294bf7bb8d4c46ea529b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbe68a5d98ebc3b3a87fd27f000030a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#acbe68a5d98ebc3b3a87fd27f000030a5">readch</a> (char c)</td></tr>
 <tr class="memdesc:acbe68a5d98ebc3b3a87fd27f000030a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">look ahead 方法  <a href="#acbe68a5d98ebc3b3a87fd27f000030a5">More...</a><br /></td></tr>
 <tr class="separator:acbe68a5d98ebc3b3a87fd27f000030a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae28380e5c67144a1aeaf37f33ab11fb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#ae28380e5c67144a1aeaf37f33ab11fb2">back</a> ()</td></tr>
-<tr class="memdesc:ae28380e5c67144a1aeaf37f33ab11fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符回退  <a href="#ae28380e5c67144a1aeaf37f33ab11fb2">More...</a><br /></td></tr>
+<tr class="memitem:ae28380e5c67144a1aeaf37f33ab11fb2"><td class="memItemLeft" align="right" valign="top"><a id="ae28380e5c67144a1aeaf37f33ab11fb2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#ae28380e5c67144a1aeaf37f33ab11fb2">back</a> ()</td></tr>
+<tr class="memdesc:ae28380e5c67144a1aeaf37f33ab11fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符回退 <br /></td></tr>
 <tr class="separator:ae28380e5c67144a1aeaf37f33ab11fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2085b8262f6237de60583375ee2731f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_token.html">Token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a2085b8262f6237de60583375ee2731f4">scan</a> ()</td></tr>
 <tr class="memdesc:a2085b8262f6237de60583375ee2731f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">扫描下一个 token  <a href="#a2085b8262f6237de60583375ee2731f4">More...</a><br /></td></tr>
 <tr class="separator:a2085b8262f6237de60583375ee2731f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2752a2b16cc1ffbcb8fc3e82e95bf331"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a2752a2b16cc1ffbcb8fc3e82e95bf331">Lexer</a> ()</td></tr>
+<tr class="memitem:a2752a2b16cc1ffbcb8fc3e82e95bf331"><td class="memItemLeft" align="right" valign="top"><a id="a2752a2b16cc1ffbcb8fc3e82e95bf331"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a2752a2b16cc1ffbcb8fc3e82e95bf331">Lexer</a> ()</td></tr>
+<tr class="memdesc:a2752a2b16cc1ffbcb8fc3e82e95bf331"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造Lexer 初始化保留字 <br /></td></tr>
 <tr class="separator:a2752a2b16cc1ffbcb8fc3e82e95bf331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a48478c1d6556ce949e7808bf3e2604b7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a48478c1d6556ce949e7808bf3e2604b7">lineIncre</a> ()</td></tr>
+<tr class="memitem:a48478c1d6556ce949e7808bf3e2604b7"><td class="memItemLeft" align="right" valign="top"><a id="a48478c1d6556ce949e7808bf3e2604b7"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>lineIncre</b> ()</td></tr>
 <tr class="separator:a48478c1d6556ce949e7808bf3e2604b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ede40225695d9eb9b42d275584cf8f0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a0ede40225695d9eb9b42d275584cf8f0">getLine</a> ()</td></tr>
-<tr class="memdesc:a0ede40225695d9eb9b42d275584cf8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 token 行号  <a href="#a0ede40225695d9eb9b42d275584cf8f0">More...</a><br /></td></tr>
+<tr class="memitem:a0ede40225695d9eb9b42d275584cf8f0"><td class="memItemLeft" align="right" valign="top"><a id="a0ede40225695d9eb9b42d275584cf8f0"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a0ede40225695d9eb9b42d275584cf8f0">getLine</a> ()</td></tr>
+<tr class="memdesc:a0ede40225695d9eb9b42d275584cf8f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取 token 行号 <br /></td></tr>
 <tr class="separator:a0ede40225695d9eb9b42d275584cf8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:abb0f5b7f1e6fd685c8c8e9074553c67f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#abb0f5b7f1e6fd685c8c8e9074553c67f">read</a> (char *)</td></tr>
-<tr class="memdesc:abb0f5b7f1e6fd685c8c8e9074553c67f"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取文件进入buffer中  <a href="#abb0f5b7f1e6fd685c8c8e9074553c67f">More...</a><br /></td></tr>
 <tr class="separator:abb0f5b7f1e6fd685c8c8e9074553c67f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5f52af80cfc8de7841d2ac6bc736662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_token.html">Token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#aa5f52af80cfc8de7841d2ac6bc736662">firstScan</a> ()</td></tr>
+<tr class="memitem:aa5f52af80cfc8de7841d2ac6bc736662"><td class="memItemLeft" align="right" valign="top"><a id="aa5f52af80cfc8de7841d2ac6bc736662"></a>
+<a class="el" href="class_token.html">Token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#aa5f52af80cfc8de7841d2ac6bc736662">firstScan</a> ()</td></tr>
+<tr class="memdesc:aa5f52af80cfc8de7841d2ac6bc736662"><td class="mdescLeft">&#160;</td><td class="mdescRight">构建根块 <br /></td></tr>
 <tr class="separator:aa5f52af80cfc8de7841d2ac6bc736662"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28eb3e3a349bcbc7a0b03e16bb42192f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_token.html">Token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a28eb3e3a349bcbc7a0b03e16bb42192f">lastScan</a> ()</td></tr>
+<tr class="memitem:a28eb3e3a349bcbc7a0b03e16bb42192f"><td class="memItemLeft" align="right" valign="top"><a id="a28eb3e3a349bcbc7a0b03e16bb42192f"></a>
+<a class="el" href="class_token.html">Token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a28eb3e3a349bcbc7a0b03e16bb42192f">lastScan</a> ()</td></tr>
+<tr class="memdesc:a28eb3e3a349bcbc7a0b03e16bb42192f"><td class="mdescLeft">&#160;</td><td class="mdescRight">构建根块 <br /></td></tr>
 <tr class="separator:a28eb3e3a349bcbc7a0b03e16bb42192f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a606dd5cec5ec316ca1b1df40823fb853"><td class="memItemLeft" align="right" valign="top">std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a606dd5cec5ec316ca1b1df40823fb853">input_file</a></td></tr>
-<tr class="memdesc:a606dd5cec5ec316ca1b1df40823fb853"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入文件  <a href="#a606dd5cec5ec316ca1b1df40823fb853">More...</a><br /></td></tr>
+<tr class="memitem:a606dd5cec5ec316ca1b1df40823fb853"><td class="memItemLeft" align="right" valign="top"><a id="a606dd5cec5ec316ca1b1df40823fb853"></a>
+std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a606dd5cec5ec316ca1b1df40823fb853">input_file</a></td></tr>
+<tr class="memdesc:a606dd5cec5ec316ca1b1df40823fb853"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入文件 <br /></td></tr>
 <tr class="separator:a606dd5cec5ec316ca1b1df40823fb853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a372c56c466c70d808bdcdb11e94bd914"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a372c56c466c70d808bdcdb11e94bd914">buffer</a> [4097]</td></tr>
-<tr class="memdesc:a372c56c466c70d808bdcdb11e94bd914"><td class="mdescLeft">&#160;</td><td class="mdescRight">缓冲区  <a href="#a372c56c466c70d808bdcdb11e94bd914">More...</a><br /></td></tr>
+<tr class="memitem:a372c56c466c70d808bdcdb11e94bd914"><td class="memItemLeft" align="right" valign="top"><a id="a372c56c466c70d808bdcdb11e94bd914"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a372c56c466c70d808bdcdb11e94bd914">buffer</a> [4097]</td></tr>
+<tr class="memdesc:a372c56c466c70d808bdcdb11e94bd914"><td class="mdescLeft">&#160;</td><td class="mdescRight">缓冲区 <br /></td></tr>
 <tr class="separator:a372c56c466c70d808bdcdb11e94bd914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a266317e9b89ad0e681fdb21032ef00f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a266317e9b89ad0e681fdb21032ef00f8">index</a> = 0</td></tr>
-<tr class="memdesc:a266317e9b89ad0e681fdb21032ef00f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">缓冲区读取指针  <a href="#a266317e9b89ad0e681fdb21032ef00f8">More...</a><br /></td></tr>
+<tr class="memitem:a266317e9b89ad0e681fdb21032ef00f8"><td class="memItemLeft" align="right" valign="top"><a id="a266317e9b89ad0e681fdb21032ef00f8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a266317e9b89ad0e681fdb21032ef00f8">index</a> = 0</td></tr>
+<tr class="memdesc:a266317e9b89ad0e681fdb21032ef00f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">缓冲区读取指针 <br /></td></tr>
 <tr class="separator:a266317e9b89ad0e681fdb21032ef00f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c13ae056a34e7ec483c561152bb8d49"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a1c13ae056a34e7ec483c561152bb8d49">peek</a> = ' '</td></tr>
-<tr class="memdesc:a1c13ae056a34e7ec483c561152bb8d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前扫描到的字符  <a href="#a1c13ae056a34e7ec483c561152bb8d49">More...</a><br /></td></tr>
+<tr class="memitem:a1c13ae056a34e7ec483c561152bb8d49"><td class="memItemLeft" align="right" valign="top"><a id="a1c13ae056a34e7ec483c561152bb8d49"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a1c13ae056a34e7ec483c561152bb8d49">peek</a> = ' '</td></tr>
+<tr class="memdesc:a1c13ae056a34e7ec483c561152bb8d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前扫描到的字符 <br /></td></tr>
 <tr class="separator:a1c13ae056a34e7ec483c561152bb8d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add52df03b8546bfe059f4e1832141c16"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="class_word.html">Word</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#add52df03b8546bfe059f4e1832141c16">words</a></td></tr>
-<tr class="memdesc:add52df03b8546bfe059f4e1832141c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">单词保留区  <a href="#add52df03b8546bfe059f4e1832141c16">More...</a><br /></td></tr>
+<tr class="memitem:add52df03b8546bfe059f4e1832141c16"><td class="memItemLeft" align="right" valign="top"><a id="add52df03b8546bfe059f4e1832141c16"></a>
+std::map&lt; std::string, <a class="el" href="class_word.html">Word</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#add52df03b8546bfe059f4e1832141c16">words</a></td></tr>
+<tr class="memdesc:add52df03b8546bfe059f4e1832141c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">单词保留区 <br /></td></tr>
 <tr class="separator:add52df03b8546bfe059f4e1832141c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a123d0134daef2ce492f0707342456afc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a123d0134daef2ce492f0707342456afc">readFinished</a> = false</td></tr>
+<tr class="memitem:a123d0134daef2ce492f0707342456afc"><td class="memItemLeft" align="right" valign="top"><a id="a123d0134daef2ce492f0707342456afc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a123d0134daef2ce492f0707342456afc">readFinished</a> = false</td></tr>
+<tr class="memdesc:a123d0134daef2ce492f0707342456afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">标记是否到达文件末尾 <br /></td></tr>
 <tr class="separator:a123d0134daef2ce492f0707342456afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:af8222e02dc3180feb942b4a6d3083a22"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#af8222e02dc3180feb942b4a6d3083a22">BUFFER_LENTHGH</a> = 4096</td></tr>
-<tr class="memdesc:af8222e02dc3180feb942b4a6d3083a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取文件的缓冲区大小  <a href="#af8222e02dc3180feb942b4a6d3083a22">More...</a><br /></td></tr>
+<tr class="memitem:af8222e02dc3180feb942b4a6d3083a22"><td class="memItemLeft" align="right" valign="top"><a id="af8222e02dc3180feb942b4a6d3083a22"></a>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#af8222e02dc3180feb942b4a6d3083a22">BUFFER_LENTHGH</a> = 4096</td></tr>
+<tr class="memdesc:af8222e02dc3180feb942b4a6d3083a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取文件的缓冲区大小 <br /></td></tr>
 <tr class="separator:af8222e02dc3180feb942b4a6d3083a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35d0802ee5cced4c5294fb6dc77ad2f4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a35d0802ee5cced4c5294fb6dc77ad2f4">line</a> = 1</td></tr>
-<tr class="memdesc:a35d0802ee5cced4c5294fb6dc77ad2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前行  <a href="#a35d0802ee5cced4c5294fb6dc77ad2f4">More...</a><br /></td></tr>
+<tr class="memitem:a35d0802ee5cced4c5294fb6dc77ad2f4"><td class="memItemLeft" align="right" valign="top"><a id="a35d0802ee5cced4c5294fb6dc77ad2f4"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lexer.html#a35d0802ee5cced4c5294fb6dc77ad2f4">line</a> = 1</td></tr>
+<tr class="memdesc:a35d0802ee5cced4c5294fb6dc77ad2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前行 <br /></td></tr>
 <tr class="separator:a35d0802ee5cced4c5294fb6dc77ad2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class <a class="el" href="class_lexer.html" title="Class Lexer 词法分析器 ">Lexer</a> 词法分析器 </p>
 <p>该类用于把源文件分析成token流, 便于语法分析时对元素的提取 </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2752a2b16cc1ffbcb8fc3e82e95bf331"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2752a2b16cc1ffbcb8fc3e82e95bf331">&sect;&nbsp;</a></span>Lexer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Lexer::Lexer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae28380e5c67144a1aeaf37f33ab11fb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae28380e5c67144a1aeaf37f33ab11fb2">&sect;&nbsp;</a></span>back()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Lexer::back </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>字符回退 </p>
-
-</div>
-</div>
-<a id="aa5f52af80cfc8de7841d2ac6bc736662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5f52af80cfc8de7841d2ac6bc736662">&sect;&nbsp;</a></span>firstScan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_token.html">Token</a> * Lexer::firstScan </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0ede40225695d9eb9b42d275584cf8f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ede40225695d9eb9b42d275584cf8f0">&sect;&nbsp;</a></span>getLine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Lexer::getLine </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>获取 token 行号 </p>
-
-</div>
-</div>
-<a id="a28eb3e3a349bcbc7a0b03e16bb42192f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28eb3e3a349bcbc7a0b03e16bb42192f">&sect;&nbsp;</a></span>lastScan()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_token.html">Token</a> * Lexer::lastScan </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a48478c1d6556ce949e7808bf3e2604b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48478c1d6556ce949e7808bf3e2604b7">&sect;&nbsp;</a></span>lineIncre()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Lexer::lineIncre </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abb0f5b7f1e6fd685c8c8e9074553c67f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb0f5b7f1e6fd685c8c8e9074553c67f">&sect;&nbsp;</a></span>read()</h2>
 
@@ -311,32 +192,12 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>读取文件进入buffer中 </p>
 
 </div>
 </div>
-<a id="a5c91a26ad6b4294bf7bb8d4c46ea529b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c91a26ad6b4294bf7bb8d4c46ea529b">&sect;&nbsp;</a></span>readch() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Lexer::readch </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>获取下一个字符 </p>
-
-</div>
-</div>
 <a id="acbe68a5d98ebc3b3a87fd27f000030a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbe68a5d98ebc3b3a87fd27f000030a5">&sect;&nbsp;</a></span>readch() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acbe68a5d98ebc3b3a87fd27f000030a5">&sect;&nbsp;</a></span>readch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,26 +219,6 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ae96c693bf6eba38f21adab5fc94c18b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae96c693bf6eba38f21adab5fc94c18b1">&sect;&nbsp;</a></span>reserve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Lexer::reserve </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_word.html">Word</a> *&#160;</td>
-          <td class="paramname"><em>word</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>录入保留字 </p>
 
 </div>
 </div>
@@ -406,219 +247,9 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d7cdd99b7b18e3450cc365971bf76d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d7cdd99b7b18e3450cc365971bf76d2">&sect;&nbsp;</a></span>setFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Lexer::setFile </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>设置源文件 </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a372c56c466c70d808bdcdb11e94bd914"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a372c56c466c70d808bdcdb11e94bd914">&sect;&nbsp;</a></span>buffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char Lexer::buffer[4097]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>缓冲区 </p>
-
-</div>
-</div>
-<a id="af8222e02dc3180feb942b4a6d3083a22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8222e02dc3180feb942b4a6d3083a22">&sect;&nbsp;</a></span>BUFFER_LENTHGH</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int Lexer::BUFFER_LENTHGH = 4096</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>读取文件的缓冲区大小 </p>
-
-</div>
-</div>
-<a id="a266317e9b89ad0e681fdb21032ef00f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a266317e9b89ad0e681fdb21032ef00f8">&sect;&nbsp;</a></span>index</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Lexer::index = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>缓冲区读取指针 </p>
-
-</div>
-</div>
-<a id="a606dd5cec5ec316ca1b1df40823fb853"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a606dd5cec5ec316ca1b1df40823fb853">&sect;&nbsp;</a></span>input_file</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ifstream Lexer::input_file</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>输入文件 </p>
-
-</div>
-</div>
-<a id="a35d0802ee5cced4c5294fb6dc77ad2f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35d0802ee5cced4c5294fb6dc77ad2f4">&sect;&nbsp;</a></span>line</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Lexer::line = 1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>当前行 </p>
-
-</div>
-</div>
-<a id="a1c13ae056a34e7ec483c561152bb8d49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c13ae056a34e7ec483c561152bb8d49">&sect;&nbsp;</a></span>peek</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char Lexer::peek = ' '</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>当前扫描到的字符 </p>
-
-</div>
-</div>
-<a id="a123d0134daef2ce492f0707342456afc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a123d0134daef2ce492f0707342456afc">&sect;&nbsp;</a></span>readFinished</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Lexer::readFinished = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="add52df03b8546bfe059f4e1832141c16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add52df03b8546bfe059f4e1832141c16">&sect;&nbsp;</a></span>words</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::map&lt;std::string, <a class="el" href="class_word.html">Word</a>&gt; Lexer::words</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>单词保留区 </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/lexer/<a class="el" href="_lexer_8h_source.html">Lexer.h</a></li>
-<li>src/lexer/<a class="el" href="_lexer_8cpp.html">Lexer.cpp</a></li>
+<li>src/lexer/Lexer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

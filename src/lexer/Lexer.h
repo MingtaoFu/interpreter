@@ -36,7 +36,7 @@ public:
     void back();
     /// 扫描下一个 token
     Token* scan();
-
+    /// 构造Lexer 初始化保留字
     Lexer();
 
 
@@ -49,9 +49,11 @@ private:
     char peek = ' ';    ///< 当前扫描到的字符
     std::map<std::string, Word> words;  ///< 单词保留区
     void read(char*);   ///< 读取文件进入buffer中
+    /// 构建根块
     Token * firstScan();
+    /// 构建根块
     Token * lastScan();
-    bool readFinished = false;
+    bool readFinished = false; ///< 标记是否到达文件末尾
 };
 
 #endif //COMPILER_LEXER_H

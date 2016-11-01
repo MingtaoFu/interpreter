@@ -7,7 +7,9 @@
 
 
 #include "Stmt.h"
-
+///
+/// \brief 空语句类
+///
 class Blank: public Stmt{
     // 未覆盖 stmt 默认的 execute
 };

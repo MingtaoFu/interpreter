@@ -2,6 +2,11 @@
 \label{class_node}\index{Node@{Node}}
 
 
+Node类  
+
+
+
+
 {\ttfamily \#include $<$Node.\+h$>$}
 
 Inheritance diagram for Node\+:\begin{figure}[H]
@@ -13,8 +18,9 @@ Inheritance diagram for Node\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_node_ad7a34779cad45d997bfd6d3d8043c75f}\label{class_node_ad7a34779cad45d997bfd6d3d8043c75f}} 
 \hyperlink{class_node_ad7a34779cad45d997bfd6d3d8043c75f}{Node} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 用于初始化节点行号 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,27 +29,15 @@ int \hyperlink{class_node_a8e50263ff9416be77e26edfbf6b926a1}{lexline} = 0
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_node_aa1bb6c155277eb2c073a60c00674b8b6}{error} (std\+::string)
-\end{DoxyCompactItemize}
-
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_node_ad7a34779cad45d997bfd6d3d8043c75f}\label{class_node_ad7a34779cad45d997bfd6d3d8043c75f}} 
-\index{Node@{Node}!Node@{Node}}
-\index{Node@{Node}!Node@{Node}}
-\subsubsection{\texorpdfstring{Node()}{Node()}}
-{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-\subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_node_aa1bb6c155277eb2c073a60c00674b8b6}\label{class_node_aa1bb6c155277eb2c073a60c00674b8b6}} 
-\index{Node@{Node}!error@{error}}
-\index{error@{error}!Node@{Node}}
-\subsubsection{\texorpdfstring{error()}{error()}}
-{\footnotesize\ttfamily void Node\+::error (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+void \hyperlink{class_node_aa1bb6c155277eb2c073a60c00674b8b6}{error} (std\+::string)
+\begin{DoxyCompactList}\small\item\em $<$ 节点抛出异常 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Node类 
+
+所有的语句内容都算是抽象语法树中的一个节点 所有的语句与表达式都是该类的子类 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_node_a8e50263ff9416be77e26edfbf6b926a1}\label{class_node_a8e50263ff9416be77e26edfbf6b926a1}} 
@@ -52,9 +46,9 @@ void \hyperlink{class_node_aa1bb6c155277eb2c073a60c00674b8b6}{error} (std\+::str
 \subsubsection{\texorpdfstring{lexline}{lexline}}
 {\footnotesize\ttfamily int Node\+::lexline = 0}
 
-
+该节点位于的行号 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/inter/\hyperlink{_node_8h}{Node.\+h}\item 
-src/inter/\hyperlink{_node_8cpp}{Node.\+cpp}\end{DoxyCompactItemize}
+src/inter/Node.\+h\item 
+src/inter/Node.\+cpp\end{DoxyCompactItemize}
