@@ -1,4 +1,4 @@
-\hypertarget{class_vm}{}\section{Vm Class Reference}
+\hypertarget{class_vm}{}\section{Vm类 参考}
 \label{class_vm}\index{Vm@{Vm}}
 
 
@@ -9,7 +9,7 @@
 
 {\ttfamily \#include $<$Vm.\+h$>$}
 
-\subsection*{Public Member Functions}
+\subsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_vm_a37a0791ef2b63e41421446993d0e7e4d}\label{class_vm_a37a0791ef2b63e41421446993d0e7e4d}} 
@@ -20,24 +20,24 @@ void \hyperlink{class_vm_af036edc52fab207ca28530c06b6d0c67}{set\+Entry} (\hyperl
 \begin{DoxyCompactList}\small\item\em 设置语法树入口 \end{DoxyCompactList}\item 
 \hyperlink{class_vm_a4a37106b5b5b9382baa79dea901db8ba}{Vm} (\hyperlink{class_block}{Block} $\ast$)
 \end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
+\subsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_vm_a376141bb4182218ac7a499043eb18a6c}\label{class_vm_a376141bb4182218ac7a499043eb18a6c}} 
 static void \hyperlink{class_vm_a376141bb4182218ac7a499043eb18a6c}{print\+Line} (int line\+Number)
 \begin{DoxyCompactList}\small\item\em 输出行号 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Attributes}
+\subsection*{静态 Public 属性}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_env}{Env} $\ast$ \hyperlink{class_vm_a1a83823801a5ab090d9ad20527a6c638}{top}
 \end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
+\subsection*{Protected 属性}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_vm_ab5aae972ea15ddfd01362e27ed797a51}\label{class_vm_ab5aae972ea15ddfd01362e27ed797a51}} 
 \hyperlink{class_block}{Block} $\ast$ \hyperlink{class_vm_ab5aae972ea15ddfd01362e27ed797a51}{entry}
 \begin{DoxyCompactList}\small\item\em 语法树的入口 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{静态 Private 属性}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_vm_acfa435ede93d1ba8fe2250fd3469de15}\label{class_vm_acfa435ede93d1ba8fe2250fd3469de15}} 
@@ -45,12 +45,12 @@ static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line}
 \begin{DoxyCompactList}\small\item\em 运行到的当前行 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{详细描述}
 虚拟机类 
 
 用于执行整个抽象语法树 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{构造及析构函数说明}
 \mbox{\Hypertarget{class_vm_a4a37106b5b5b9382baa79dea901db8ba}\label{class_vm_a4a37106b5b5b9382baa79dea901db8ba}} 
 \index{Vm@{Vm}!Vm@{Vm}}
 \index{Vm@{Vm}!Vm@{Vm}}
@@ -58,13 +58,13 @@ static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line}
 {\footnotesize\ttfamily Vm\+::\+Vm (\begin{DoxyParamCaption}\item[{\hyperlink{class_block}{Block} $\ast$}]{node }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{参数}
 {\em block} & \+: 程序运行的初始block \\
 \hline
 \end{DoxyParams}
 
 
-\subsection{Member Data Documentation}
+\subsection{类成员变量说明}
 \mbox{\Hypertarget{class_vm_a1a83823801a5ab090d9ad20527a6c638}\label{class_vm_a1a83823801a5ab090d9ad20527a6c638}} 
 \index{Vm@{Vm}!top@{top}}
 \index{top@{top}!Vm@{Vm}}
@@ -73,7 +73,7 @@ static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line}
 
 当前运行的变量环境 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
 src/vm/Vm.\+h\item 
 src/vm/Vm.\+cpp\end{DoxyCompactItemize}

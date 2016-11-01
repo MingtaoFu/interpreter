@@ -1,4 +1,4 @@
-\hypertarget{class_parser}{}\section{Parser Class Reference}
+\hypertarget{class_parser}{}\section{Parser类 参考}
 \label{class_parser}\index{Parser@{Parser}}
 
 
@@ -9,7 +9,7 @@
 
 {\ttfamily \#include $<$Parser.\+h$>$}
 
-\subsection*{Public Member Functions}
+\subsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_parser_a25929f4bcec5c5ff010218f001203b73}{Parser} (\hyperlink{class_lexer}{Lexer} $\ast$lexer)
@@ -20,7 +20,7 @@ void \hyperlink{class_parser_af213985eb12738d0dbf7d505a8795ea2}{program} ()
 \mbox{\Hypertarget{class_parser_ad05b2f1f2e9f60a7373961da0588eb5b}\label{class_parser_ad05b2f1f2e9f60a7373961da0588eb5b}} 
 \hyperlink{class_block}{Block} $\ast$ \hyperlink{class_parser_ad05b2f1f2e9f60a7373961da0588eb5b}{get\+Root} ()
 \begin{DoxyCompactList}\small\item\em 获取语法树的根节点 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
+\subsection*{Protected 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_parser_ae6cc5bf3ee250c954a36bd16f7559d79}\label{class_parser_ae6cc5bf3ee250c954a36bd16f7559d79}} 
@@ -65,12 +65,12 @@ void \hyperlink{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}{decl} ()
 \mbox{\Hypertarget{class_parser_ac85a997e91604de1d3505b3c8aaddf3b}\label{class_parser_ac85a997e91604de1d3505b3c8aaddf3b}} 
 \hyperlink{class_expr}{Expr} $\ast$ \hyperlink{class_parser_ac85a997e91604de1d3505b3c8aaddf3b}{factor} ()
 \begin{DoxyCompactList}\small\item\em 生成 因子 对象 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
+\subsection*{Protected 属性}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_block}{Block} $\ast$ \hyperlink{class_parser_a2c2aa893bb15b76ceea0330cad0c75cb}{root}
 \end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Private 属性}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_parser_a8a8214126b0b0455e3ce375f3e9b20bf}\label{class_parser_a8a8214126b0b0455e3ce375f3e9b20bf}} 
@@ -81,12 +81,12 @@ void \hyperlink{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}{decl} ()
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{详细描述}
 语法分析类 
 
 用于构建抽象语法树, 以便虚拟机去执行 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{构造及析构函数说明}
 \mbox{\Hypertarget{class_parser_a25929f4bcec5c5ff010218f001203b73}\label{class_parser_a25929f4bcec5c5ff010218f001203b73}} 
 \index{Parser@{Parser}!Parser@{Parser}}
 \index{Parser@{Parser}!Parser@{Parser}}
@@ -94,13 +94,13 @@ void \hyperlink{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}{decl} ()
 {\footnotesize\ttfamily Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{\hyperlink{class_lexer}{Lexer} $\ast$}]{lexer }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{参数}
 {\em lexer} & \+: 语法分析器对象 \\
 \hline
 \end{DoxyParams}
 
 
-\subsection{Member Function Documentation}
+\subsection{成员函数说明}
 \mbox{\Hypertarget{class_parser_a2e96322fd6d40261ab256a726634c1b3}\label{class_parser_a2e96322fd6d40261ab256a726634c1b3}} 
 \index{Parser@{Parser}!block@{block}}
 \index{block@{block}!Parser@{Parser}}
@@ -133,7 +133,7 @@ void \hyperlink{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}{decl} ()
 
 一个表达式最低优先级为 == != 可以没有这一项，若没有，直接返回rel对象
 
-\subsection{Member Data Documentation}
+\subsection{类成员变量说明}
 \mbox{\Hypertarget{class_parser_a2c2aa893bb15b76ceea0330cad0c75cb}\label{class_parser_a2c2aa893bb15b76ceea0330cad0c75cb}} 
 \index{Parser@{Parser}!root@{root}}
 \index{root@{root}!Parser@{Parser}}
@@ -142,7 +142,7 @@ void \hyperlink{class_parser_a44a52c6402e86b0a200e02b516f8e9fe}{decl} ()
 
 语法树的根节点 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
 src/parser/Parser.\+h\item 
 src/parser/Parser.\+cpp\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-\hypertarget{class_lexer}{}\section{Lexer Class Reference}
+\hypertarget{class_lexer}{}\section{Lexer类 参考}
 \label{class_lexer}\index{Lexer@{Lexer}}
 
 
@@ -9,7 +9,7 @@ Class \hyperlink{class_lexer}{Lexer} 词法分析器
 
 {\ttfamily \#include $<$Lexer.\+h$>$}
 
-\subsection*{Public Member Functions}
+\subsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_lexer_ae96c693bf6eba38f21adab5fc94c18b1}\label{class_lexer_ae96c693bf6eba38f21adab5fc94c18b1}} 
@@ -31,7 +31,7 @@ void \hyperlink{class_lexer_ae28380e5c67144a1aeaf37f33ab11fb2}{back} ()
 \mbox{\Hypertarget{class_lexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}\label{class_lexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}} 
 \hyperlink{class_lexer_a2752a2b16cc1ffbcb8fc3e82e95bf331}{Lexer} ()
 \begin{DoxyCompactList}\small\item\em 构造\+Lexer 初始化保留字 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
+\subsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_lexer_a48478c1d6556ce949e7808bf3e2604b7}\label{class_lexer_a48478c1d6556ce949e7808bf3e2604b7}} 
@@ -40,7 +40,7 @@ static void {\bfseries line\+Incre} ()
 \mbox{\Hypertarget{class_lexer_a0ede40225695d9eb9b42d275584cf8f0}\label{class_lexer_a0ede40225695d9eb9b42d275584cf8f0}} 
 static int \hyperlink{class_lexer_a0ede40225695d9eb9b42d275584cf8f0}{get\+Line} ()
 \begin{DoxyCompactList}\small\item\em 获取 token 行号 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Private 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_lexer_abb0f5b7f1e6fd685c8c8e9074553c67f}{read} (char $\ast$)
@@ -51,7 +51,7 @@ void \hyperlink{class_lexer_abb0f5b7f1e6fd685c8c8e9074553c67f}{read} (char $\ast
 \mbox{\Hypertarget{class_lexer_a28eb3e3a349bcbc7a0b03e16bb42192f}\label{class_lexer_a28eb3e3a349bcbc7a0b03e16bb42192f}} 
 \hyperlink{class_token}{Token} $\ast$ \hyperlink{class_lexer_a28eb3e3a349bcbc7a0b03e16bb42192f}{last\+Scan} ()
 \begin{DoxyCompactList}\small\item\em 构建根块 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\subsection*{Private 属性}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_lexer_a606dd5cec5ec316ca1b1df40823fb853}\label{class_lexer_a606dd5cec5ec316ca1b1df40823fb853}} 
@@ -72,7 +72,7 @@ std\+::map$<$ std\+::string, \hyperlink{class_word}{Word} $>$ \hyperlink{class_l
 \mbox{\Hypertarget{class_lexer_a123d0134daef2ce492f0707342456afc}\label{class_lexer_a123d0134daef2ce492f0707342456afc}} 
 bool \hyperlink{class_lexer_a123d0134daef2ce492f0707342456afc}{read\+Finished} = false
 \begin{DoxyCompactList}\small\item\em 标记是否到达文件末尾 \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{静态 Private 属性}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_lexer_af8222e02dc3180feb942b4a6d3083a22}\label{class_lexer_af8222e02dc3180feb942b4a6d3083a22}} 
@@ -83,12 +83,12 @@ static int \hyperlink{class_lexer_a35d0802ee5cced4c5294fb6dc77ad2f4}{line} = 1
 \begin{DoxyCompactList}\small\item\em 当前行 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{详细描述}
 Class \hyperlink{class_lexer}{Lexer} 词法分析器 
 
 该类用于把源文件分析成token流, 便于语法分析时对元素的提取 
 
-\subsection{Member Function Documentation}
+\subsection{成员函数说明}
 \mbox{\Hypertarget{class_lexer_abb0f5b7f1e6fd685c8c8e9074553c67f}\label{class_lexer_abb0f5b7f1e6fd685c8c8e9074553c67f}} 
 \index{Lexer@{Lexer}!read@{read}}
 \index{read@{read}!Lexer@{Lexer}}
@@ -106,7 +106,7 @@ Class \hyperlink{class_lexer}{Lexer} 词法分析器
 look ahead 方法 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{参数}
 {\em c} & 判断下一个字符是否为c \\
 \hline
 \end{DoxyParams}
@@ -127,7 +127,7 @@ look ahead 方法
 返回相应的 token~\newline
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
 src/lexer/Lexer.\+h\item 
 src/lexer/Lexer.\+cpp\end{DoxyCompactItemize}

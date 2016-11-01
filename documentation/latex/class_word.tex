@@ -1,4 +1,4 @@
-\hypertarget{class_word}{}\section{Word Class Reference}
+\hypertarget{class_word}{}\section{Word类 参考}
 \label{class_word}\index{Word@{Word}}
 
 
@@ -9,32 +9,32 @@
 
 {\ttfamily \#include $<$Word.\+h$>$}
 
-Inheritance diagram for Word\+:\begin{figure}[H]
+类 Word 继承关系图\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_word}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_word_acb127ce0ab789dc0ecfc407dec786ac2}{Word} (std\+::string s, int \hyperlink{class_token_a2a4b0e1b648c2a9be1976004eb3c4ff0}{tag})
 \item 
 std\+::string \hyperlink{class_word_a950a81bfd0fc369b0eb8d0d6b27e2870}{to\+String} ()
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\subsection*{Public 属性}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \hyperlink{class_word_a34691d869ec57b2a0b7a8eb41230b92a}{lexeme} = \char`\"{}\char`\"{}
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{详细描述}
 字类 
 
 代表关键字, 变量名等的 对应类 
 
-\subsection{Constructor \& Destructor Documentation}
+\subsection{构造及析构函数说明}
 \mbox{\Hypertarget{class_word_acb127ce0ab789dc0ecfc407dec786ac2}\label{class_word_acb127ce0ab789dc0ecfc407dec786ac2}} 
 \index{Word@{Word}!Word@{Word}}
 \index{Word@{Word}!Word@{Word}}
@@ -42,7 +42,7 @@ std\+::string \hyperlink{class_word_a34691d869ec57b2a0b7a8eb41230b92a}{lexeme} =
 {\footnotesize\ttfamily Word\+::\+Word (\begin{DoxyParamCaption}\item[{std\+::string}]{s,  }\item[{int}]{tag }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{参数}
 {\em s} & \+: 该字的字符串 \\
 \hline
 {\em tag} & \+: 该字的类型 \\
@@ -50,23 +50,23 @@ std\+::string \hyperlink{class_word_a34691d869ec57b2a0b7a8eb41230b92a}{lexeme} =
 \end{DoxyParams}
 
 
-\subsection{Member Function Documentation}
+\subsection{成员函数说明}
 \mbox{\Hypertarget{class_word_a950a81bfd0fc369b0eb8d0d6b27e2870}\label{class_word_a950a81bfd0fc369b0eb8d0d6b27e2870}} 
 \index{Word@{Word}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!Word@{Word}}
 \subsubsection{\texorpdfstring{to\+String()}{toString()}}
 {\footnotesize\ttfamily std\+::string Word\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-将字输出成字符串 \begin{DoxyReturn}{Returns}
+将字输出成字符串 \begin{DoxyReturn}{返回}
 该字的字符串 
 \end{DoxyReturn}
 
 
-Reimplemented from \hyperlink{class_token_a8863381edabce7bc1e92473b445ba81f}{Token}.
+重载 \hyperlink{class_token_a8863381edabce7bc1e92473b445ba81f}{Token} .
 
 
 
-\subsection{Member Data Documentation}
+\subsection{类成员变量说明}
 \mbox{\Hypertarget{class_word_a34691d869ec57b2a0b7a8eb41230b92a}\label{class_word_a34691d869ec57b2a0b7a8eb41230b92a}} 
 \index{Word@{Word}!lexeme@{lexeme}}
 \index{lexeme@{lexeme}!Word@{Word}}
@@ -75,7 +75,7 @@ Reimplemented from \hyperlink{class_token_a8863381edabce7bc1e92473b445ba81f}{Tok
 
 改字的字符串信息 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
 src/lexer/Word.\+h\item 
 src/lexer/Word.\+cpp\end{DoxyCompactItemize}
