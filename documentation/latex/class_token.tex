@@ -22,14 +22,14 @@ token类
 \item 
 virtual std\+::string \hyperlink{class_token_a8863381edabce7bc1e92473b445ba81f}{to\+String} ()
 \item 
-\mbox{\Hypertarget{class_token_a745ea87ba20ab7e4d3f9061c62c179ca}\label{class_token_a745ea87ba20ab7e4d3f9061c62c179ca}} 
-bool \hyperlink{class_token_a745ea87ba20ab7e4d3f9061c62c179ca}{operator$<$} (const \hyperlink{class_token}{Token} t) const
+bool \hyperlink{class_token_a157a63b83c2b18a64ba1f4170d476895}{operator$<$} (const \hyperlink{class_token}{Token} t) const \hypertarget{class_token_a157a63b83c2b18a64ba1f4170d476895}{}\label{class_token_a157a63b83c2b18a64ba1f4170d476895}
+
 \begin{DoxyCompactList}\small\item\em 重载token的比较符,用于比较token \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public 属性}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_token_a2a4b0e1b648c2a9be1976004eb3c4ff0}\label{class_token_a2a4b0e1b648c2a9be1976004eb3c4ff0}} 
-int \hyperlink{class_token_a2a4b0e1b648c2a9be1976004eb3c4ff0}{tag}
+int \hyperlink{class_token_a2a4b0e1b648c2a9be1976004eb3c4ff0}{tag}\hypertarget{class_token_a2a4b0e1b648c2a9be1976004eb3c4ff0}{}\label{class_token_a2a4b0e1b648c2a9be1976004eb3c4ff0}
+
 \begin{DoxyCompactList}\small\item\em 该token的类型 \end{DoxyCompactList}\item 
 int \hyperlink{class_token_a4b96c2a31d7c374fd2bd1986794f80dd}{line}
 \end{DoxyCompactItemize}
@@ -41,12 +41,13 @@ token类
 语法分析器中解析的基本元素 也是词法分析器中生成的元素 
 
 \subsection{构造及析构函数说明}
-\mbox{\Hypertarget{class_token_a29580f176bfba9981aeec62946114675}\label{class_token_a29580f176bfba9981aeec62946114675}} 
 \index{Token@{Token}!Token@{Token}}
 \index{Token@{Token}!Token@{Token}}
-\subsubsection{\texorpdfstring{Token()}{Token()}}
-{\footnotesize\ttfamily Token\+::\+Token (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{Token(int t)}{Token(int t)}}]{\setlength{\rightskip}{0pt plus 5cm}Token\+::\+Token (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{class_token_a29580f176bfba9981aeec62946114675}{}\label{class_token_a29580f176bfba9981aeec62946114675}
 
 \begin{DoxyParams}{参数}
 {\em t} & \+: 初始化token的tag值 \\
@@ -55,12 +56,13 @@ token类
 
 
 \subsection{成员函数说明}
-\mbox{\Hypertarget{class_token_a8863381edabce7bc1e92473b445ba81f}\label{class_token_a8863381edabce7bc1e92473b445ba81f}} 
 \index{Token@{Token}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!Token@{Token}}
-\subsubsection{\texorpdfstring{to\+String()}{toString()}}
-{\footnotesize\ttfamily std\+::string Token\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
+\subsubsection[{\texorpdfstring{to\+String()}{toString()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Token\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_token_a8863381edabce7bc1e92473b445ba81f}{}\label{class_token_a8863381edabce7bc1e92473b445ba81f}
 \begin{DoxyReturn}{返回}
 返回该token的信息 
 \end{DoxyReturn}
@@ -71,12 +73,9 @@ token类
 
 
 \subsection{类成员变量说明}
-\mbox{\Hypertarget{class_token_a4b96c2a31d7c374fd2bd1986794f80dd}\label{class_token_a4b96c2a31d7c374fd2bd1986794f80dd}} 
 \index{Token@{Token}!line@{line}}
 \index{line@{line}!Token@{Token}}
-\subsubsection{\texorpdfstring{line}{line}}
-{\footnotesize\ttfamily int Token\+::line}
-
+\subsubsection[{\texorpdfstring{line}{line}}]{\setlength{\rightskip}{0pt plus 5cm}int Token\+::line}\hypertarget{class_token_a4b96c2a31d7c374fd2bd1986794f80dd}{}\label{class_token_a4b96c2a31d7c374fd2bd1986794f80dd}
 该token所处的行号 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}

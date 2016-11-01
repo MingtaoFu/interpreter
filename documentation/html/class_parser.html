@@ -3,8 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
 <title>C Compiler: Parser类 参考</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -12,6 +11,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -29,19 +31,41 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.13 -->
+<!-- 制作者 Doxygen 1.8.11 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','搜索');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="hierarchy.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,73 +102,61 @@ $(function() {
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a25929f4bcec5c5ff010218f001203b73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a25929f4bcec5c5ff010218f001203b73">Parser</a> (<a class="el" href="class_lexer.html">Lexer</a> *lexer)</td></tr>
 <tr class="separator:a25929f4bcec5c5ff010218f001203b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af213985eb12738d0dbf7d505a8795ea2"><td class="memItemLeft" align="right" valign="top"><a id="af213985eb12738d0dbf7d505a8795ea2"></a>
+<tr class="memitem:af213985eb12738d0dbf7d505a8795ea2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af213985eb12738d0dbf7d505a8795ea2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#af213985eb12738d0dbf7d505a8795ea2">program</a> ()</td></tr>
 <tr class="memdesc:af213985eb12738d0dbf7d505a8795ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">分析函数入口 <br /></td></tr>
 <tr class="separator:af213985eb12738d0dbf7d505a8795ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad05b2f1f2e9f60a7373961da0588eb5b"><td class="memItemLeft" align="right" valign="top"><a id="ad05b2f1f2e9f60a7373961da0588eb5b"></a>
+<tr class="memitem:ad05b2f1f2e9f60a7373961da0588eb5b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad05b2f1f2e9f60a7373961da0588eb5b"></a>
 <a class="el" href="class_block.html">Block</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ad05b2f1f2e9f60a7373961da0588eb5b">getRoot</a> ()</td></tr>
 <tr class="memdesc:ad05b2f1f2e9f60a7373961da0588eb5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取语法树的根节点 <br /></td></tr>
 <tr class="separator:ad05b2f1f2e9f60a7373961da0588eb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected 成员函数</h2></td></tr>
-<tr class="memitem:ae6cc5bf3ee250c954a36bd16f7559d79"><td class="memItemLeft" align="right" valign="top"><a id="ae6cc5bf3ee250c954a36bd16f7559d79"></a>
+<tr class="memitem:ae6cc5bf3ee250c954a36bd16f7559d79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6cc5bf3ee250c954a36bd16f7559d79"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ae6cc5bf3ee250c954a36bd16f7559d79">move</a> ()</td></tr>
 <tr class="memdesc:ae6cc5bf3ee250c954a36bd16f7559d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">扫描的 token 前移 <br /></td></tr>
 <tr class="separator:ae6cc5bf3ee250c954a36bd16f7559d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0915f6c61a1a70038a8608ff7a823b5a"><td class="memItemLeft" align="right" valign="top"><a id="a0915f6c61a1a70038a8608ff7a823b5a"></a>
+<tr class="memitem:a0915f6c61a1a70038a8608ff7a823b5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0915f6c61a1a70038a8608ff7a823b5a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a0915f6c61a1a70038a8608ff7a823b5a">error</a> (std::string)</td></tr>
 <tr class="memdesc:a0915f6c61a1a70038a8608ff7a823b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">抛出错误 <br /></td></tr>
 <tr class="separator:a0915f6c61a1a70038a8608ff7a823b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a009517efe4fe90b136071179beb32360"><td class="memItemLeft" align="right" valign="top"><a id="a009517efe4fe90b136071179beb32360"></a>
+<tr class="memitem:a009517efe4fe90b136071179beb32360"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a009517efe4fe90b136071179beb32360"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a009517efe4fe90b136071179beb32360">match</a> (int)</td></tr>
 <tr class="memdesc:a009517efe4fe90b136071179beb32360"><td class="mdescLeft">&#160;</td><td class="mdescRight">根据语法匹配关键 token <br /></td></tr>
 <tr class="separator:a009517efe4fe90b136071179beb32360"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e96322fd6d40261ab256a726634c1b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_block.html">Block</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a2e96322fd6d40261ab256a726634c1b3">block</a> ()</td></tr>
 <tr class="memdesc:a2e96322fd6d40261ab256a726634c1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 块 对象  <a href="#a2e96322fd6d40261ab256a726634c1b3">更多...</a><br /></td></tr>
 <tr class="separator:a2e96322fd6d40261ab256a726634c1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44a52c6402e86b0a200e02b516f8e9fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a44a52c6402e86b0a200e02b516f8e9fe">decl</a> ()</td></tr>
-<tr class="memdesc:a44a52c6402e86b0a200e02b516f8e9fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">完成声明语句  <a href="#a44a52c6402e86b0a200e02b516f8e9fe">更多...</a><br /></td></tr>
-<tr class="separator:a44a52c6402e86b0a200e02b516f8e9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1ae72a37dbe2118ab65ad8f4dec4630"><td class="memItemLeft" align="right" valign="top"><a id="ab1ae72a37dbe2118ab65ad8f4dec4630"></a>
-<a class="el" href="class_stmt.html">Stmt</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ab1ae72a37dbe2118ab65ad8f4dec4630">stmt</a> ()</td></tr>
-<tr class="memdesc:ab1ae72a37dbe2118ab65ad8f4dec4630"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 语句 对象 <br /></td></tr>
+<tr class="memitem:ab1ae72a37dbe2118ab65ad8f4dec4630"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_stmt.html">Stmt</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ab1ae72a37dbe2118ab65ad8f4dec4630">stmt</a> ()</td></tr>
+<tr class="memdesc:ab1ae72a37dbe2118ab65ad8f4dec4630"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 语句 对象  <a href="#ab1ae72a37dbe2118ab65ad8f4dec4630">更多...</a><br /></td></tr>
 <tr class="separator:ab1ae72a37dbe2118ab65ad8f4dec4630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf18837a6acc9b543969706108d1191f"><td class="memItemLeft" align="right" valign="top"><a id="abf18837a6acc9b543969706108d1191f"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#abf18837a6acc9b543969706108d1191f">comma</a> ()</td></tr>
-<tr class="memdesc:abf18837a6acc9b543969706108d1191f"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 逗号表达式 对象 <br /></td></tr>
+<tr class="memitem:abf18837a6acc9b543969706108d1191f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#abf18837a6acc9b543969706108d1191f">comma</a> ()</td></tr>
+<tr class="memdesc:abf18837a6acc9b543969706108d1191f"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 逗号表达式 对象  <a href="#abf18837a6acc9b543969706108d1191f">更多...</a><br /></td></tr>
 <tr class="separator:abf18837a6acc9b543969706108d1191f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24a9ce00f5db17f1e2b2019d6791a7e3"><td class="memItemLeft" align="right" valign="top"><a id="a24a9ce00f5db17f1e2b2019d6791a7e3"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a24a9ce00f5db17f1e2b2019d6791a7e3">assign</a> ()</td></tr>
-<tr class="memdesc:a24a9ce00f5db17f1e2b2019d6791a7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 赋值表达式 对象 <br /></td></tr>
+<tr class="memitem:a24a9ce00f5db17f1e2b2019d6791a7e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a24a9ce00f5db17f1e2b2019d6791a7e3">assign</a> ()</td></tr>
+<tr class="memdesc:a24a9ce00f5db17f1e2b2019d6791a7e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 赋值表达式 对象  <a href="#a24a9ce00f5db17f1e2b2019d6791a7e3">更多...</a><br /></td></tr>
 <tr class="separator:a24a9ce00f5db17f1e2b2019d6791a7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf81bd28478a78855da7271b0dd7a09d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#acf81bd28478a78855da7271b0dd7a09d">equality</a> ()</td></tr>
 <tr class="memdesc:acf81bd28478a78855da7271b0dd7a09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 等于表达式 对象  <a href="#acf81bd28478a78855da7271b0dd7a09d">更多...</a><br /></td></tr>
 <tr class="separator:acf81bd28478a78855da7271b0dd7a09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ca8a4997cc230fb127ddb34986e9ffd"><td class="memItemLeft" align="right" valign="top"><a id="a8ca8a4997cc230fb127ddb34986e9ffd"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a8ca8a4997cc230fb127ddb34986e9ffd">rel</a> ()</td></tr>
-<tr class="memdesc:a8ca8a4997cc230fb127ddb34986e9ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 打小于表达式 对象 <br /></td></tr>
+<tr class="memitem:a8ca8a4997cc230fb127ddb34986e9ffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a8ca8a4997cc230fb127ddb34986e9ffd">rel</a> ()</td></tr>
+<tr class="memdesc:a8ca8a4997cc230fb127ddb34986e9ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 打小于表达式 对象  <a href="#a8ca8a4997cc230fb127ddb34986e9ffd">更多...</a><br /></td></tr>
 <tr class="separator:a8ca8a4997cc230fb127ddb34986e9ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a198213e9e10727dab4b6f54ee781958b"><td class="memItemLeft" align="right" valign="top"><a id="a198213e9e10727dab4b6f54ee781958b"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a198213e9e10727dab4b6f54ee781958b">addsub</a> ()</td></tr>
-<tr class="memdesc:a198213e9e10727dab4b6f54ee781958b"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 加减表达式 对象 <br /></td></tr>
+<tr class="memitem:a198213e9e10727dab4b6f54ee781958b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a198213e9e10727dab4b6f54ee781958b">addsub</a> ()</td></tr>
+<tr class="memdesc:a198213e9e10727dab4b6f54ee781958b"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 加减表达式 对象  <a href="#a198213e9e10727dab4b6f54ee781958b">更多...</a><br /></td></tr>
 <tr class="separator:a198213e9e10727dab4b6f54ee781958b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3809fe1d71ccaf111e4c6dc57f86640f"><td class="memItemLeft" align="right" valign="top"><a id="a3809fe1d71ccaf111e4c6dc57f86640f"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a3809fe1d71ccaf111e4c6dc57f86640f">term</a> ()</td></tr>
-<tr class="memdesc:a3809fe1d71ccaf111e4c6dc57f86640f"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 表达式项 对象 <br /></td></tr>
+<tr class="memitem:a3809fe1d71ccaf111e4c6dc57f86640f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a3809fe1d71ccaf111e4c6dc57f86640f">term</a> ()</td></tr>
+<tr class="memdesc:a3809fe1d71ccaf111e4c6dc57f86640f"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 表达式项 对象  <a href="#a3809fe1d71ccaf111e4c6dc57f86640f">更多...</a><br /></td></tr>
 <tr class="separator:a3809fe1d71ccaf111e4c6dc57f86640f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac58cd88a976f4a7d147f5f815724f6a6"><td class="memItemLeft" align="right" valign="top"><a id="ac58cd88a976f4a7d147f5f815724f6a6"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ac58cd88a976f4a7d147f5f815724f6a6">unary</a> ()</td></tr>
-<tr class="memdesc:ac58cd88a976f4a7d147f5f815724f6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 符号表达式 对象 <br /></td></tr>
+<tr class="memitem:ac58cd88a976f4a7d147f5f815724f6a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ac58cd88a976f4a7d147f5f815724f6a6">unary</a> ()</td></tr>
+<tr class="memdesc:ac58cd88a976f4a7d147f5f815724f6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 符号表达式 对象  <a href="#ac58cd88a976f4a7d147f5f815724f6a6">更多...</a><br /></td></tr>
 <tr class="separator:ac58cd88a976f4a7d147f5f815724f6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d5348cd92711fd39aea2b959e029e99"><td class="memItemLeft" align="right" valign="top"><a id="a3d5348cd92711fd39aea2b959e029e99"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a3d5348cd92711fd39aea2b959e029e99">selfop</a> ()</td></tr>
-<tr class="memdesc:a3d5348cd92711fd39aea2b959e029e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 自增自减表达式 对象 <br /></td></tr>
+<tr class="memitem:a3d5348cd92711fd39aea2b959e029e99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a3d5348cd92711fd39aea2b959e029e99">selfop</a> ()</td></tr>
+<tr class="memdesc:a3d5348cd92711fd39aea2b959e029e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 自增自减表达式 对象  <a href="#a3d5348cd92711fd39aea2b959e029e99">更多...</a><br /></td></tr>
 <tr class="separator:a3d5348cd92711fd39aea2b959e029e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac85a997e91604de1d3505b3c8aaddf3b"><td class="memItemLeft" align="right" valign="top"><a id="ac85a997e91604de1d3505b3c8aaddf3b"></a>
-<a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ac85a997e91604de1d3505b3c8aaddf3b">factor</a> ()</td></tr>
-<tr class="memdesc:ac85a997e91604de1d3505b3c8aaddf3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 因子 对象 <br /></td></tr>
+<tr class="memitem:ac85a997e91604de1d3505b3c8aaddf3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_expr.html">Expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#ac85a997e91604de1d3505b3c8aaddf3b">factor</a> ()</td></tr>
+<tr class="memdesc:ac85a997e91604de1d3505b3c8aaddf3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成 因子 对象  <a href="#ac85a997e91604de1d3505b3c8aaddf3b">更多...</a><br /></td></tr>
 <tr class="separator:ac85a997e91604de1d3505b3c8aaddf3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -154,10 +166,10 @@ Protected 属性</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private 属性</h2></td></tr>
-<tr class="memitem:a8a8214126b0b0455e3ce375f3e9b20bf"><td class="memItemLeft" align="right" valign="top"><a id="a8a8214126b0b0455e3ce375f3e9b20bf"></a>
+<tr class="memitem:a8a8214126b0b0455e3ce375f3e9b20bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a8214126b0b0455e3ce375f3e9b20bf"></a>
 <a class="el" href="class_lexer.html">Lexer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>lexer</b></td></tr>
 <tr class="separator:a8a8214126b0b0455e3ce375f3e9b20bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5d56e87794ceab4e8346bf4a60a5625"><td class="memItemLeft" align="right" valign="top"><a id="ac5d56e87794ceab4e8346bf4a60a5625"></a>
+<tr class="memitem:ac5d56e87794ceab4e8346bf4a60a5625"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5d56e87794ceab4e8346bf4a60a5625"></a>
 <a class="el" href="class_token.html">Token</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>look</b></td></tr>
 <tr class="separator:ac5d56e87794ceab4e8346bf4a60a5625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -165,9 +177,7 @@ Private 属性</h2></td></tr>
 <div class="textblock"><p>语法分析类 </p>
 <p>用于构建抽象语法树, 以便虚拟机去执行 </p>
 </div><h2 class="groupheader">构造及析构函数说明</h2>
-<a id="a25929f4bcec5c5ff010218f001203b73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25929f4bcec5c5ff010218f001203b73">&sect;&nbsp;</a></span>Parser()</h2>
-
+<a class="anchor" id="a25929f4bcec5c5ff010218f001203b73"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -190,9 +200,72 @@ Private 属性</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="a2e96322fd6d40261ab256a726634c1b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e96322fd6d40261ab256a726634c1b3">&sect;&nbsp;</a></span>block()</h2>
+<a class="anchor" id="a198213e9e10727dab4b6f54ee781958b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::addsub </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>生成 加减表达式 对象 </p>
+<p>加减法运算<br />
+ 参见 comma</p>
+
+</div>
+</div>
+<a class="anchor" id="a24a9ce00f5db17f1e2b2019d6791a7e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::assign </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成 赋值表达式 对象 </p>
+<p>赋值表达式视为 变量名 与 等于/不等表达式 进行赋值运算<br />
+ 变量名 与 等于符号 可以不存在(降级为判断相等)<br />
+ 若存在连等<br />
+ 递归地生成多个赋值表达式<br />
+ --------------&mdash;<br />
+ 有一点与 逗号表达式 不同<br />
+ 逗号表达式的结合性为 从左到右<br />
+ 所以第二个表达式必须是比 逗号表达式 优先级更低的赋值运算<br />
+ 而赋值运算结合性从右到左<br />
+ 检测到等号后，右侧允许出现赋值<br />
+ 所以第二个表达式依然是赋值<br />
+ --------------&mdash;<br />
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e96322fd6d40261ab256a726634c1b3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -218,9 +291,7 @@ Private 属性</h2></td></tr>
 
 </div>
 </div>
-<a id="a44a52c6402e86b0a200e02b516f8e9fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44a52c6402e86b0a200e02b516f8e9fe">&sect;&nbsp;</a></span>decl()</h2>
-
+<a class="anchor" id="abf18837a6acc9b543969706108d1191f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -228,7 +299,7 @@ Private 属性</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Parser::decl </td>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::comma </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -241,14 +312,16 @@ Private 属性</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>完成声明语句 </p>
-<p>对声明的解析 </p>
+<p>生成 逗号表达式 对象 </p>
+<p>逗号表达式视为 两个赋值表达式 进行逗号运算<br />
+ 第二个赋值运算 与 逗号 可以不存在(降级为赋值)<br />
+ 若存在多个逗号<br />
+ 迭代地生成多个逗号表达式<br />
+</p>
 
 </div>
 </div>
-<a id="acf81bd28478a78855da7271b0dd7a09d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf81bd28478a78855da7271b0dd7a09d">&sect;&nbsp;</a></span>equality()</h2>
-
+<a class="anchor" id="acf81bd28478a78855da7271b0dd7a09d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -270,14 +343,176 @@ Private 属性</h2></td></tr>
 </div><div class="memdoc">
 
 <p>生成 等于表达式 对象 </p>
-<p>一个表达式最低优先级为 == != 可以没有这一项，若没有，直接返回rel对象</p>
+<p>等于/不等于运算<br />
+ 参见 comma</p>
+
+</div>
+</div>
+<a class="anchor" id="ac85a997e91604de1d3505b3c8aaddf3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::factor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成 因子 对象 </p>
+<p>因子<br />
+ 最小的运算单元<br />
+ 分为 变量 与 数字</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ca8a4997cc230fb127ddb34986e9ffd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::rel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成 打小于表达式 对象 </p>
+<p>大于/小于运算<br />
+ 参见 comma</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d5348cd92711fd39aea2b959e029e99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::selfop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成 自增自减表达式 对象 </p>
+<p>自增/自减运算<br />
+ 参见 unary</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1ae72a37dbe2118ab65ad8f4dec4630"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_stmt.html">Stmt</a> * Parser::stmt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成 语句 对象 </p>
+<p>处理语句</p>
+
+</div>
+</div>
+<a class="anchor" id="a3809fe1d71ccaf111e4c6dc57f86640f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::term </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成 表达式项 对象 </p>
+<p>乘除运算<br />
+ 参见 comma</p>
+
+</div>
+</div>
+<a class="anchor" id="ac58cd88a976f4a7d147f5f815724f6a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_expr.html">Expr</a> * Parser::unary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成 符号表达式 对象 </p>
+<p>正负运算<br />
+ 对 '-', '+' 采取同样的规则<br />
+ 执行时再区分</p>
 
 </div>
 </div>
 <h2 class="groupheader">类成员变量说明</h2>
-<a id="a2c2aa893bb15b76ceea0330cad0c75cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c2aa893bb15b76ceea0330cad0c75cb">&sect;&nbsp;</a></span>root</h2>
-
+<a class="anchor" id="a2c2aa893bb15b76ceea0330cad0c75cb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -307,7 +542,7 @@ Private 属性</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 制作者 &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.11
 </small></address>
 </body>
 </html>

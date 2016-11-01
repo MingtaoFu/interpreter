@@ -12,7 +12,7 @@
 #include <map>
 
 ///
-/// \brief Class Lexer 词法分析器
+/// \brief 词法分析器
 ///
 /// 该类用于把源文件分析成token流,
 /// 便于语法分析时对元素的提取

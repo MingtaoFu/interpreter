@@ -9,3 +9,4 @@ output.txt
 test
 *.js
 *.c
+.DS_Store

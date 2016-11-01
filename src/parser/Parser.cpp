@@ -79,10 +79,10 @@ Block * Parser::block() {
 
 Expr* Parser::comma() {
     ///
-    /// 逗号表达式视为 两个赋值表达式 进行逗号运算
-    /// 第二个赋值运算 与 逗号 可以不存在(降级为赋值)
-    /// 若存在多个逗号
-    /// 迭代地生成多个逗号表达式
+    /// 逗号表达式视为 两个赋值表达式 进行逗号运算<br>
+    /// 第二个赋值运算 与 逗号 可以不存在(降级为赋值)<br>
+    /// 若存在多个逗号<br>
+    /// 迭代地生成多个逗号表达式<br>
     ///
     Expr * expr1 = assign();
     while (look->tag == Tag::COMMA) {
@@ -95,18 +95,18 @@ Expr* Parser::comma() {
 
 Expr * Parser::assign() {
     ///
-    /// 赋值表达式视为 变量名 与 等于/不等表达式 进行赋值运算
-    /// 变量名 与 等于符号 可以不存在(降级为判断相等)
-    /// 若存在连等
-    /// 递归地生成多个赋值表达式
-    /// -----------------
-    /// 有一点与 逗号表达式 不同
-    /// 逗号表达式的结合性为 从左到右
-    /// 所以第二个表达式必须是比 逗号表达式 优先级更低的赋值运算
-    /// 而赋值运算结合性从右到左
-    /// 检测到等号后，右侧允许出现赋值
-    /// 所以第二个表达式依然是赋值
-    /// -----------------
+    /// 赋值表达式视为 变量名 与 等于/不等表达式 进行赋值运算<br>
+    /// 变量名 与 等于符号 可以不存在(降级为判断相等)<br>
+    /// 若存在连等<br>
+    /// 递归地生成多个赋值表达式<br>
+    /// -----------------<br>
+    /// 有一点与 逗号表达式 不同<br>
+    /// 逗号表达式的结合性为 从左到右<br>
+    /// 所以第二个表达式必须是比 逗号表达式 优先级更低的赋值运算<br>
+    /// 而赋值运算结合性从右到左<br>
+    /// 检测到等号后，右侧允许出现赋值<br>
+    /// 所以第二个表达式依然是赋值<br>
+    /// -----------------<br>
     ///
     Expr * equality1 = equality();
     while (look->tag == '=') {
@@ -118,6 +118,10 @@ Expr * Parser::assign() {
 }
 
 Expr * Parser::equality() {
+    ///
+    /// 等于/不等于运算<br>
+    /// 参见 comma
+    ///
     Expr * rel1 = rel();
     while(look->tag == Tag::EQ || look->tag == Tag::NE) {
         Token * token = look;
@@ -128,6 +132,10 @@ Expr * Parser::equality() {
 }
 
 Expr * Parser::rel() {
+    ///
+    /// 大于/小于运算<br>
+    /// 参见 comma
+    ///
     Expr *expr1 = addsub();
     switch (look->tag) {
         case '<':
@@ -145,6 +153,10 @@ Expr * Parser::rel() {
 }
 
 Expr * Parser::addsub() {
+    ///
+    /// 加减法运算<br>
+    /// 参见 comma
+    ///
     Expr * expr1 = term();
     while (look->tag == '+' || look->tag == '-') {
         Token * token = look;
@@ -156,6 +168,10 @@ Expr * Parser::addsub() {
 
 
 Expr * Parser::term() {
+    ///
+    /// 乘除运算<br>
+    /// 参见 comma
+    ///
     Expr * expr1 = unary();
     while (look->tag == '*' || look->tag == '/') {
         Token * token = look;
@@ -166,6 +182,11 @@ Expr * Parser::term() {
 }
 
 Expr * Parser::unary() {
+    ///
+    /// 正负运算<br>
+    /// 对 '-', '+' 采取同样的规则<br>
+    /// 执行时再区分
+    ///
     switch (look -> tag) {
         case '-':
         case '+': {
@@ -179,6 +200,10 @@ Expr * Parser::unary() {
 }
 
 Expr * Parser::selfop() {
+    ///
+    /// 自增/自减运算<br>
+    /// 参见 unary
+    ///
     Expr * factor1 = factor();
     switch (look->tag) {
         case Tag::INCRE:
@@ -193,6 +218,11 @@ Expr * Parser::selfop() {
 }
 
 Expr * Parser::factor() {
+    ///
+    /// 因子<br>
+    /// 最小的运算单元<br>
+    /// 分为 变量 与 数字
+    ///
     switch(look->tag) {
         case Tag::NUM: {
             Token * token = look;
@@ -213,6 +243,9 @@ Expr * Parser::factor() {
 }
 
 Stmt * Parser::stmt() {
+    ///
+    /// 处理语句
+    /// 
     Expr * expr;
     Stmt * stmt1;
     //保存 break 外部的循环语句
@@ -259,9 +292,7 @@ Stmt * Parser::stmt() {
 
         // 处理分析 声明的语句结构
         case Tag::INT: {
-
             match(Tag::INT);
-
             stmt1 = new Decl();
             while (1) {
                 Token * token = look;

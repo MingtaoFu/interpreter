@@ -14,8 +14,8 @@
 \item 
 \hyperlink{class_env_ab9d20c5b47453e30038f156cc5e25c0f}{Env} (\hyperlink{class_env}{Env} $\ast$)
 \begin{DoxyCompactList}\small\item\em 初始化当前环境 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}\label{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}} 
-void \hyperlink{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}{put} (std\+::string, \hyperlink{class_id}{Id})
+void \hyperlink{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}{put} (std\+::string, \hyperlink{class_id}{Id})\hypertarget{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}{}\label{class_env_a4648c2b83fea7e757ccb4ab519ffc9a0}
+
 \begin{DoxyCompactList}\small\item\em 向环境中添加新的变量 \end{DoxyCompactList}\item 
 \hyperlink{class_id}{Id} $\ast$ \hyperlink{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}{get} (std\+::string)
 \begin{DoxyCompactList}\small\item\em 获取变量 \end{DoxyCompactList}\item 
@@ -36,8 +36,8 @@ void \hyperlink{class_env_a8ba6704ef2039c2329569efc99f1e087}{print\+All\+Var} ()
 \subsection*{Private 属性}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_env_ab93397b135a614cb1c7e6057a00a8d85}\label{class_env_ab93397b135a614cb1c7e6057a00a8d85}} 
-std\+::map$<$ std\+::string, \hyperlink{class_id}{Id} $>$ \hyperlink{class_env_ab93397b135a614cb1c7e6057a00a8d85}{table}
+std\+::map$<$ std\+::string, \hyperlink{class_id}{Id} $>$ \hyperlink{class_env_ab93397b135a614cb1c7e6057a00a8d85}{table}\hypertarget{class_env_ab93397b135a614cb1c7e6057a00a8d85}{}\label{class_env_ab93397b135a614cb1c7e6057a00a8d85}
+
 \begin{DoxyCompactList}\small\item\em 当前环境的环境变量表 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -45,12 +45,13 @@ std\+::map$<$ std\+::string, \hyperlink{class_id}{Id} $>$ \hyperlink{class_env_a
 变量环境类 
 
 \subsection{构造及析构函数说明}
-\mbox{\Hypertarget{class_env_ab9d20c5b47453e30038f156cc5e25c0f}\label{class_env_ab9d20c5b47453e30038f156cc5e25c0f}} 
 \index{Env@{Env}!Env@{Env}}
 \index{Env@{Env}!Env@{Env}}
-\subsubsection{\texorpdfstring{Env()}{Env()}}
-{\footnotesize\ttfamily Env\+::\+Env (\begin{DoxyParamCaption}\item[{\hyperlink{class_env}{Env} $\ast$}]{n }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{Env(\+Env $\ast$)}{Env(Env *)}}]{\setlength{\rightskip}{0pt plus 5cm}Env\+::\+Env (
+\begin{DoxyParamCaption}
+\item[{{\bf Env} $\ast$}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{class_env_ab9d20c5b47453e30038f156cc5e25c0f}{}\label{class_env_ab9d20c5b47453e30038f156cc5e25c0f}
 
 
 初始化当前环境 
@@ -63,42 +64,46 @@ std\+::map$<$ std\+::string, \hyperlink{class_id}{Id} $>$ \hyperlink{class_env_a
 
 
 \subsection{成员函数说明}
-\mbox{\Hypertarget{class_env_aca71253ff9d30153d0834a47cd35a351}\label{class_env_aca71253ff9d30153d0834a47cd35a351}} 
 \index{Env@{Env}!\+\_\+get@{\+\_\+get}}
 \index{\+\_\+get@{\+\_\+get}!Env@{Env}}
-\subsubsection{\texorpdfstring{\+\_\+get()}{\_get()}}
-{\footnotesize\ttfamily \hyperlink{class_id}{Id} $\ast$ Env\+::\+\_\+get (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{\texorpdfstring{\+\_\+get(std\+::string)}{_get(std::string)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Id} $\ast$ Env\+::\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_env_aca71253ff9d30153d0834a47cd35a351}{}\label{class_env_aca71253ff9d30153d0834a47cd35a351}
 
 
 获取当前变量 
 
-在当前表中查找 \mbox{\Hypertarget{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}\label{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}} 
-\index{Env@{Env}!get@{get}}
+在当前表中查找 \index{Env@{Env}!get@{get}}
 \index{get@{get}!Env@{Env}}
-\subsubsection{\texorpdfstring{get()}{get()}}
-{\footnotesize\ttfamily \hyperlink{class_id}{Id} $\ast$ Env\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{get(std\+::string)}{get(std::string)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Id} $\ast$ Env\+::get (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{word}
+\end{DoxyParamCaption}
+)}\hypertarget{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}{}\label{class_env_a59bbdcdb7af396f6fb6cbff2f828e62b}
 
 
 获取变量 
 
-在表链中查找 迭代实现 \mbox{\Hypertarget{class_env_a8ba6704ef2039c2329569efc99f1e087}\label{class_env_a8ba6704ef2039c2329569efc99f1e087}} 
-\index{Env@{Env}!print\+All\+Var@{print\+All\+Var}}
+在表链中查找 迭代实现 \index{Env@{Env}!print\+All\+Var@{print\+All\+Var}}
 \index{print\+All\+Var@{print\+All\+Var}!Env@{Env}}
-\subsubsection{\texorpdfstring{print\+All\+Var()}{printAllVar()}}
-{\footnotesize\ttfamily void Env\+::print\+All\+Var (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{print\+All\+Var()}{printAllVar()}}]{\setlength{\rightskip}{0pt plus 5cm}void Env\+::print\+All\+Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_env_a8ba6704ef2039c2329569efc99f1e087}{}\label{class_env_a8ba6704ef2039c2329569efc99f1e087}
 
 
 输出所有的环境中的变量 
 
-打印作用域链所有变量 调试使用 \mbox{\Hypertarget{class_env_a398c166330482abb7e38c546bc3974cf}\label{class_env_a398c166330482abb7e38c546bc3974cf}} 
-\index{Env@{Env}!print\+Current\+Var@{print\+Current\+Var}}
+打印作用域链所有变量 调试使用 \index{Env@{Env}!print\+Current\+Var@{print\+Current\+Var}}
 \index{print\+Current\+Var@{print\+Current\+Var}!Env@{Env}}
-\subsubsection{\texorpdfstring{print\+Current\+Var()}{printCurrentVar()}}
-{\footnotesize\ttfamily void Env\+::print\+Current\+Var (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{print\+Current\+Var()}{printCurrentVar()}}]{\setlength{\rightskip}{0pt plus 5cm}void Env\+::print\+Current\+Var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_env_a398c166330482abb7e38c546bc3974cf}{}\label{class_env_a398c166330482abb7e38c546bc3974cf}
 
 
 输出当前环境中的所有变量 
@@ -106,12 +111,9 @@ std\+::map$<$ std\+::string, \hyperlink{class_id}{Id} $>$ \hyperlink{class_env_a
 打印当前block作用域变量 调试使用 
 
 \subsection{类成员变量说明}
-\mbox{\Hypertarget{class_env_a79a41e9166e949e4c1320ffe3750cb29}\label{class_env_a79a41e9166e949e4c1320ffe3750cb29}} 
 \index{Env@{Env}!prev@{prev}}
 \index{prev@{prev}!Env@{Env}}
-\subsubsection{\texorpdfstring{prev}{prev}}
-{\footnotesize\ttfamily \hyperlink{class_env}{Env}$\ast$ Env\+::prev\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{\texorpdfstring{prev}{prev}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Env}$\ast$ Env\+::prev\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_env_a79a41e9166e949e4c1320ffe3750cb29}{}\label{class_env_a79a41e9166e949e4c1320ffe3750cb29}
 上一层环境变量的指针 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}

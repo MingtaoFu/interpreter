@@ -12,19 +12,19 @@
 \subsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vm_a37a0791ef2b63e41421446993d0e7e4d}\label{class_vm_a37a0791ef2b63e41421446993d0e7e4d}} 
-void \hyperlink{class_vm_a37a0791ef2b63e41421446993d0e7e4d}{execute} ()
+void \hyperlink{class_vm_a37a0791ef2b63e41421446993d0e7e4d}{execute} ()\hypertarget{class_vm_a37a0791ef2b63e41421446993d0e7e4d}{}\label{class_vm_a37a0791ef2b63e41421446993d0e7e4d}
+
 \begin{DoxyCompactList}\small\item\em 执行整个语法树 \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_vm_af036edc52fab207ca28530c06b6d0c67}\label{class_vm_af036edc52fab207ca28530c06b6d0c67}} 
-void \hyperlink{class_vm_af036edc52fab207ca28530c06b6d0c67}{set\+Entry} (\hyperlink{class_block}{Block} $\ast$)
+void \hyperlink{class_vm_af036edc52fab207ca28530c06b6d0c67}{set\+Entry} (\hyperlink{class_block}{Block} $\ast$)\hypertarget{class_vm_af036edc52fab207ca28530c06b6d0c67}{}\label{class_vm_af036edc52fab207ca28530c06b6d0c67}
+
 \begin{DoxyCompactList}\small\item\em 设置语法树入口 \end{DoxyCompactList}\item 
 \hyperlink{class_vm_a4a37106b5b5b9382baa79dea901db8ba}{Vm} (\hyperlink{class_block}{Block} $\ast$)
 \end{DoxyCompactItemize}
 \subsection*{静态 Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vm_a376141bb4182218ac7a499043eb18a6c}\label{class_vm_a376141bb4182218ac7a499043eb18a6c}} 
-static void \hyperlink{class_vm_a376141bb4182218ac7a499043eb18a6c}{print\+Line} (int line\+Number)
+static void \hyperlink{class_vm_a376141bb4182218ac7a499043eb18a6c}{print\+Line} (int line\+Number)\hypertarget{class_vm_a376141bb4182218ac7a499043eb18a6c}{}\label{class_vm_a376141bb4182218ac7a499043eb18a6c}
+
 \begin{DoxyCompactList}\small\item\em 输出行号 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{静态 Public 属性}
 \begin{DoxyCompactItemize}
@@ -34,14 +34,14 @@ static \hyperlink{class_env}{Env} $\ast$ \hyperlink{class_vm_a1a83823801a5ab090d
 \subsection*{Protected 属性}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vm_ab5aae972ea15ddfd01362e27ed797a51}\label{class_vm_ab5aae972ea15ddfd01362e27ed797a51}} 
-\hyperlink{class_block}{Block} $\ast$ \hyperlink{class_vm_ab5aae972ea15ddfd01362e27ed797a51}{entry}
+\hyperlink{class_block}{Block} $\ast$ \hyperlink{class_vm_ab5aae972ea15ddfd01362e27ed797a51}{entry}\hypertarget{class_vm_ab5aae972ea15ddfd01362e27ed797a51}{}\label{class_vm_ab5aae972ea15ddfd01362e27ed797a51}
+
 \begin{DoxyCompactList}\small\item\em 语法树的入口 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{静态 Private 属性}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vm_acfa435ede93d1ba8fe2250fd3469de15}\label{class_vm_acfa435ede93d1ba8fe2250fd3469de15}} 
-static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line} = 0
+static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line} = 0\hypertarget{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{}\label{class_vm_acfa435ede93d1ba8fe2250fd3469de15}
+
 \begin{DoxyCompactList}\small\item\em 运行到的当前行 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -51,12 +51,13 @@ static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line}
 用于执行整个抽象语法树 
 
 \subsection{构造及析构函数说明}
-\mbox{\Hypertarget{class_vm_a4a37106b5b5b9382baa79dea901db8ba}\label{class_vm_a4a37106b5b5b9382baa79dea901db8ba}} 
 \index{Vm@{Vm}!Vm@{Vm}}
 \index{Vm@{Vm}!Vm@{Vm}}
-\subsubsection{\texorpdfstring{Vm()}{Vm()}}
-{\footnotesize\ttfamily Vm\+::\+Vm (\begin{DoxyParamCaption}\item[{\hyperlink{class_block}{Block} $\ast$}]{node }\end{DoxyParamCaption})}
-
+\subsubsection[{\texorpdfstring{Vm(\+Block $\ast$)}{Vm(Block *)}}]{\setlength{\rightskip}{0pt plus 5cm}Vm\+::\+Vm (
+\begin{DoxyParamCaption}
+\item[{{\bf Block} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vm_a4a37106b5b5b9382baa79dea901db8ba}{}\label{class_vm_a4a37106b5b5b9382baa79dea901db8ba}
 
 \begin{DoxyParams}{参数}
 {\em block} & \+: 程序运行的初始block \\
@@ -65,12 +66,9 @@ static int \hyperlink{class_vm_acfa435ede93d1ba8fe2250fd3469de15}{current\+Line}
 
 
 \subsection{类成员变量说明}
-\mbox{\Hypertarget{class_vm_a1a83823801a5ab090d9ad20527a6c638}\label{class_vm_a1a83823801a5ab090d9ad20527a6c638}} 
 \index{Vm@{Vm}!top@{top}}
 \index{top@{top}!Vm@{Vm}}
-\subsubsection{\texorpdfstring{top}{top}}
-{\footnotesize\ttfamily \hyperlink{class_env}{Env} $\ast$ Vm\+::top\hspace{0.3cm}{\ttfamily [static]}}
-
+\subsubsection[{\texorpdfstring{top}{top}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Env} $\ast$ Vm\+::top\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_vm_a1a83823801a5ab090d9ad20527a6c638}{}\label{class_vm_a1a83823801a5ab090d9ad20527a6c638}
 当前运行的变量环境 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}

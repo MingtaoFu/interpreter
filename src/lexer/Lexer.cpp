@@ -9,6 +9,9 @@
 #include <iostream>
 
 bool isalpha2(char c) {
+    ///
+    /// 判断为字母或下划线
+    ///
     if(c == '_' || isalpha(c)) {
         return true;
     }

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['scan',['scan',['../class_lexer.html#a2085b8262f6237de60583375ee2731f4',1,'Lexer']]],
-  ['selfop',['SelfOp',['../class_self_op.html#a5292e81fca1817185db15b29564a32ee',1,'SelfOp::SelfOp()'],['../class_parser.html#a3d5348cd92711fd39aea2b959e029e99',1,'Parser::selfop()']]],
+  ['selfop',['selfop',['../class_parser.html#a3d5348cd92711fd39aea2b959e029e99',1,'Parser::selfop()'],['../class_self_op.html#a5292e81fca1817185db15b29564a32ee',1,'SelfOp::SelfOp()']]],
   ['set',['Set',['../class_set.html#a05474c6de277894bcebe5230c587efab',1,'Set']]],
   ['setentry',['setEntry',['../class_vm.html#af036edc52fab207ca28530c06b6d0c67',1,'Vm']]],
   ['setenv',['setEnv',['../class_block.html#aa48058bd426766898bf31df828b3dac2',1,'Block']]],
