@@ -17,7 +17,7 @@ int Decl::execute() {
         if(expr) {
             Vm::printLine(expr->lexline);
             var->setValue(expr->execute());
-            std::cout << "执行声明中赋值 \t行号: " << expr->lexline << std::endl;
+            //std::cout << "执行声明中赋值 \t行号: " << expr->lexline << std::endl;
         }
 
         Word * word = (Word*)var->token;

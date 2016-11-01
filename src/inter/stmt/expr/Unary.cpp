@@ -12,7 +12,7 @@ Unary::Unary(Token * token, Expr * factor1):Math(token, NULL, factor1) {
 }
 
 int Unary::execute() {
-    std::cout << "发生正/负运算 \t行号: "  << lexline << std::endl;
+    //std::cout << "发生正/负运算 \t行号: "  << lexline << std::endl;
     Vm::printLine(lexline);
     int _value = ((Factor *)expr_r)->execute();
 

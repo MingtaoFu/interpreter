@@ -12,7 +12,7 @@ int Block::execute() {
     Env * saveEnv = Vm::top;
     Vm::top = new Env(Vm::top);
 
-    std::cout << "进入块" << std::endl;
+    //std::cout << "进入块" << std::endl;
     this->setEnv(Vm::top);
     for(auto &stmt : stmts) {
         try {
@@ -21,7 +21,7 @@ int Block::execute() {
             throw (aBreak);
         }
     }
-    std::cout << "出块" << std::endl;
+    //std::cout << "出块" << std::endl;
     Vm::top = saveEnv;
     return 0;
 }
